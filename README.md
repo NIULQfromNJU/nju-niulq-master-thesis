@@ -1,3 +1,8 @@
+# NJU-NIULIQIANG-MASTER-THESIS 
+
+This is niuliqiang's master thesis github repository using following NJU-Thesis template.
+2016.3.2
+
 # NJU-Thesis
 
 本项目提供了一个用于排版南京大学学位论文的XeLaTeX模板。该模板严格遵循南京大学学术委员会对学位论文的排版格式要求以及相应的国家标准规范，可帮助南京大学的同学们方便地排版出漂亮的学位论文。
