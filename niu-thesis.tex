@@ -54,7 +54,7 @@
 % 设置论文的中文封面
 
 % 论文标题，不可换行
-\title{自然语言处理中文本表示与建模研究}
+\title{基于神经网络语言模型的文本向量表示研究}
 % 论文作者姓名
 \author{牛力强}
 % 论文作者联系电话
@@ -88,7 +88,7 @@
 % 设置论文的英文封面
 
 % 论文的英文标题，不可换行
-\englishtitle{A Research on Text Representation and Modelling for Natural Language Processing}
+\englishtitle{A Research on Text Embeddings based on Neural Network Language Models}
 % 论文作者姓名的拼音
 \englishauthor{NIU Li-Qiang}
 % 导师姓名职称的英文
@@ -103,7 +103,7 @@
 % 格式，即``Month day, year''，其中``Month''为月份的英文名全称，首字母大写；``day''为
 % 该月中日期的阿拉伯数字表示；``year''为年份的四位阿拉伯数字表示。此属性可选，默认值为最后
 % 一次编译时的日期。
-\englishdate{Mar 1, 2013}
+\englishdate{Mar 1, 2016}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 设置论文的中文摘要
@@ -120,10 +120,10 @@
 
 % 设置英文摘要页面的论文标题及副标题的第一行。
 % 此属性可选，其默认值为使用|\englishtitle|命令所设置的论文标题
-\englishabstracttitlea{A Research on Text Representation and Modelling}
+\englishabstracttitlea{A Research on Text Embeddings}
 % 设置英文摘要页面的论文标题及副标题的第二行。
 % 此属性可选，其默认值为空白
-\englishabstracttitleb{for Natural Language Processing}
+\englishabstracttitleb{based on Neural Network Language Models}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -145,17 +145,21 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 论文的中文摘要
 \begin{abstract}
-自然语言同语音、图像并列为人工智能研究领域的三大重要元素。特别地，自2006年以来深度学习技术在机器学习以及人工智能领域取得重大突破。其中，语音识别、计算机视觉、图像处理等典型人工智能任务取得了重大进展与广泛应用。但是，不同于语音、图像等原始信号或者信息，自然语言是人类高度抽象之后的产物。因此，深度学习等机器学习技术在面对自然语言处理任务时依旧面临较大的挑战。
 
-传统的自然语言处理任务包括了语言建模、机器翻译、文本分类、情感分析、句法分析、中文分词、复述识别、自动问答等等。传统的自然语言处理方法大多是将有监督机器学习模型方法等根据对应的任务加以修改应用。例如，基于短语的统计机器翻译采用双语平行语料，依据源语言与目标语言词对齐方法来构建翻译模型，之后用此翻译模型来将源语言翻译为目标语言；文本分类、情感分析、复述识别等都是将具体的任务转换为有监督机器学习中二分类或者多分类任务，不同的任务采取不同的特征提取方法，进而构建对应的分类器；句法分析、中文分词等任务采用条件随机场等图模型方法来，基于特征模板来提取特征进而构造有监督分类器来进行参数学习。可以看到传统自然语言处理处理的最大局限在于采用有监督的机器学习方法，而现实中有监督方法所需的标记语料是相对有限且人工成本昂贵。因此，传统有监督机器学习方法在自然语言处理任务中的效果并不理想依旧面临很大的问题与挑战。
+文本表示与建模是自然语言处理领域一项基础任务，传统文本表示方法是基于词袋模型，即将所有存在的词组成一个高维的0/1空间，若词出现，则对应维度置为1，否则置为0。词袋模型的好处在于简单高效，容易扩展，但同时也面临众多严重的问题，如维度灾难、数据稀疏表示、缺失语义表达能力等。而近年来随着深度学习技术在语音、图像、生物信息等领域取得重大的成果，研究者们也开始将深度学习技术应用到自然语言处理领域。特别地，自2013年谷歌研究员基于神经网络语言模型来学习分布式词向量表示起，越来越多基于深度学习技术来学习各层次文本语义向量表示的方法出现。
 
-在此背景下，诸多研究者意识到深度学习的下一个突破口是自然语言处理方向。深度学习在语音以及图像等领域的成果得益于多层神经网络基于大量的未标注语料中的层次表示学习能力。如在图像中，神经网络通过层次化的学习可以学习到像素、边际、部分、图像的表示，之后通过这些不同层级的特征来构造分类器。可以看到多层神经网络在处理图像时模拟人脑的处理过程，因此深度学习得以取得重大突破，语音识别也类似。因此，研究者将自然语言处理的突破寄望于深度学习。近年来，研究者也开始探索文本的层次化表示学习，并希望通过基于深度学习的文本表示方法来提升传统的自然语言处理任务。
+本文集中对基于神经网络语言模型的文本表示与建模问题进行了探索。相比传统方法以及前人基于神经网络的文本表示与建模方法，本文对其进行了多方面的扩展：
 
-文本表示与建模是自然语言处理中一项基础任务，好的文本表示方法将直接有益于各种自然语言处理任务。传统的文本表示方法是基于词袋模型，即将所有的词组成高维0/1特征空间，若词出现，则对应维度置为1，否则置为0。词袋模型的好处在于简单高效，但是面临众多严重的问题，如维度灾难、数据稀疏、缺失语义表达能力等。而最新的基于深度学习的文本表示方法通过多层神经网络的学习将文本中的多层结构（词、短语、句子、段落、文档等）映射至一个低维连续的空间，每一种类型的文本都对应一个低维连续值的向量。因此，新的深度学习文本表示方法完美的克服了原来词袋模型的弊端，而且在各类自然语言处理任务中取得了最好的结果。如基于神经网络的机器翻译、基于神经网络的文本分类、情感分析、复述识别等等。基于近年来深度学习用于自然语言处理任务所取得的成果，本文集中在自然语言处理中的文本表示以及建模问题进行了探索。相比原有的深度学习的文本表示与建模方法，本文对其进行了多方面的扩展：（1）借助于潜在狄利克雷分布挖掘到词主题信息，将词表示扩展到主题表示；（2）将词表示学习扩展到联合学习词及其属性表示；（3）将词表示应用到狄利克雷分布中提升词主题发现。针对扩展之后的模型方法，本文进行了多方面的实验验证评估，实验结果表明扩展之后的方法均优于原有的模型方法。
+\begin{enumerate}
+\item 提出主题语义向量学习模型Topic2Vec：借助于潜在狄利克雷分布（Latent Dirichlet Allocation, LDA）挖掘到词的主题信息，将基于神经网络语言模型学习来学习词的语义向量表示模型Word2Vec扩展到主题语义向量表示。相比原始LDA中词以及主题文档等都以维度下标来表示而且词与主题之间的关系采用条件概率来衡量，Topic2Vec将词及其主题映射至统一语义向量空间，词与主题之间关系采用余弦相似度来计算。
+\item 提出一个能够联合学习词及其属性分布式表示的学习框架：将词向量表示学习方法扩展到联合学习词及其属性语义向量表示。相比单一模型的学习能力，联合学习框架使得词与其属性在学习过程中相互促进来得到更好的语义向量表示。
+\item 提出融合词向量与LDA的模型：将词向量表示应用到LDA中来提升词主题发现。
+\end{enumerate}
+针对扩展之后的模型方法，本文分别进行了多方面的实验评估，实验结果表明扩展之后的方法均优于原有的模型方法。
 
 
 % 中文关键词。关键词之间用中文全角分号隔开，末尾无标点符号。
-\keywords{人工智能；深度学习；自然语言处理；文本表示；神经网络；文本建模}
+\keywords{自然语言处理；文本表示；深度学习；神经网络；文本建模}
 \end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -171,7 +175,7 @@ Text representation
 
 
 % 英文关键词。关键词之间用英文半角逗号隔开，末尾无符号。
-\englishkeywords{Artificial Intelligence, Deep Learning, Natural Language Processing, Text Representation, Neural Networks, Text Modelling}
+\englishkeywords{Natural Language Processing, Text Representation, Deep Learning, Neural Networks, Text Modelling}
 \end{englishabstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -186,9 +190,9 @@ Text representation
 基于近年来深度学习用于自然语言处理任务所取得的成果，本文集中对自然语言处理中的文本表示以及建模问题进行了探索。相比原有基于深度学习的文本表示与建模方法，本文对其进行了多方面的扩展：
 
 \begin{enumerate}
-\item 借助于潜在狄利克雷分布\cite{blei2003latent}挖掘到词主题信息，将词表示扩展到主题表示。潜在狄里克雷分布是一个生成式模型，旨在挖掘文本结构化层次信息，即词、主题、文档三者之间的关系。另外，潜在狄里克雷分布假设文档由一组隐藏的主题所构成，而文档中的每一个词均由某一主题所生成。
-\item 将词表示学习扩展到联合学习词及其属性表示。
-\item 将词表示应用到狄利克雷分布中提升词主题发现。
+\item 提出主题语义向量学习模型Topic2Vec：借助于潜在狄利克雷分布（Latent Dirichlet Allocation, LDA）挖掘到词的主题信息，将基于神经网络语言模型学习来学习词的语义向量表示模型Word2Vec扩展到主题语义向量表示。相比原始LDA中词以及主题文档等都以维度下标来表示而且词与主题之间的关系采用条件概率来衡量，Topic2Vec将词及其主题映射至统一语义向量空间，词与主题之间关系采用余弦相似度来计算。
+\item 提出一个能够联合学习词及其属性分布式表示的学习框架：将词向量表示学习方法扩展到联合学习词及其属性语义向量表示。相比单一模型的学习能力，联合学习框架使得词与其属性在学习过程中相互促进来得到更好的语义向量表示。
+\item 提出融合词向量与LDA的模型：将词向量表示应用到LDA中来提升词主题发现。
 \end{enumerate}
 
 针对扩展之后的模型方法，本文进行了多方面的实验验证评估，实验结果表明扩展之后的方法均优于原有的模型方法。
@@ -220,452 +224,639 @@ Text representation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 学位论文的正文应以《绪论》作为第一章
 
-\chapter{绪论}\label{chapter_introduction}
+\chapter{绪论}\label{chapter1_introduction}
+\section{研究背景}\label{sec_chap1_background}
+
+自然语言同语音、图像并列为人工智能研究领域的三大重要元素。特别地，自2006年Hinton提出深度学习技术\cite{hinton2006reducing}并且在机器学习以及人工智能领域取得重大突破。其中，语音识别、计算机视觉、图像处理等典型人工智能任务取得了重大进展与广泛应用。但是，不同于语音、图像等原始信号或者信息，自然语言是人类高度抽象之后的产物。因此，深度学习等机器学习技术在面对自然语言处理任务时依旧面临较大的挑战。
+
+传统的自然语言处理任务包括了语言建模、机器翻译、文本分类、情感分析、句法分析、词性标注、命名实体识别、中文分词、复述识别、自动问答等等\cite{collobert2008unified}。传统的自然语言处理方法大多是将有监督机器学习模型方法等根据对应的任务加以修改应用。例如，基于短语的统计机器翻译采用双语平行语料，依据源语言与目标语言词对齐方法来构建翻译模型，之后基于翻译模型来将源语言翻译为目标语言\cite{chiang2005hierarchical}；文本分类、情感分析、复述识别等都是将具体的任务转换为有监督机器学习中二分类或者多分类任务，不同的任务采取不同的特征提取方法，进而构建对应的分类器\cite{collobert2008unified}；句法分析、中文分词等序列标注任务部分采用条件随机场等图模型方法，基于特征模板来提取特征进而构造有监督分类器来进行参数学习\cite{lafferty2001conditional,zhao2006improved}。可以看到传统自然语言处理处理的最大局限在于采用有监督的机器学习方法，而现实中有监督方法所需的标记语料是相对有限且人工成本昂贵。因此，传统有监督机器学习方法在自然语言处理任务中的效果并不理想依旧面临很大的问题与挑战。
+
+在此背景下，诸多研究者意识到深度学习的下一个突破口是自然语言处理方向。深度学习在语音以及图像等领域的成果得益于多层神经网络基于大量的未标注语料中的层次表示学习能力。如在图像中，神经网络通过层次化的学习可以学习到像素、边际、部分、图像的表示，之后通过这些不同层级的特征来构造分类器\cite{lee2009convolutional}。可以看到多层神经网络在处理图像时模拟人脑的处理过程，因此深度学习得以取得重大突破，语音识别也类似\cite{lee2009unsupervised}。因此，研究者将自然语言处理的突破寄望于深度学习。近年来，研究者也开始探索文本的层次化表示学习，并希望通过基于深度学习的文本表示方法来提升传统的自然语言处理任务。
+
+\section{研究目的与意义}\label{sec_chap1_motivations}
+
+对文本诸如词（Word）、主题（Topic）、句子（Sentence）、文档（Document）等进行建模在自然语言处理（Natural Language Processing, NLP）和信息检索（Information Retrieval, IR）领域是一项关键任务，其目的在于找到一类简短扼要的描述来表达文本的语义，使其能够促进大规模系统的高效处理并且有益于常见的任务，例如文本分类、聚类、摘要、相似性或者相关性估计。
+
+在过去的几十年间，各种各样的模型和解决方法被提出来，例如词袋模型（Bag-of-Words, BOW)\cite{zhang2010understanding}、TF-IDF\cite{salton1986introduction}、潜在语义分析（Latent Semantic Analysis, LSA）\cite{landauer1998introduction}、概率潜在语义分析（Probabilistic Latent Semantic Analysis, PLSA）\cite{hofmann1999probabilistic}、潜在狄利克雷分布（Latent Dirichlet Allocation, LDA）\cite{blei2003latent}等。词袋模型的好处在于简单高效，但是面临众多严重的问题，如维度灾难、数据稀疏、缺失语义表达能力等。
+
+近年来，基于深度学习的文本表示方法通过多层神经网络的学习将文本中的多层结构（词、短语、句子、段落、文档等）映射至一个低维连续的空间，每一种类型的文本都对应一个低维连续值的向量，如词向量（Word Embedding）。因此，基于深度学习文本表示方法完美的克服了传统词袋模型的问题，而且在各类自然语言处理任务中取得了最好的结果\cite{collobert2008unified}。如基于Bengio等人在2003年提出的神经网络语言模型\cite{bengio2003neural}，Mikolov等人在2013年提出了Word2Vec模型来学习词向量表示\cite{mikolov2013efficient,mikolov2013distributed,mikolov2013linguistic}；Le和Mikolov在2014年提出学习句子和文档分布式向量表示的方法\cite{le2014distributed}；Stanford大学Socher等人利用递归自编码器和动态Pooling技术来做复述识别取得state-of-the-art的结果\cite{socher2011dynamic}；Tang等人在2014年利用开发了基于深度学习技术的系统用于Twitter情感分类\cite{tang2014coooolll}；还有各类基于递归神经网络和编码-解码器的统计机器翻译模型\cite{bahdanau2014neural,cho2014learning}。
+
+由上可以看出，基于深度学习的文本表示与建模在克服传统方法缺点的同时，在各类自然语言处理任务中均取得较好甚至是最好的结果。但是，深度学习技术在NLP领域的应用远不止于此。因此，基于近年来深度学习用于自然语言处理任务所取得的成果，本文集中在自然语言处理中的文本表示以及建模问题进行了深入的探索。相比原有的深度学习的文本表示与建模方法，本文对其进行了多方面的扩展：
+
+\begin{enumerate}
+\item 提出主题语义向量学习模型Topic2Vec：借助于潜在狄利克雷分布（Latent Dirichlet Allocation, LDA）挖掘到词的主题信息，将基于神经网络语言模型学习来学习词的语义向量表示模型Word2Vec扩展到主题语义向量表示。相比原始LDA中词以及主题文档等都以维度下标来表示而且词与主题之间的关系采用条件概率来衡量，Topic2Vec将词及其主题映射至统一语义向量空间，词与主题之间关系采用余弦相似度来计算。
+\item 提出一个能够联合学习词及其属性分布式表示的学习框架：将词向量表示学习方法扩展到联合学习词及其属性语义向量表示。相比单一模型的学习能力，联合学习框架使得词与其属性在学习过程中相互促进来得到更好的语义向量表示。
+\item 提出融合词向量与LDA的模型：将词向量表示应用到LDA中来提升词主题发现。
+\end{enumerate}
+
+针对扩展之后的模型方法，本文进行了多方面的实验验证评估，实验结果表明扩展之后的方法均优于原有的模型方法。因此，尽管深度学习技术已经在文本表示与建模甚至是整个NLP领域做出不俗的成绩，但当我们面对具体的实际问题时候，仍需思考当前问题的不同之处以及现有方法的不足，对现有模型做出修改或者创新才能做到更好的效果。
+
+\section{论文结构}\label{sec_chap1_outline}
+
+本文旨在对深度学习技术在自然语言处理领域中文本表示与建模这一问题的应用做进一步的探索，从（1）学习主题向量表示、（2）联合学习词及其属性分布式表示和（3）融合词向量表示与图模型三个大的方面来进行扩展，分析了现有方法的不足之处，提出了自己的模型方法，并且分别进行了理论分析与实验对比。
+
+本文一共分为六章，后续章节安排如下：
+
+\begin{itemize}
+\item 第\ref{chapter2_nnlm_word_representations}章：语言模型与词向量表示。本章简要介绍本文的背景工作，分别介绍自然语言处理中的语言模型、Bengio等人在2003年提出的神经网络语言模型\cite{bengio2003neural}以及Mikolov等人在2013年提出的基于神经网络语言模型学习分布式词向量表示的模型Word2Vec\cite{mikolov2013efficient,mikolov2013distributed,mikolov2013linguistic}。
+\item 第\ref{chapter3_topic_representations}章：学习主题向量表示。本章主要工作是借助于潜在狄利克雷分布（Latent Dirichlet Allocation, LDA）挖掘到词的主题（Topic）信息，将Word2Vec扩展至学习主题Topic的分布式表示，并且提出了模型Topic2Vec。
+\item 第\ref{chapter4_word_attributes}章：联合学习词和属性向量表示。本章主要工作是将Word2Vec扩展到一个能够联合学习词（Word）和属性（Attributes）分布式向量表示的统一框架，其中重点引入了三类词属性：词元（Lemma）、主题（Topic）、文档（Document），基于该框架实现：（1）学习主题Topic的分布式表示、（2）学习文档Document的分布式表示和（3）利用词元Lemma和主题Topic信息来提升词向量表示。该框架不仅可以学习到属性的分布式表示，而且可以利用属性知识来提高原来词向量表示。另外，该框架易于扩展，可以学习更多其他的词属性的分布式表示。
+\item 第\ref{chapter5_embedding_topic_model}章：融合词向量与主题模型。
+\item 第\ref{chapter6_concludes}章：总结与展望。本章对前面的工作进行总结，并提出了进一步研究的展望。
+
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%
+
+\chapter{语言模型与词向量表示}\label{chapter2_nnlm_word_representations}
+
+\section{统计语言模型}\label{sec_chap2_lm}
+
+统计语言建模（Statistical Language Modeling）的目的在于建立一个统计语言模型（Statistical Language Model, SLM），使其能够尽量准确的估计自然语言的分布。一个统计语言模型（SLM）是一个发生在字符串S上且能够反应字符串S作为一个句子出现频率的概率分布P(s)。通过在统计语言模型中将各种各样的语言现象用简单的参数表达，SLMs提供了一种容易的方法使得计算机能够处理复杂的自然语言。SLMs最初始也是最重要的应用是语音识别，但是SLMs在其他各种各样的自然语言应用中扮演者重要的角色，诸如机器翻译、词性标注、智能输入系统和文本转换语音系统等。
+
+不失一般性，我们先定义$V^\dagger$为词汇表$V$中所有可能句子的集合，$V^\dagger$是一个无穷集，因为句子可以是任意无限长度。因此，我们给出如下语言模型的定义：
+\begin{definition}[语言模型]
+一个语言模型包含一个有限集$V$和一个函数$p(x_1, x_2, ..., x_n)$因此：
+	\begin{enumerate}
+	\item 对于任意
+		\begin{equation}
+		\left \langle x_1, x_2, ..., x_n\right \rangle \in V^\dagger, p(x_1, x_2, ..., x_n) \geq 0
+		\end{equation}
+	\item 并且
+		\begin{equation}
+		\sum_{\left \langle x_1, ..., x_n\right \rangle \in V^\dagger} p(x_1, x_2, ..., x_n) = 1
+		\end{equation}
+	\end{enumerate}
+这里$p(x_1, x_2, ..., x_n)$是一个在$V^\dagger$中所有句子的概率分布。
+\end{definition}
+
+常见的统计语言模型如下（这里以句子$S: w_1, w_2, ..., w_n$为例说明）：
+
+\begin{itemize}
+\item \textbf{N-gram语言模型}\cite{niesler1995variable,niesler1996variable}
+	\begin{itemize}
+	\item \textbf{Unigram模型}假设当前词$w_i$只依赖于自己，因此我们按如下方式计算句子S的概率：
+		\begin{equation}
+		P(w_1, w_2, ..., w_n) = \prod_{i} P(w_i|w_1, w_2, ..., w_{i-1}) \approx \prod_{i} P(w_i)
+		\end{equation}
+	\item \textbf{Bigram模型}假设当前词$w_i$依赖于前一个词$w_{i-1}$，因此我们按如下方式计算句子S的概率：
+		\begin{equation}
+		P(w_1, w_2, ..., w_n) = \prod_{i} P(w_i|w_1, w_2, ..., w_{i-1}) \approx \prod_{i} P(w_i|w_{i-1})
+		\end{equation}
+	\item 按如上方法类推，我们可以扩展到trigrams模型，4-grams模型以及5-grams模型。
+	\end{itemize}
+	其中，N-gram模型参数可以通过极大似人估计（Maximum Likelihood Estimation, MLE）方法，如下所示：
+		\begin{equation}
+		P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i)}{C(w_{i-1})}
+		\end{equation}
+\item 扩展N-gram语言模型：基于类别的N-gram语言模型、语法的trigrams模型、序列N-gram模型等。
+\item 此外还有最大熵语言模型（Maximum Entropy Language Model）\cite{rosenfeld1996maximum}、结构化语言模型（Structured Language Model）\cite{chelba1997structured}、全句指数模型（Whole Sentence Exponetial Model）\cite{rosenfeld1997whole}等。
+\end{itemize}
+
+\section{神经网络语言模型}\label{sec_chap2_nnlm}
+
+以上我们知道，统计语言模型的目标是学习一个关于自然语言中任意词所组成句子的联合概率函数。但是这个过程其实是异常艰难的，因为存在维度灾难（curse of dimensionality）的问题：在模型中被测试的一个词序列很有可能跟训练集中的所有句子不同。传统并且非常成功的基于N-grams的模型通过连接训练集中出现过的较短的覆盖词序列来提高语言模型的泛化能力。为了彻底克服维度灾难的问题，Bengio等人在2003年提出了一个基于神经网络的语言模型（Neural Probabilistic Language Model, NPLM）\cite{bengio2003neural}。该神经网络语言模型可以同时学习到（1）每个词对应的分布式表示和（2）以这些词分布式表示表达的词序列的概率函数。泛化能力可以保证是因为若某一从未出现过的词序列中的词跟存在的句子中的词相似（词与词具有相似的分布式表示），则该词序列也会得到比较高的概率。
+
+神经网络语言模型结构如下图\ref{fig:nnlm}所示：
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width= 0.7\textwidth]{figures//nnlm_chap2.pdf}\\
+  \caption{神经网络语言模型结构图}\label{fig:nnlm}
+\end{figure}
+
+这里主要介绍神经网络语言模型的训练过程如下：
+
+\begin{itemize}
+\item 训练数据：一个词序列$w_1, ..., w_T$且任意$w_t \in V$，这里$V$是一个大的有限词汇表。\\
+		训练目标：学习一个好的模型$f(w_t, ..., w_{t-n+1}) = \hat{p}(w_t|w_{1}^{t-1})$, 满足对任意$w_{1}^{t-1}$有$\sum_{i=1}^{|V|}f(i, w_{t-1}, ..., w_{t-n+1}) = 1$且$f>0$。
+\item 将函数$f(w_t, ..., w_{t-n+1}) = \hat{p}(w_t|w_{1}^{t-1})$分解为两部分：
+	\begin{enumerate}
+	\item 映射矩阵$C$将$V$中任意元素$i$映射到实数向量$C(i) \in \mathbb{R}^m$，代表词汇表里每一个词的分布式特征向量（distributed feature vector），实际中$C$是一个$|V| \times m$的矩阵。
+	\item 基于当前词的概率函数，用$C$来表示：函数$g$将上下文中词序列的特征向量映射为词汇表$V$中下一个词$w_t$出现的条件概率，$g$的输出结果是一个向量，其第$i$个元素估计概率$ \hat{p}(w_t|w_{1}^{t-1})$如图\ref{fig:nnlm}所示。
+		\begin{equation}
+		f(i, w_i, ..., w_{t-n+1}) = g(i, C(w_{t-1}), ..., C(w_{t-n+1}))
+		\end{equation}
+	\end{enumerate}
+\item 函数$f$是两个映射的组合（$C$和$g$），其中$C$在上下文中被所有词所共享。映射$C$中参数时特征向量本身，表示为$|V| \times m$，其中第$i$行$C(i)$是词$i$的特征向量。函数$g$可以由一个前向或者递归神经网络或其他参数函数实现，参数为$\omega $。因此所有的参数集合是$\theta=(C, \omega)$。
+\item 参数训练通过求解$\theta$使得训练语料的惩罚log似然最大：
+		\begin{equation}
+		L=\frac{1}{T}\sum_{t}log(f(w_t,w_{t-1},...,w_{t-n+1};\theta)+R(\theta)
+		\end{equation}
+		在大多数情况下，神经网络包含一个隐藏层建立在词特征向量映射之上或者直接由词特征向量连接到输出。因此这里实际有两个隐藏层：共享词特征映射层$C$和普通的双曲正切隐藏层。更精确地，神经网络计算如下函数，选用$softmax$输出层保证输出概率值总和为1：
+		\begin{equation}
+		\hat{p}(w_t|w_{t-1}, ..., w_{t-n+1})=\frac{e^{y_{w_t}}}{\sum_{i}e^{y_i}}
+		\end{equation}
+		这里$y_i$是每一个输出词$i$的非规范化log概率，通过以下方式来计算，包含参数$b,W,U,d$和$H$：
+		\begin{equation}
+		y=b+Wx+Utanh(d+Hx)
+		\end{equation}
+		这里双曲正切tanh逐元的应用，$W$可选置为0（没有从输入词特征向量直接连接到输出层），$x$是词特征层激活向量，通过矩阵$C$中所有输入词特征组合连接而成：
+		\begin{equation}
+		x=(C(w_{t-1}), C(w_{t-2}), ..., C(w_{t-n+1}))
+		\end{equation}
+		令$h$作为隐藏单元的个数，$m$作为每个词特征数。当词特征没有直接连接到输出层时，矩阵$W$置为0。则模型的所有自由参数（free parameters）有输出偏置（biases）$b$（包含$|V|$个元素），隐藏层偏置$d$（包含$h$个元素），隐藏层到输出层权重$U$（$|V|\times h$矩阵），词特征到输出层权重$W$（$|V|\times (n-1)m$矩阵），隐藏层权重$H$（$h\times (n-1)m$矩阵）和词特征$C$（$|V|\times m$矩阵）：
+		\begin{equation}
+		\theta=(b,d,W,U,H,C)
+		\end{equation}
+		所有自由参数的总数为$|V|(1+nm+h)+h(1+(n-1)m)$，主要影响因子是$|V|(nm+h)$。
+\item 随机梯度下降用来训练该神经网络，通过如下遍历训练语料中第$t$个词的方式迭代更新：
+		\begin{equation}
+		\theta \leftarrow \theta+\epsilon \frac{\partial log\hat{p}(w_t|w_{t-1}, ..., w_{t-n+1})}{\partial \theta}
+		\end{equation}
+		这里$\epsilon$是学习率（learning rate）。
+\end{itemize}
+
+综上可以看到神经网络语言模型不仅可以学习到词序列即句子的概率值，而且还可以学习到每一个词所对应的特征向量。在文本表示特别是词的表示方法中我们重点关注词特征向量的计算，即矩阵$C$。
+
+\section{传统词向量表示}
+
+
+
+\section{分布式词向量表示}\label{sec_chap2_word2vec}
+
+当前众多的自然语言处理（NLP）系统中，词被视作为原子单元，但是词与词之间的相似度却没有度量，是因为词被表示为词汇表中的下标索引（indices）。通常采用比较流行的N-gram模型用于统计语言模型，如今可以在所有有效数据中来训练N-grams（万亿的词数级别\cite{brants2007large}）。但是这类简单方法依赖于大量训练数据，缺失泛化能力。因此在很多任务中都存在缺陷，例如自动语音识别中的领域内数据是有限的；同样地，在机器翻译系统中，大多数语言所有的语料数据也仅仅包含十亿级别的词数或者更少。
+
+随着近年来机器学习技术的进步，依赖大数据来训练更加复杂的模型已经成为可能并且通常效果优于简单模型。特别地，最成功的概念是利用词的分布式表示（distributed representations）\cite{hinton1986learning}。例如，基于语言模型的神经网络模型相比N-gram模型表现更好\cite{bengio2003neural,schwenk2007continuous}。
+
+因此，Mikolov等人在2013年基于神经网络语言模型提出Word2Vec模型来在大数据集上训练词的分布式向量表示\cite{mikolov2013efficient,mikolov2013distributed,mikolov2013linguistic}，包括Continuous Bag-of-Words(CBOW)和Skip-gram两种结构。下面分别简要介绍CBOW和Skip-gram模型：
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width= 1.0\textwidth]{figures//word2vec_chap2.pdf}\\
+  \caption{Word2Vec结构图}\label{fig:word2vec}
+\end{figure}
+
+\begin{itemize}
+\item \textbf{CBOW模型}\\
+	假设给定词序列$(w_{t-2}, w_{t-1}, w_t, w_{t+1}, w_{t+2})$，其中$w_t$是当前词，其余词作为$w_t$的上下文（context）。如图\ref{fig:word2vec}所示，CBOW模型利用上下文所有词$(w_{t-2}, w_{t-1}, w_{t+1}, w_{t+2})$去预测当前词$w_t$。训练时，给定一个词序列$D=\{w_1, ..., w_M\}$，CBOW模型的学习目标函数定义为最大化如下log似然：
+		\begin{equation}\label{eq:cbow}
+		{L}_{CBOW}(D)=\frac{1}{M}\sum_{i=1}^{M}\log p(w_{i}|w_{cxt})
+		\end{equation}
+	这里$w_{cxt}$表示当前词$w_i$的上下文。
+\item \textbf{Skip-gram模型}\\
+	如图\ref{fig:word2vec}所示，Skip-gram模型利用当前词$w_t$去预测上下文所有词$(w_{t-2}, w_{t-1}, w_{t+1}, w_{t+2})$。训练时，给定一个词序列$D=\{w_1, ..., w_M\}$，Skip-gram模型的学习目标函数定义为最大化如下log似然：
+		\begin{equation}\label{eq:skip-gram}
+		{L}_{Skip-gram}(D)=\frac{1}{M}\sum_{i=1}^{M}\sum_{-k\leq c\leq k,c\neq 0}\log p(w_{i+c}|w_{i})
+		\end{equation}
+	这里$k$是上下文窗口大小。
+\end{itemize}
+
+另外，在公式\ref{eq:cbow}和\ref{eq:skip-gram}中，对任意变量$w_j$和$w_i$，条件概率$p(w_j|w_i)$通过以下$softmax$函数来计算：
+		\begin{equation}\label{eq:softmax}
+		p(w_{j}|w_{i})=\frac{\exp(\mathbf{w_{j}} \cdot \mathbf{w_{i}})}{\sum_{w\in W}\exp(\mathbf{w} \cdot \mathbf{w_{i}})}
+		\end{equation}
+
+在实际Word2Vec训练中，考虑到$softmax$函数中分母项数量级为$W$，计算$\nabla logp(w_{j}|w_{i})$等比例于$W$，而$W$通常是非常大的（$10^5-10^7$词项），因此采用一般的随机梯度下降算法计算代价太大，在实践中并不适用。因此Mikolov等人随机提出了加速$softmax$的算法，包括层次$softmax$（Hierarchical Softmax）和负采样（Negative Sampling）\cite{mikolov2013distributed}。
+
+\begin{itemize}
+\item \textbf{层次$softmax$}\\
+		层次$softmax$是一个计算高效的$softmax$的近似方法，在神经网络语言模型中，最早由Morin和Bengio提出\cite{morin2005hierarchical}。主要优势是替代原来神经网络中评估$W$个输出节点获得概率分布，层次$softmax$只需评估$log_2(W)$个节点。\\
+		层次$softmax$采用一棵以$W$个词作为叶子节点的二叉树，而且对于每一个节点，层次$softmax$明确地表示其子孙节点的相对概率，这定义了一个赋予词以概率值的随机游走过程。\\
+		更精确地，每一个词$w$可以由树的根节点通过合适的路径达到。设$n(w,j)$为从根节点root到$w$路径中第$j$个节点，$L(w)$为这个路径的长度。因此$n(w,1)=root$且$n(w,L(w))=w$。另外，对任意的内部节点$n$，设$ch(n)$为一个$n$任意固定的孩子节点且令如果$x$是真，则$\left [ x \right ]$为1，否则为-1。因此层次$softmax$按如下定义$p(w_O|w_I)$：
+		\begin{equation}
+		p(w|w_I)=\prod_{j=1}^{L(w)-1} \sigma(\left [ n(w,j+1)=ch(n(w,j)) \right ] \cdot {v_{n(w,j)}^{'}}^Tv_{w_I})
+		\end{equation}
+		这里$\sigma(x)=1/(1+exp(-x))$，可以证明$\sum_{w=1}^{W}p(w|w_I)=1$。这使得$logp(w_O|w_I)$和$\nabla log(w_O|w_I)$的计算代价等比例于$L(w_O)$，$L(w_O)$平均情况不会大于$logW)$。并且，不同于标准$softmax$中每个词$w$被赋予两个表示$v_w$和$v_w^{'}$，而层次$softmax$中每个词$w$只有一个表示$v_w$，并且二叉树中每一个内部节点$n$也有一个表示$v_n^{'}$。\\
+		层次$softmax$中树的结构对于性能有着重要的影响，Mnih和Hinton基于对训练时间和结果模型的准确率的考虑探索了很多方法来构造树的结构\cite{mnih2009scalable}。在Word2Vec训练过程中，层次$softmax$采用了霍夫曼树结构，对高频词赋予短的编码来加速训练。因为在实践中观测到提前对词依据出现频率来进行聚簇在神经网络语言模型中是一种非常简单有效的加速技术\cite{mikolov2011extensions,mikolov2013efficient}。
+		
+\item \textbf{负采样}\\
+		层次$softmax$的一种替代方法是噪音对比估计（Noise Contrastive Estimation, NCE），最早由Gutmann和Hycarinen提出\cite{gutmann2012noise}并且由Mnih和Teh用于语言建模中\cite{mnih2012fast}。NCE假设一个好的模型有能力通过逻辑斯蒂回归（logistic regression）从噪音中区分数据，这与Collober和Weston通过对噪音以上的数据进行排序来训练模型所用的hinge损失类似\cite{collobert2008unified}。\\
+		NCE可以被证明能够近似最大化$softmax$的log概率，Word2Vec模型仅仅关心学习到高质量的词向量表示，因此可以简化NCE只需保证向量表示的质量即可，按如下方式定义负采样（Negative Sampling）：
+		\begin{equation}\label{eq:neg}
+		log\sigma({v_{w_O}^{'}}^Tv_{w_I})+\sum_{i=1}^{k}E_{w_i}\sim P_{n}(w)\left [log\sigma(-{v_{w_i}^{'}}^Tv_{w_I}\right ]
+		\end{equation}
+		公式\ref{eq:neg}可以用来替代Word2Vec中的每一个$logP(w_O|w_I)$项。因此，任务变成利用逻辑斯蒂回归（logistic regression）从噪音分布$P_n(w)$区分目标词$w_O$，这里对于每一个数据样本都有$k$个负例样本。实验表明$k$的值范围在5-20之间对于小数据集有利，而对于大数据集，$k$通常设置较小为2-5之间。负采样与NCE之间的主要区别在于NCE同时需要样本和噪音分布的数值概率，而负采样只需要样本。并且NCE目的在于最大化$softmax$的log概率，这个属性对于我们训练向量表示并不重要。
+\end{itemize}
+
+相比传统独热表示（one-hot representations）和词袋模型（Bag-of-Words），Word2Vec学习词的分布式向量表示能够更好表征词的特征，泛化能力更强，因此在各项自然语言处理任务中取得最好的结果\cite{mikolov2013efficient,mikolov2013distributed,mikolov2013linguistic,dos2014deep,tang2014learning}。另外，基于Google开源C语言的Word2Vec\footnote{C：https://code.google.com/archive/p/word2vec/}，也有多个其他语言版本相继开源如Java\footnote{Java：http://deeplearning4j.org/word2vec}和Python\footnote{Python：https://radimrehurek.com/gensim/models/word2vec.html}等。
+
+受到词的分布式向量表示的启发，研究人员探索新的方法如Pennington等人提出基于全局上下文矩阵分解的Glove模型\cite{pennington2014glove}、基于词的多义现象训练词的多个分布式向量表示\cite{qiu2014co,reisinger2010multi}、融合LDA挖掘词的主题信息来学习词的向量表示解决一词多义的问题\cite{liu2015topical}和更快速的学习词的分布式向量表示的方法\cite{yogatama2014learning,mnih2013learning}。也有基于词向量表示技术扩展至句子、文档\footnote{Doc2Vec：https://radimrehurek.com/gensim/models/doc2vec.html}、词的情感、图结构、文本属性等\cite{le2014distributed,kalchbrenner2014convolutional,tang2014learning,tang2015line,kiros2014multiplicative}。
+
+
+\section{本章小结}\label{sec_chap2_conclusions}
+
+本章着重介绍本文的背景工作，包括：（1）统计语言模型：简要介绍语言模型的原理与对于自然语言处理任务的意义，并列举了常用的N-gram模型以及其他语言模型；（2）神经网络语言模型：简要介绍神经网络语言模型的由来，重点说明神经网络语言模型的原理；（3）Word2Vec词向量表示：简要介绍了Google基于神经网络语言模型提出Word2Vec模型来学习词的分布式表示，重点介绍Word2Vec的结构包括CBOW和Skip-gram以及训练过程。
+
+本章内容是本文所有工作的基础，基于分布式假设（Distributed Hypotheses）和神经网络语言模型（Neural Network Language Models）来学习文本的分布式表示或向量表示（Distributed Representations or Embedding）的思想贯穿全文，并且训练过程也采用Word2Vec中的随机梯度下降（Stochastic Gradient Descent）以及负采样（Negative Sampling）技术。
+
+%%%%%%%%%%%%%%%%%%
+\chapter{学习主题的向量表示}\label{chapter3_topic_representations}
+
+\section{潜在狄利克雷分布}\label{sec_chap3_lda}
+
+潜在狄利克雷分布（Latent Dirichlet Allocation, LDA）\cite{blei2003latent}是一个概率生成模型，LDA假设每篇文档包含多个隐藏主题，而每一个主题则是建立在词汇表里所有词上的一个概率分布。简单来说，LDA按如下方式来生成词序列：
+
+\begin{itemize}
+\item 对于文档$d$中第$n$个词$w_n$：
+		\begin{itemize}
+		\item 采样一个主题$z_n\sim Multinomial(\theta_d)$
+		\item 采样一个词$w_n\sim Multinomial(\phi_{z_n})$
+		\end{itemize}
+\end{itemize}
+
+通常在概率图模型中引入潜在隐藏变量，如LDA中引入隐藏主题（Topics），而采样极大似然估计法（Maximum Likelihood Estimate, MLE）和最大后验概率（Maximum a Posteriori, MAP）来直接推断模型参数会遇到无法直接求导或者计算代价太大的问题\cite{blei2003latent}。因此在实际中通常采用近似推断方法，包括拉普拉斯近似（Laplace approximation）\cite{wolfinger1993laplace}、变分近似（Variational Inference, VI）\cite{jordan1999introduction,wainwright2008graphical}和马尔可夫链蒙特卡洛方法（Markov chain Monte Carlo methods, MCMC）\cite{andrieu2003introduction}等。通过MCMC中最简单的吉布斯采样（Gibbs sampling）\footnote{http://gibbslda.sourceforge.net/}，依据当前全条件概率分布（ full conditional
+distribution）对于每个词进行一定轮数主题采样或至收敛，可以推断学习到文档-主题概率矩阵$\Theta$和主题-词概率矩阵$\Phi$\cite{griffiths2004finding}。依据已有的参数$\Theta$和$\Phi$，可以对任意新来的句子进行同样的采样过程，收敛之后文档中每一个词都会被赋予一个主题。
+
+\section{学习主题向量表示}\label{sec_chap3_topic2vec}
+
+\subsection{研究背景}
+依据前面的介绍，我们知道LDA可以挖掘文档中的主题结构信息，而且已经在自然语言处理（NLP）和机器学习（ML）等领域做出巨大的贡献\cite{blei2003latent}。但是，LDA中概率分布仅仅是语料中出现关系的统计结果，并且在实际中，概率分布表示（distrbutional representations）并不是特征表示最好的选择。近来，通过概念以及表示的学习，基于嵌入向量来表示词和文档的方法相继被提出，例如Word2Vec\cite{mikolov2013efficient}和Doc2Vec\cite{le2014distributed}等，而且嵌入向量表示在许多任务中的结果比LDA的概率分布表示更好。
+
+同时，由于词汇表通常在$10^5-10^6$之间，因此LDA还面临严重的长尾现象（long-tail）：LDA会赋予语料中的高频词以高概率而低概率的词则很难被选作为主题词。但是在实际中，低概率词有时候可以更好的表征主题。例如，LDA会赋予词$food$高概率并且选为主题词而不是$cheeseburger$，选用高概率词$drug$而不是$aricept$，选用高概率词$technology$而不是$smartphone$。从这些例子可以看出，LDA基于语料的统计结果，会明显偏向于高频词（如$food, drugs, technology$ etc.），而这些高频词词义通常比较泛，不够具体，不能够非常清晰具体地表征一个主题。相反，部分低频低概率词（如$cheeseburger, aricept, smartphone$ etc.）词义更加具体，可以更好表征某一个主题。
+
+最近，基于神经网络语言模型（NNLMs）学习的分布式表示将词和文档映射至一个低维的语义向量空间，并且在许多NLP和ML任务中实现了重要的结果\cite{mikolov2013efficient,le2014distributed}。特别地，Word2Vec可以自动学习到词的概念以及词与词之间的语义和句法简单线性关系，例如词向量语义关系：$vec(``Berlin'') - vec(``Germany'') = vec(``Paris'') - vec(``France'')$和词向量句法关系：$vec(``Write'') - vec(``Writing'') = vec(``Read'') - vec(``Reading'')$\cite{mikolov2013linguistic}。Doc2Vec在情感分析（Sentiment Analysis）任务中取得了最好的结果\cite{le2014distributed}。自然地，我们会想这个问题：如果将这些主题映射至语义空间将会发生什么？
+
+\subsection{Topic2Vec模型}
+
+受到Word2Vec的启发，我们将主题和词整合到神经网络概率语言模型（NPLM）中。如图\ref{fig:topic2vec}所示，我们提出了Topic2Vec模型能在学习词向量表示的同时学习到主题的向量表示。Topic2Vec同样分为CBOW和Skip-gram两种结构。例如，通过LDA的主题推断，给定一个词-主题序列$(w_{t-2}:z_{t-2}, w_{t-1}:z_{t-1}, w_t:z_t, w_{t+1}:z_{t+1}, w_{t+2}:z_{t+2})$，其中每个词$w_i$都被LDA赋予一个主题$z_i$。通过扩展Word2Vec，在Topic2Vec中，CBOW结构基于上下文词$(w_{t-2}, w_{t-1}, w_{t+1}, w_{t+2})$来预测当前词$w_t$和主题$z_t$，而Skip-gram结构给定当前词$w_t$和主题$z_t$来预测上下文中词$(w_{t-2}, w_{t-1}, w_{t+1}, w_{t+2})$。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width= 1.0\textwidth]{figures//topic2vec_chap3.pdf}\\
+  \caption{Topic2Vec结构图}\label{fig:topic2vec}
+\end{figure}
+
+在Topic2Vec训练之前，需将原始语料数据通过LDA来给语料中每个词赋予一个主题。之后在训练过程中，给定一个文档的词-主题序列$D=\{w_1:z_1, ..., w_M:z_M\}$，其中$z_i$是词$w_i$被LDA所赋予的主题。训练学习目标通过最大如下log似然来定义，分别基于CBOW和Skip-gram模型：
+
+	\begin{equation}
+	{L}_{CBOW}(D)=\frac{1}{M}\sum_{i=1}^{M}(\log p(w_{i}|w_{cxt})+\log p(z_{i}|w_{cxt}))
+	\end{equation}
+	
+	\begin{equation}
+	{L}_{Skip-gram}(D)=\frac{1}{M}\sum_{i=1}^{M}\sum_{-k\leq c\leq k,c\neq 0}(\log p(w_{i+c}|w_{i})+\log p(w_{i+c}|z_{i}))
+	\end{equation}
+Topic2Vec模型旨在学习词向量表示的同时能够学习到主题的向量表示。考虑到简单和高效的解决方法，我们沿用了Word2Vec中的优化策略。为了近似最大$softmax$的概率，我们选用负采样（Negative Sampling）而没有用层次$softmax$（Hierarchical Softmax）。随机梯度下降（Stochastic Gredient Descent, SGD）和后向传播（Back-Propagation, BP）算法用来优化我们的模型参数。同时，可以明显看出Topic2Vec模型的复杂度与数据规模呈线性关系，与Word2Vec一致。
+
+
+\section{实验及分析}\label{sec_chap3}
+
+\subsection{数据集}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width= 1.0\textwidth]{figures//topic_words_chap3.pdf}\\
+  \caption{对比LDA和Topic2Vec模型列举出给定主题所包含的主题词}\label{fig:topic_words_chap3}
+\end{figure}
+
+实验中，我们选用 English Gigaword Fifth Edition\footnote{https://catalog.ldc.upenn.edu/LDC2011T07}作为训练数据来学习词和主题的向量表示。期间我们随机抽取了一定数量的文档来构建训练集如下描述：我们从包含$411032$文档的子目录ltw\_eng（Los Angeles Times）抽取了$100000$文档，其中每一个文档都包含超过$1000$个字符。另外，我们还去除出现次数少于$5$的英文单词和停用词（stop words）。最终，整个训练集包含大约$42000000$个英文单词，词汇表大小为$102644$。
+
+\subsection{评价方法}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width= 1.0\textwidth]{figures//lda_tsne_chap3.pdf}\\
+  \caption{LDA结果中每个主题所包含主题词基于t-SNE的在2维空间的映射}\label{fig:lda_tsne_chap3}
+\end{figure}
+
+在实验中，我们在Skip-gram结构下运行Topic2Vec模型来学习词和主题的分布式向量表示。接着我们将Topic2Vec和原有LDA进行了如下两个方面的对比：（1）我们基于选定的一些主题来选择出每个主题最相关的主题和词；（2）利用t-SNE\cite{van2008visualizing}方法将最相关的主题和词映射至2维空间。在这两个过程中，我们通过如下方式来归纳主题所包含的最相关主题词：
+
+	\begin{itemize}
+	\item \textbf{LDA}：每一个主题是所有词的一个概率分布，因此我们依据词与主题之间的条件概率选择最相关的$N=10$个词作为主题词。
+	\item \textbf{Topic2Vec}：主题和词被同等地映射至同一个低维的向量空间，因此我们可以通过余弦相似度（cosine similarity）来计算词与主题之间的相似度并且依据相似度来排序选择最相关的主题词。
+	\end{itemize}
+
+\subsection{实验结果分析}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width= 1.0\textwidth]{figures//tw_tsne_chap3.pdf}\\
+  \caption{Topic2Vec结果中每个主题所包含主题和词基于t-SNE的在2维空间的映射}\label{fig:tw_tsne_chap3}
+\end{figure}
+
+图\ref{fig:topic_words_chap3}展示出选定8个典型有意义的主题，LDA和Topic2Vec分别给出了最相关的词和主题，我们通过如下细节的分析来理解它们两者之间的不同。如图\ref{fig:topic_words_chap3}所示，对于Topic\_19，LDA返回的主题词如$''drugs'', ``drugs'', ``cancer''$和$''patients''$，而Topic2Vec返回$''aricept'', ``memantine'', ``enbrel''$和$''gabapentin''$，对于Topic\_27，LDA返回的主题词如$''medical'', ``hospital'', ``care'', ``patients''$和$''doctors''$，而Topic2Vec返回$''neonatal'', ``anesthesiologists'', ``anesthesia''$和$''comatose''$。从LDA的结果来看，我们只知道Topic\_19和Topic\_27共享着相同关于$patients$或者$medical$的主题，但是我们无法更进一步获得这两个主题之间的不同。但是从Topic2Vec结果来看，我们可以轻易地发现Topic\_19关注一个更加具体的关于药品（$''drugs''$）的主题（$''aricept'', ``memantine'', ``enbrel''$和$''gabapentin''$），而Topic\_27则关注另一个更加具体的关于治疗状况（$''treatment''$）的主题（$''neonatal'', ``anesthesiologists'', ``anesthesia''$和$''comatose''$），Topic\_19和Topic\_27本质意义是完全不同的。因此我们得出结论，Topic2Vec在识别两个相似主题时显得更有区别能力。
+
+利用t-SNE降维方法，图\ref{fig:lda_tsne_chap3}和图\ref{fig:tw_tsne_chap3}分别展示出了LDA和Topic2Vec结果的每一个主题所包含最相关主题词在2维空间的映射。明显可以看出，Topic2Vec的结果相同的主题词产生了更好的聚簇而在不同的主题之间产生更好的分离。相反地，LDA并不能产生一个良好分离的映射，不同主题的主题词相互混合在一起。
+
+综上，对于每一个主题而言，Topic2Vec所选定的主题词相比LDA更加具有典型性和代表性。最终，Topic2Vec可以更好的区分不同的主题。
+
+\section{本章小结}\label{sec_chap3_conslusions}
+
+本章首先简要回顾了著名的主题模型潜在狄利克雷分布（LDA），分析了LDA方法中长尾以及概率分布表示存在的问题。之后借鉴Word2Vec基于神经网络语言模型学习词向量表示的思想，将主题和词同时整合到神经网络语言模型中并提出Topic2Vec模型，利用Topic2Vec模型，我们可以将隐藏主题与词映射至同一个语义向量空间。原则上，本章的目的在通过Topic2Vec模型学习新式的嵌入式主题向量表示。另外，通过实验结果的观察，Topic2Vec面对相似的主题相比LDA展示出更强的区别能力。因此，我们可以得出结论：Topic2Vec可以更好的建模主题与词之间的语义关系。
+
+但是目前我们仅仅对于Topic2Vec和LDA进行了定性的评估与分析并且强调了它们二者本质的不同。在未来工作中，我们可以针对二者的不同进行更多细节的定量的分析，包括探索Topic2Vec对于传统自然语言处理任务的提升。
+
+%%%%%%%%%%%%%%%%%%
+\chapter{联合学习词及其属性的向量表示}\label{chapter4_word_attributes}
+
 \section{研究背景}
 
-\section{研究目的与意义}
-\subsection{现有解决方法}
-\subsection{}
+基于我们的认识，词可以表示为词汇表中的下标而文档可以用词袋模型（Bag-of-Words）或N-gram模型来表示。尽管这种表示策略简单高效，但同时也面临众多的不足，例如维度灾难（Curse of Dimensionality）、数据稀疏（Data Sparsity）和缺乏捕获词和文档语义信息（Semantic Information）的能力。
 
-\section{研究的应用背景}
+而近来，新式的分布式词向量（Dsitributed Word Representations）表示已经在诸多自然语言处理（NLP）任务中取得重大的成功，例如词性标注（POS-Tagging）、命名实体识别（Name Entity Recognition）和语言建模（Language Modeling）等\cite{bengio2003neural,collobert2008unified,turian2010word,huang2015bidirectional}。另外，分布式表示方法已经被扩展到建模超越词级别的概念，例如短语、句子、文档\cite{le2014distributed}，实体与关系\cite{bordes2013translating,socher2013reasoning}、社交和引用网络等\cite{tang2015line}。但是，大多数的模型只利用到局部上下文属性并且单独地学习特定任务相关的表示。因此，这些模型都缺乏可以融合多种属性并利用词及其属性联合学习的能力。
 
-\section{论文结构}
+因此在本章，我们提出一个可以同时学习词及其属性的分布式表示的统一框架，其中词的属性可以是词的任意特性。自然地，词属性可以关联到句法关系（词性（POS-Tag）和词元（lemma））、文档结构关系（短语、主题和文档）或者其他信息（例如语言（language）、情感（sentiment）和人名（name of person））。如图\ref{fig:wtld_chap4}中例子所示，词$''scoring''$具有如下属性：$''football''$（主题）、'$''score''$（词元）和''David Villa opened the scoring. Lionel Messi notched a hat trick. There was also an own goal created by pressure from Messi.''（文档）。值得注意的是我们可以扩展我们的模型来学习更多词属性的分布式表示，例如$''David\ Villa\ opened\ the\ scoring''$（句子）、$''positive''$（情感）、$''English''$（语言）、$''NN''$（词性）和$''Lionel\ Messi''$（人名）等。
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width= 1.0\textwidth]{figures//word_topic_lemma_document_chap4.pdf}\\
+  \caption{词$''scoring''$及其节点属性图例}\label{fig:wtld_chap4}
+\end{figure}
+
+\begin{table}[t]
+\begin{center}
+\begin{tabular}{|c|l|l|}
+\hline
+\textbf{模型} & \multicolumn{1}{c|}{\textbf{词和属性对}} & \multicolumn{1}{c|}{\textbf{学习目标}}                        \\ \hline
+Word2Vec        & 词                                              & 词向量表示                                                 \\ \hline
+TW              & 词:主题                                        & 主题向量表示与提升的词向量表示 \\ \hline
+DW              & 词:文档                                     & 文档向量表示                                            \\ \hline
+LW              & 词:词元                                      & 提升的词向量表示                           \\ \hline
+TLW             & 词:主题:词元                                 & 提升的词向量表示            \\ \hline
+\end{tabular}
+\end{center}
+\caption{\label{tab:word_attributes} Word2Vec\cite{mikolov2013efficient}和模型(TW, DW, LW and TLW)中所用到词和属性对以及学习目标}
+\end{table}
+
+特别地，我们研究了三种词的属性包括主题、词元和文档。基于统一的学习框架，我们提出了四个具体的模型如表\ref{tab:word_attributes}所示：\textbf{TW}整合主题属性来学习分布式主题向量表示，同时可以学习到提升的词向量表示； \textbf{DW}旨在学习分布式文档向量表示； \textbf{LW}整合词元属性来学习提升的词向量表示； \textbf{TLW}则同时整合主题和词元属性来提升词向量表示。总结我们本章的工作如下：
+
+\begin{itemize}
+\item 我们提出了一个学习词和属性分布式表示的统一框架，见\ref{subsec_unifiedfk_chap4}。
+\item 基于统一的学习框架，我们提出的模型可以学习主题（见\ref{subsec_tw_chap4}）和文档（见\ref{subsec_dw_chap4}）的分布式表示。
+\item 我们提出的模型（TW, LW和TLW）可以利用额外的属性（主题和词元）来提升词的向量表示（（见\ref{subsec_improved_we_chap4}））。
+\end{itemize}
+
+实验结果表明我们的模型不仅可以对于特定任务学习到属性表示，而且可以利用额外的属性知识来提升词的向量表示。
+
+
+\section{我们的模型}\label{sec_our_models_chap4}
+
+\subsection{联合学习词和属性向量表示的统一框架}\label{subsec_unifiedfk_chap4}
+
+借鉴神经网络语言模型（NPLMs）和Word2Vec模型，我们提出了一个联合学习词和属性分布式向量表示的统一学习框架，如图\ref{fig:ourfk_chap4}(c)和(d)所示。例如给定一个词序列$(w_{t-2}, w_{t-1}, w_t, w_{t+1}, w_{t+2})$，其中$w_t$是当前词并且被赋予$k$个属性$(a_{t,1}, ..., a_{t,k})$，CBOW模型如图\ref{fig:ourfk_chap4}(c)所示，基于上下文词$(w_{t-2}, w_{t-1}, w_{t+1}, w_{t+2})$来预测当前词$w_t$和$k$个属性$(a_{t,1}, ..., a_{t,k})$，而Skip-gram模型给定当前词$w_t$和$k$个属性$(a_{t,1}, ..., a_{t,k})$来预测上下文词$(w_{t-2}, w_{t-1}, w_t, w_{t+1}, w_{t+2})$。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width= 1.0\textwidth]{figures//our_framework_chap4.pdf}\\
+  \caption{Word2Vec和统一学习框架中的CBOW和Skip-gram模型结构对比图}\label{fig:ourfk_chap4}
+\end{figure}
+
+基于我们提出的框架模型，可以明显地看出词和属性在学习过程中可以相互帮助提升来得到更好的向量表示。
+
+特别地，在本章我们考虑了三种属性：主题、词元和文档并分别提出了相应的模型TW、DW、LW和TLW。基于Harris及后来Pantel等人提出的词分布假设（distributional hypothesis）\cite{harris1954distributional,pantel2005inducing}，我们假设词属性也具有相似的分布假设。而且我们的模型也受到如下分布假设的驱动：
+
+\begin{itemize}
+\item \textbf{Hypothesis A}: {\em 出现在相同上下文中的词具有相似的意义。（ ``words that occur in the same contexts tend to have similar meanings" (Pantel, 2005)）}.
+\item \textbf{Hypothesis B}: {\em 出现在相同上下文中的词所赋予的主题也是相似的。（``topics assigned to words that occur in the same contexts tend to be similar"）}.
+\item \textbf{Hypothesis C}: {\em 出现在相同上下文中的词所属的词元也是相似的。（``lemmas of words that occur in the same contexts tend to be similar"）}.
+\item \textbf{Hypothesis D}: {\em 出现在相同上下文中的词所属的文档也是相似的。（``documents consisting of words that occur in the same contexts tend to be similar"）}.
+\end{itemize}
+
+\subsection{TW模型：学习主题向量表示}\label{subsec_tw_chap4}
+
+如表\ref{tab:word_attributes}所示，TW考虑了词所赋予的主题属性旨在学习分布式主题向量表示。例如给定一个词-主题序列$(w_{t-2}:z_{t-2}, w_{t-1}:z_{t-1}, w_t:z_t, w_{t+1}:z_{t+1}, w_{t+2}:z_{t+2})$，其中$w_t$是当前词并伴随着一个从$GibbsLDA++$\footnote{http://gibbslda.sourceforge.net/}学到的主题属性$z_t$，CBOW模型基于上下文词$(w_{t-2}, w_{t-1}, w_{t+1}, w_{t+2})$来预测当前词$w_t$和主题$z_t$，而Skip-gram模型给定当前词$w_t$和主题$z_t$来预测上下文词$(w_{t-2}, w_{t-1}, w_{t+1}, w_{t+2})$。
+
+当开始训练时，给定一个词-主题序列$D=\left \{w_{1}:z_{1},...,w_{M}:z_{M}  \right \}$，学习目标通过最大如下log似然来定义，分别基于CBOW和Skip-gram模型：
+
+	\begin{equation}\label{eq:tw_cbow_chap4}
+	{L}_{CBOW}(D)=\frac{1}{M}\sum_{i=1}^{M}(\log p(w_{i}|w_{cxt})+\log p(z_{i}|w_{cxt}))
+	\end{equation}
+	
+	\begin{equation}\label{eq:tw_skip-gram_chap4}
+	{L}_{Skip-gram}(D)=\frac{1}{M}\sum_{i=1}^{M}\sum_{-k\leq c\leq k,c\neq 0}(\log p(w_{i+c}|w_{i})+\log p(w_{i+c}|z_{i}))
+	\end{equation}
+
+值得注意的是，在上述公式\ref{eq:tw_cbow_chap4}和公式\ref{eq:tw_skip-gram_chap4}中，第一部分关于$w_i$基于\textbf{Hypothesis A}而第二部分关于$z_i$基于\textbf{Hypothesis B}。不同于传统LDA中作为一个在词表上的概率分布的主题表示方法，TW模型将词和主题属性映射至同一个语义空间。在相同的语义空间里，词和主题的相似度可以直接采用余弦函数来计算。
+
+\subsection{DW模型：学习文档向量表示}\label{subsec_dw_chap4}
+
+如表\ref{tab:word_attributes}所示，DW考虑了词所赋予的文档属性旨在学习分布式文档向量表示。例如给定一个词-文档序列$(w_{t-2}:d_{t-2}, w_{t-1}:d_{t-1}, w_t:d_t, w_{t+1}:d_{t+1}, w_{t+2}:d_{t+2})$，其中$w_t$是当前词并伴随着一个包含这个词的文档属性$d_t$，CBOW模型基于上下文词$(w_{t-2}, w_{t-1}, w_{t+1}, w_{t+2})$来预测当前词$w_t$和文档$d_t$，而Skip-gram模型给定当前词$w_t$和文档$d_t$来预测上下文词$(w_{t-2}, w_{t-1}, w_{t+1}, w_{t+2})$。
+
+当开始训练时，给定一个词-文档序列$D=\left \{w_{1}:d_{1},...,w_{M}:d_{M}  \right \}$，学习目标通过最大如下log似然来定义，分别基于CBOW和Skip-gram模型：
+
+	\begin{equation}\label{eq:dw_cbow_chap4}
+	{L}_{CBOW}(D)=\frac{1}{M}\sum_{i=1}^{M}(\log p(w_{i}|w_{cxt})+\log p(d_{i}|w_{cxt}))
+	\end{equation}
+	
+	\begin{equation}\label{eq:dw_skip-gram_chap4}
+	{L}_{Skip-gram}(D)=\frac{1}{M}\sum_{i=1}^{M}\sum_{-k\leq c\leq k,c\neq 0}(\log p(w_{i+c}|w_{i})+\log p(w_{i+c}|d_{i}))
+	\end{equation}
+
+值得注意的是，在上述公式\ref{eq:dw_cbow_chap4}和公式\ref{eq:dw_skip-gram_chap4}中，第一部分关于$w_i$基于\textbf{Hypothesis A}而第二部分关于$d_i$基于\textbf{Hypothesis D}。文档作为词的属性导致了包含在同一个文档中的所有词更难于区别，因此DW模型使得词的向量表示更差。因此在本文中，DW仅仅关注与学习文档的分布式表示而不能够提升词的向量表示。
+
+\subsection{提升词向量表示的模型}\label{subsec_improved_we_chap4}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width= 1.0\textwidth]{figures//lemma_word_chap4.pdf}\\
+  \caption{形态学中一个词元及其变种词的例子}\label{fig:lemma_word_chap4}
+\end{figure}
+
+\begin{itemize}
+\item \textbf{TW} 如前面在\ref{subsec_tw_chap4}中描述，TW模型可以联合学习词向量表示和分布式主题向量表示。同只利用到局部上下文的Word2Vec模型相比，TW模型同时考虑了词和主题属性。自然地，我们期望运用额外的主题属性可以提升原来的词向量表示。
+
+\item \textbf{LW} 在形态学（Morphology）中，词元（Lemma）\footnote{https://en.wikipedia.org/wiki/Lemma}是一组词的规范化（canonical）形式。在英语中，例如单词$''go'', ``goes'', ``went''$和$''going''$是同一个词素（Lexeme）的不同形式，以单词$''go''$作为词元，如图\ref{fig:lemma_word_chap4}所示。拥有相同词元的不同单词通常包含着相同的基本意义。
+
+如表\ref{tab:word_attributes}所示，LW考虑了词所赋予的词元属性旨在提升词的向量表示。例如给定一个词-词元序列$(w_{t-2}:l_{t-2}, w_{t-1}:l_{t-1}, w_t:l_t, w_{t+1}:l_{t+1}, w_{t+2}:l_{t+2})$，其中$w_t$是当前词并伴随着一个由$WordNet\ Lemmatizer$\footnote{http://textanalysisonline.com/nltk-wordnet-lemmatizer}获取的词元属性$l_t$，CBOW模型基于上下文词$(w_{t-2}, w_{t-1}, w_{t+1}, w_{t+2})$来预测当前词$w_t$和词元$l_t$，而Skip-gram模型给定当前词$w_t$和词元$l_t$来预测上下文词$(w_{t-2}, w_{t-1}, w_{t+1}, w_{t+2})$。
+
+当开始训练时，给定一个词-词元序列$D=\left \{w_{1}:l_{1},...,w_{M}:l_{M}  \right \}$，学习目标通过最大如下log似然来定义，分别基于CBOW和Skip-gram模型：
+
+	\begin{equation}\label{eq:lw_cbow_chap4}
+	{L}_{CBOW}(D)=\frac{1}{M}\sum_{i=1}^{M}(\log p(w_{i}|w_{cxt})+\log p(l_{i}|w_{cxt}))
+	\end{equation}
+	
+	\begin{equation}\label{eq:lw_skip-gram_chap4}
+	{L}_{Skip-gram}(D)=\frac{1}{M}\sum_{i=1}^{M}\sum_{-k\leq c\leq k,c\neq 0}(\log p(w_{i+c}|w_{i})+\log p(w_{i+c}|l_{i}))
+	\end{equation}
+
+值得注意的是，在上述公式\ref{eq:lw_cbow_chap4}和公式\ref{eq:lw_skip-gram_chap4}中，第一部分关于$w_i$基于\textbf{Hypothesis A}而第二部分关于$l_i$基于\textbf{Hypothesis C}。
+
+\item \textbf{TLW} 如表\ref{tab:word_attributes}所示，TLW同时考虑了词所赋予的主题和词元属性旨在提升词的向量表示。例如给定一个词-主题-词元序列$(w_{t-2}:z_{t-2}:l_{t-2},w_{t-1}:z_{t-1}:l_{t-1},w_{t}:z_{t}:l_{t},w_{t+1}:z_{t+1}:l_{t+1},w_{t+2}:z_{t+2}:l_{t+2})$，其中$w_t$是当前词并伴随着一个主题属性$z_t$和一个词元属性$l_t$，CBOW模型基于上下文词$(w_{t-2}, w_{t-1}, w_{t+1}, w_{t+2})$来预测当前词$w_t$、主题$z_t$和词元$l_t$，而Skip-gram模型给定当前词$w_t$、主题$z_t$和词元$l_t$来预测上下文词$(w_{t-2}, w_{t-1}, w_{t+1}, w_{t+2})$。
+
+当开始训练时，给定一个词-词元序列$D=\left \{w_{1}:z_{1}:l_{1},...,w_{M}:z_{M}:l_{M}  \right \}$，学习目标通过最大如下log似然来定义，分别基于CBOW和Skip-gram模型：
+
+	\begin{equation}\label{eq:tlw_cbow_chap4}
+	{L}_{CBOW}(D)=\frac{1}{M}\sum_{i=1}^{M}(\log p(w_{i}|w_{cxt})+\log p(z_{i}|w_{cxt})+\log p(l_{i}|w_{cxt}))
+	\end{equation}
+	
+	\begin{equation}\label{eq:tlw_skip-gram_chap4}
+	{L}_{Skip-gram}(D)=\frac{1}{M}\sum_{i=1}^{M}\sum_{-k\leq c\leq k,c\neq 0}(\log p(w_{i+c}|w_{i})+\log p(w_{i+c}|z_{i})+\log p(w_{i+c}|l_{i}))
+	\end{equation}
+
+值得注意的是，在上述公式\ref{eq:tlw_cbow_chap4}和公式\ref{eq:tlw_skip-gram_chap4}中，第一部分关于$w_i$基于\textbf{Hypothesis A}，第二部分关于$z_i$是基于\textbf{Hypothesis B}，而第三部分关于$l_i$基于\textbf{Hypothesis C}。
+
+\end{itemize}
+
+\subsection{优化和学习过程}\label{subsec_optimize_chap4}
+
+同样地，考虑到简单和高效的解决方法，我们沿用了Word2Vec中的优化策略。为了近似最大$softmax$的log概率，我们选用负采样（Negative Sampling）而没有用层次$softmax$（Hierarchical Softmax）\cite{mikolov2013distributed}。随机梯度下降（Stochastic Gredient Descent, SGD）和后向传播（Back-Propagation, BP）算法用来优化我们的模型参数。
+
+特别地，TW模型集中来学习主题的分布式向量表示，而DW则学习文档的分布式向量表示。更甚者，TW、LW和TLW模型可以提升词向量表示。在具体实现中，这些模型首先初始化词和主题等属性的向量表示，然后联合的学习各自的分布式表示。而对于DW，我们仅仅对文档向量进行了随机初始化，对于词向量采用了预先从大规模和高质量的数据集中学习到的词向量来初始化，然后DW模型来学习文档的分布式表示，并且保持词向量表示不变。由我们模型的学习目标函数可以明显看出，模型的复杂度与数据集呈线性关系，与Word2Vec保持一致。
+
+\section{实验及分析}\label{sec_exps_chap4}
+
+\subsection{数据集}\label{subsec_datasets_chap4}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width= 1.0\textwidth]{figures//topic_words_chap4.pdf}\\
+  \caption{对比LDA和TW模型列举出给定主题所包含的主题词}\label{fig:topic_words_chap4}
+\end{figure}
+
+我们选用英语Gigaword\footnote{https://catalog.ldc.upenn.edu/LDC2011T07}作为训练数据来学习基础词向量表示。实际中，我们随机选择了一些文档并且按如下方式构造了两个不同大小的训练集：
+
+\begin{itemize}
+\item \textbf{DS-100k}：我们从包含了$411032$文档数的子目录ltw\_eng（Los Angeles Times）中选取了$100000$的文档，每个文档至少包含$1000$个字符。另外，我们去除掉出现次数少于$5$的词和停用词（stop words）。最终，DS-100k数据集包含$42000000$的单词而整个词汇表的大小为$102644$。
+\item \textbf{DS-500k}：我们还从包含了$1962178$文档数的子目录nyt\_eng（New York Times）中选取了$500000$的文档。在去除出现次数少于$5$的单词和停用词之后，DS-500k最终大约包含了$2.1$亿的单词而整个词汇表的大小为$232481$。
+\end{itemize}
+另外，我们在数据集DS-100k上运行了$GibbsLDA++$和TW模型来评估主题的向量表示，并且在$20NewsGroup$\footnote{http://qwone.com/~jason/20Newsgroups/}上进行了文档向量表示的评估。
+
+\subsection{评估主题向量表示}\label{subsec_evaluate_topic_chap4}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width= 1.0\textwidth]{figures//lda_tsne_chap4.pdf}\\
+  \caption{LDA结果中每个主题所包含主题词基于t-SNE的在2维空间的映射}\label{fig:lda_tsne_chap4}
+\end{figure}
+
+TW模型能够在学习词向量表示的同时学习主题的向量表示。因此我们首先进行实验与原始LDA\cite{blei2003latent}模型来对比评估TW模型学习到的主题向量表示。我们按照如下方式来选取主题所包含的主题词：
+
+	\begin{itemize}
+	\item \textbf{LDA}：所有的主题都表示为词汇表上的概率分布，因此我们依据词与主题之间的条件概率选择最相关的$N=15$个词作为主题词。
+	\item \textbf{TW}：所有的主题和词被同等地映射至同一个低维的向量空间，因此我们可以通过余弦相似度（cosine similarity）来计算词与主题之间的相似度并且依据相似度来排序选择最相关的主题词。
+	\end{itemize}
+	
+\begin{figure}[htbp]
+\centering
+\includegraphics[width= 1.0\textwidth]{figures//tw_tsne_chap4.pdf}\\
+\caption{TW结果中每个主题所包含主题词基于t-SNE的在2维空间的映射}\label{fig:lda_tsne_chap4}
+\end{figure}
+	
+图\ref{fig:topic_words_chap4}展示出选定4个典型有意义的主题，LDA和TW分别给出了最相关的词和主题，我们通过如下细节的分析来理解它们两者之间的不同。如图\ref{fig:topic_words_chap4}所示，对于Topic\_19，LDA返回的主题词如$''drugs'', ``drugs'', ``cancer''$和$''patients''$，而TW返回$''aricept'', ``memantine'', ``enbrel''$和$''gabapentin''$，对于Topic\_27，LDA返回的主题词如$''medical'', ``hospital'', ``care'', ``patients''$和$''doctors''$，而TW返回$''neonatal'', ``anesthesiologists'', ``anesthesia''$和$''comatose''$。从LDA的结果来看，我们只知道Topic\_19和Topic\_27共享着相同关于$patients$或者$medical$的主题，但是我们无法更进一步获得这两个主题之间的不同。但是从TW结果来看，我们可以轻易地发现Topic\_19关注一个更加具体的关于药品（$''drugs''$）的主题（$''aricept'', ``memantine'', ``enbrel''$和$''gabapentin''$），而Topic\_27则关注另一个更加具体的关于治疗状况（$''treatment''$）的主题（$''neonatal'', ``anesthesiologists'', ``anesthesia''$和$''comatose''$），Topic\_19和Topic\_27本质意义是完全不同的。明显地可以看出TW在识别两个相似主题时显得更有区别能力。
+
+利用t-SNE\cite{van2008visualizing}降维方法，图\ref{fig:lda_tsne_chap4}和图\ref{fig:tw_tsne_chap4}分别展示出了LDA和TW结果的每一个主题所包含最相关主题词在2维空间的映射。明显可以看出，TW的结果相同的主题词产生了更好的聚簇而在不同的主题之间产生更好的分离。相反地，LDA并不能产生一个良好分离的映射，不同主题的主题词相互混合在一起。
+
+综上，对于每一个主题而言，TW所选定的主题词相比LDA更加具有典型性和代表性。最终，TW可以更好的区分不同的主题。
+
+\subsection{评估文档向量表示}\label{subsec_evaluate_doc_chap4}
+
+\begin{itemize}
+\item \textbf{文本分类（Text Classification）} DW集中学习文档的分布式向量表示，因此我们通过多分类（Multi-Class）的文本分类任务来评估文档向量表示。我们选用标准的$20NewsGroup$数据集，其中包含了从$20$个不同的新闻组收集到的大约$20000$的文档。考虑到$20NewsGroup$数据集对于训练词向量表示时数据不足的问题，我们首先基于大数据集DS-500k来训练得到词的向量表示。然后DW模型开始学习$20NewsGroup$中的文档的向量表示，并且保持词向量表示不变。
+
+\end{itemize}
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{2}{|c|}{模型}                                                                                                           & 维度                                                    & 准确率                                                   & 精确度                                                  & 回归率                                                     & F1度量                                                  \\ \hline
+\multicolumn{2}{|c|}{\begin{tabular}[c]{@{}c@{}}LDA\\ PV-DM\\ PV-DBOW\end{tabular}} & \begin{tabular}[c]{@{}c@{}}80\\ 400\\ 400\end{tabular} & \begin{tabular}[c]{@{}c@{}}72.2\\ 72.4\\ 75.4\end{tabular} & \begin{tabular}[c]{@{}c@{}}70.8\\ 72.1\\ 74.9\end{tabular} & \begin{tabular}[c]{@{}c@{}}70.7\\ 71.5\\ 74.3\end{tabular} & \begin{tabular}[c]{@{}c@{}}70.0\\ 71.5\\ 74.3\end{tabular} \\ \hline
+\multirow{4}{*}{DW}                  & \multirow{2}{*}{CBOW}             & 300                                                    & 74.4                                                       & 73.9                                                       & 73.5                                                       & 73.4                                                       \\ \cline{3-7} 
+                                      &                                   & 400                                                    &\textbf{75.8}                                                            &\textbf{75.4}                                           &\textbf{74.9}                                                            &\textbf{74.8}                                                            \\ \cline{2-7} 
+                                      & \multirow{2}{*}{Skip-gram}        & 300                                                    & 72.1                                                       & 71.5                                                       & 71.2                                                       & 71.1                                                       \\ \cline{3-7} 
+                                      &                                   & 400                                                    &72.9                                                        & 72.4                                                        &72.1                                                        & 72.2                                                         \\ \hline
+\end{tabular}
+\caption{DW模型与其他模型在$20NewsGroup$数据集上的实验对比。其他方法的结果见\cite{liu2015topical}。粗体表示所有结果中最好的结果。}
+\label{tab:tc_chap4}
+\end{table}
+
+对于每一个文档，DW返回一个对应的向量作为这个文档的表示。紧接着我们利用采用了“一对剩余所有”（''one vs rest''）模式的LIBLINEAR\footnote{http://www.csie.ntu.edu.tw/~cjlin/liblinear/} 来做多类别的文本分类。为了评价我们模型的有效性，我们将DW模型与其他学习文档表示的模型进行了实验对比，包括LDA以及最近提出的段落向量表示模型（Paragraph Vector Model）\cite{le2014distributed}。其中，LDA将每个文档表示为隐藏主题上的概率分布，而段落向量表示模型则将每个文档表示为一个低维的连续向量，包括分布式记忆模型（distributed memory model, PV-DM）和分布式词袋模型（distributed bag-of-words model, PV-DBOW）。如表\ref{tab:tc_chap4}所示，DW模型相比已有模型实现了具有竞争力的结果。值得注意的是，所有这些学习文档的低维连续值向量表示的方法的性能都不如传统的词袋模型（BOW）和TWE-1模型\cite{liu2015topical}，其中后两者方法均利用了语料数据的TF-IDF特征来帮助文本分类。
+
+
+\subsection{评估提升的词向量表示}\label{subsec_evaluate_improved_word_chap4}
+
+最终我们通过如下的标准任务来评估提升的词向量表示：
+
+\begin{itemize}
+\item \textbf{词类比（Word Analogy）} 实验中采用两个数据集用于这个任务。其中谷歌数据集\cite{mikolov2013distributed}包含$10675$个句法问题（如{\em young:yonger::large:larger}）和$8869$个语义问题（如{\em Rome:Italy::Athens:Greece}）。微软数据集\cite{mikolov2013linguistic}\footnote{http://research.microsoft.com/enus/projects/rnn/default.aspx}包含了$8000$个句法问题（如{\em good:better::rough:rougher}）。在每一个问题中，第四个单词是缺失的，而这个任务是正确地预测第四个单词。我们采用向量偏移（vector offset）方法\cite{mikolov2013distributed}来计算第四个单词的向量表示$\mathbf{w_{fourth}}=\mathbf{w_{third}}+(\mathbf{w_{second}}-\mathbf{w_{first}})$，如果向量$\mathbf{w_{fourth}}$与正确答案的向量具有最高的余弦相似度，则这个问题算作回答正确。
+
+我们通过将我们的模型与基准模型Word2Vec\cite{mikolov2013efficient}和目前最好的模型Glove\cite{pennington2014glove}\footnote{http://nlp.stanford.edu/projects/glove/}进行了结果对比。如表\ref{tab:wordanalogies_chap4}所示，LW和TLW模型相比Word2Vec在多数Skip-gram情况下表现更好，而TW不能。原有似乎是词元信息在词类比这个任务中相比主题信息可以获得更多的提升。更准确地，在DS-100k数据集上和Skip-gram情况下，TLW在谷歌语义上提升了+8.48\%而LW在微软句法上提升了+5.57\%。在更大的DS-500k数据集上和Skip-gram情况下，LW在谷歌语义问题上提升了+3.95\%而在微软句法问题上提升了+2.72\%。一般地，我们可以得出如下的结论：
+
+	\begin{itemize}
+	\item 在词类比任务中，利用附加的词元信息可以得到更好的词向量表示。
+	\item 特别地在小数据集上，利用附加的词元信息可以使得词向量表示有重大的提升。但当数据集越来越大，额外的信息的作用会减弱。这个结果也与说法“更多的数据通常会打败更好的算法（More data usually beats better algorithms\cite{rajaraman2008more}）”保持一致。
+	\end{itemize}
+	
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{2}{|c|}{\multirow{2}{*}{\textbf{模型} (维度=300)}} & \multirow{2}{*}{\textbf{数据集}} & \multicolumn{3}{c|}{\textbf{Google}}                      & \textbf{MSR}       & \textbf{时间} \\ \cline{4-8} 
+\multicolumn{2}{|c|}{}                                 &                       & \textbf{语义关系} & \textbf{句法关系} & \textbf{总体}   & \textbf{句法关系} & \textbf{小时} \\ \hline
+\multirow{4}{*}{CBOW}                   & W2V          & DS-100k             & 19.08           & 33.73            & 27.69          & 32.36            & 0.1             \\ \cline{2-8} 
+                                        & TW           & DS-100k             & 20.42           & 31.42            & 26.88          & 31.47            & 0.2             \\ \cline{2-8} 
+                                        & LW           & DS-100k             & 28.64           & 25.71            & 26.92          & 29.35            & 0.2             \\ \cline{2-8} 
+                                        & TLW          & DS-100k             & 28.15           & 27.32            & 27.67          & 30.21            & 0.2             \\ \hline
+\multirow{4}{*}{Skip-gram}              & W2V          & DS-100k             & 27.56           & 35.63            & 32.31          & 29.85            & 1.1            \\ \cline{2-8} 
+                                        & TW           & DS-100k             & 31.26           & 35.13            & 33.53          & 29.03            & 1.2            \\ \cline{2-8} 
+                                        & LW           & DS-100k             & 33.94           & \textbf{37.13}(+1.50)    & 36.16          & \textbf{35.42}(+5.57)    & 1.2            \\ \cline{2-8} 
+                                        & TLW          & DS-100k             & \textbf{36.04}(+8.48)   & 36.60            & \textbf{36.37}(+4.06)  & 34.65            & 1.3            \\ \hline
+\multicolumn{2}{|c|}{Glove:iter=5} 							 & DS-100k             & 43.64           & 40.83             & 41.99          & 39.47             & 1.1            \\ \hline 	
+\hline
+\multirow{4}{*}{CBOW}                   & W2V          & DS-500k             & 30.57           & 50.57            & 41.74          & 44.97            & 2.1            \\ \cline{2-8} 
+                                        & TW           & DS-500k             & 28.12           & 49.60            & 40.12          & 43.93            & 2.2             \\ \cline{2-8} 
+                                        & LW           & DS-500k             & 41.80           & 46.11            & 44.21          & 42.43            & 2.2             \\ \cline{2-8} 
+                                        & TLW          & DS-500k             & 41.76           & 47.63            & 45.04          & 44.44            & 2.2             \\ \hline
+\multirow{4}{*}{Skip-gram}              & W2V          & DS-500k             & 41.77           & 50.63            & 46.89          & 43.38            & 6.8            \\ \cline{2-8} 
+                                        & TW           & DS-500k             & 41.46           & 49.46            & 45.93          & 41.39            & 7.4            \\ \cline{2-8} 
+                                        & LW           & DS-500k             & \textbf{45.72}(+3.95)              & \textbf{50.86}(+0.23)  & \textbf{48.59}(+1.7)  & \textbf{46.10}(+2.72)    & 7.2            \\ \cline{2-8} 
+                                        & TLW          & DS-500k             & 44.85  		    & 50.58             & 48.05 		    & 45.62            & 7.7            \\ \hline
+\multicolumn{2}{|c|}{Glove:iter=5} 							 & DS-500k             & 51.32           & 49.12             & 50.09          & 46.36             & 6.3            \\ \hline
+\multicolumn{2}{|c|}{Glove:iter=15} 						 & DS-500k             & 51.88           & 53.41             & 52.74          & 48.32             & 17.2            \\ \hline
+\end{tabular}
+\end{center}
+\caption{\label{tab:wordanalogies_chap4} 词类比任务上的准确率（\%），值越高越好。我们将我们的模型（TW, LW和TLW）和基础模型W2V（Word2Vec）以及目前最好的模型Glove进行对比。粗体数据表示每个数据集上的最好结果。时间是在一个8GB内存的单机上估计得来。}
+\end{table}
+	
+值得注意的是在表\ref{tab:wordanalogies_chap4}中，Word2Vec和我们的模型表现均差于Glove。原因可能是由于Glove中利用全局的词-词共现次数矩阵（word-word co-occurrence counts）而在Word2Vec和我们的模型中采用的是局部上下文窗口（local context windows）。因此我们还需进一步的实验来比较这些相关的模型。
+
+\item \textbf{词相似度（Word Similarity）} 接着我们继续进行第二个词相似度的实验，基于另一个WordSim-353数据集来验证我们模型的有效性，我们一致的将我们的模型和Word2Vec和Glove进行对比。这里词相似度任务中将人工评估的词与词之间的相似度与词向量计算的结果通过斯皮尔曼等级相关系数来衡量\footnote{https://en.wikipedia.org/wiki/Spearman\%27s\_rank\_correlation\_coefficient}，值越高说明相关性越高，表示词向量的结果与人的判断结果一致。如表\ref{tab:wordsim-spearman_chap4}所示，我们的模型在词相似度任务中相比Word2Vec实现了重大的提升，并且比Glove模型更好。
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\multicolumn{2}{|c|}{\textbf{模型} (维度=300)}                                                                            & \textbf{语料}                                                                                & $\rho$ $\times$ 100                                                             \\ \hline
+\multicolumn{2}{|c|}{Glove:iter=5}                                                                            & DS-100k                                                                             & 51.9                                                              \\ \hline
+CBOW                  & \begin{tabular}[c]{@{}c@{}}Word2Vec\\ TW\\ LW\\ TLW\end{tabular}             & \begin{tabular}[c]{@{}c@{}}DS-100k\\ DS-100k\\ DS-100k\\ DS-100k\end{tabular} & \begin{tabular}[c]{@{}c@{}}55.6\\ 62.6\\ 63.9\\ 65.0\end{tabular} \\ \hline
+Skip-gram             & \begin{tabular}[c]{@{}c@{}}Word2Vec\\ TW\\ LW\\ TLW\end{tabular}             & \begin{tabular}[c]{@{}c@{}}DS-100k\\ DS-100k\\ DS-100k\\ DS-100k\end{tabular} & \begin{tabular}[c]{@{}c@{}}61.5\\ 63.7\\ \textbf{65.4}\\ 63.5\end{tabular}               \\ \hline
+\hline
+\multicolumn{2}{|c|}{Glove:iter=5}                                                                            & DS-500k                                                                             & 50.8                                                              \\
+\multicolumn{2}{|c|}{Glove:iter=15}                                                                            & DS-500k                                                                             & 50.9                                                              \\ \hline
+CBOW                  & \begin{tabular}[c]{@{}c@{}}Word2Vec\\ TW\\ LW\\ TLW\end{tabular}             & \begin{tabular}[c]{@{}c@{}}DS-500k\\ DS-500k\\ DS-500k\\ DS-500k\end{tabular} & \begin{tabular}[c]{@{}c@{}}63.7\\ 62.2\\ 65.9\\ \textbf{67.5}\end{tabular} \\ \hline
+Skip-gram             & \begin{tabular}[c]{@{}c@{}}Word2Vec\\ TW\\ LW\\ TLW\end{tabular}             & \begin{tabular}[c]{@{}c@{}}DS-500k\\ DS-500k\\ DS-500k\\ DS-500k\end{tabular} & \begin{tabular}[c]{@{}c@{}}65.8\\ 63.7\\ 64.6\\ 63.9\end{tabular}               \\ \hline
+\end{tabular}
+\caption{WordSim-353数据集上我们的模型（TW, LW和TLW）和Word2Vec以及Glove的进行斯皮尔曼等级相关系数（Spearman rank correlation coefficient）对比。粗体表示每个数据集上的最好结果。}
+\label{tab:wordsim-spearman_chap4}
+\end{table}
+
+现在可以看出利用附加的主题和词元知识可以非常重大的提升原有的词向量表示，尤其是对于小数据集。因此我们可以想到在一些特定的领域内利用已知的额外知识可以缓解数据不足的问题。
+
+\end{itemize}
+
+\section{本章小结}\label{sec_conclusions_chap4}
+
+在本章内容中，我们首先分析了现实中词通常伴随着很多特征或者属性一起出现，例如词的主题（topic）、词性（POS-Tag）、词元（lemma）、所属文档（document）、所在语言（language）或者人名（name of person）等等。而现实中大多数的模型往往是学习特定任务的向量表示并且缺乏融合多种信息来学习词向量表示的能力。因此我们重点提出了一个联合学习词和属性向量表示的统一框架。特别地，我们考虑了主题、词元和文档属性并且分别给出了四个具体的模型（TW, DW, LW和TLW）。从实验内容的观察和分析可以看出，基于提出的统一学习框架，我们的模型不仅可以学习到主题和文档的分布式向量表示，并在各自对应的任务中实现了明显和有竞争力的结果，而且还可以同时利用附加的知识信息来提升词的向量表示。
+
+最后我们想强调的是我们所提出的框架具有灵活性和可扩展性，可以整合更多的属性。在未来的工作中，我们可以探索词的其他属性的向量表示学习，例如情感分析（sentiment analysis）中的情感（sentiment）、词性标注（POS-Tagging）中的词性（POS-Tags）和命名实体识别（name entity recognition, NER）中的人名（name of person）。
 
 %%%%%%%%%%%%%%%%%%
+\chapter{融合词向量与主题模型}\label{chapter5_embedding_topic_model}
 
-\chapter{神经网络语言模型与词向量表示}\label{chapter_nnlm_word_representations}
-\section{神经网络语言模型}
+\section{融合词向量主题模型}\label{sec_}
 
-\section{Word2Vec词向量表示}
+\section{实验及分析}\label{sec_}
 
-\section{本章小结}
-
-%%%%%%%%%%%%%%%%%%
-\chapter{主题向量表示}\label{chapter_topic_representations}
-\section{Topic2Vec主题向量表示}
-
-\section{实验及分析}
-
-\section{本章小结}
-%%%%%%%%%%%%%%%%%%
-\chapter{联合学习词及其属性向量表示}\label{chapter_word_attributes}
-\section{联合学习词及其属性向量表示}
-
-\section{实验及分析}
-
-\section{本章小结}
-%%%%%%%%%%%%%%%%%%
-\chapter{融合词向量主题模型}\label{chapter_embedding_topic_model}
-\section{潜在狄里克雷分布主题模型}
-
-\section{融合词向量主题模型}
-
-\section{实验及分析}
-
-\section{本章小结}
+\section{本章小结}\label{sec_}
 
 %%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 学位论文的正文应以《结论》作为最后一章
-\chapter{结论}\label{chapter_concludes}
+\chapter{总结与展望}\label{chapter6_concludes}
 
-本文在第\ref{chapter_smallworld}章中，通过考虑数据中心网络布局构建中的最大度限制
-问题，提出了符合数据中心网络基本要求的DS小世界模型，并分析了它的性质。随后提出
-SIDN，将DS模型映射到具体的网络结构中，并分析了所构成网络的平均直径、网络总带宽、
-对故障的容错能力等各项网络性能。
+本文在第\ref{chapter_smallworld}章中，
 
-分析与仿真实验证明，SIDN网络具有很好的扩展能力，网络总带宽与网络规模成
-近似线性增长的关系；具有很强的容错能力，链路损坏与节点损坏几乎无法破坏
-网络的联通性，故障率对网络性能的影响与破坏节点/链路占总资源比率线性相关。
-
-随后在第\ref{chapter_scalefree}章中，分析了无尺度网络在数据中心网络构建应用中的
-理论方面问题。对Scafida \cite{gyarmati2010scafida}文中所述在最大度限制的情况下运
-用BA算法构造的网络并不会损失无尺度性质的观点，进行了深入的分析，并指出了该论点的
-局限性。
-
-在给出了在引入节点最大度限制之后，利用分治和递归的思想，对无尺度网络
-进行多层构建，对所构造的网络进行度-度相关性，以及聚类性分析。
-
-\begin{table}
-  \centering
-  \begin{tabular}{cccp{38mm}}
-    \toprule
-    \textbf{文档域类型} & \textbf{Java类型} & \textbf{宽度(字节)} & \textbf{说明} \\
-    \midrule
-    BOOLEAN  & boolean &  1  & \\
-    CHAR     & char    &  2  & UTF-16字符 \\
-    BYTE     & byte    &  1  & 有符号8位整数 \\
-    SHORT    & short   &  2  & 有符号16位整数 \\
-    INT      & int     &  4  & 有符号32位整数 \\
-    LONG     & long    &  8  & 有符号64位整数 \\
-    STRING   & String  &  字符串长度  & 以UTF-8编码存储 \\
-    DATE     & java.util.Date & 8 & 距离GMT时间1970年1月1日0点0分0秒的毫秒数 \\
-    BYTE\_ARRAY & byte$[]$ & 数组长度 & 用于存储二进制值 \\
-    BIG\_INTEGER & java.math.BigInteger & 和具体值有关 & 任意精度的长整数 \\
-    BIG\_DECIMAL & java.math.BigDecimal & 和具体值有关 & 任意精度的十进制实数 \\
-    \bottomrule
-  \end{tabular}
-  \caption{测试表格}\label{table:test5}
-\end{table}
-
-表\ref{table:test5}用于测试表格。随后分析了无尺度网络构造过程中，交换机节点与数
-据节点的角色区别，分析了两者在不同比率下形成的网络形态，以及对网络性能造成的影响。
-
-通过理论分析和仿真实验，分析并找出比率因子q的最佳取值。此外，无尺度现象
-的引入提高了网络的聚类系数，从而在不失灵活性可靠性的基础上，进一步提升
-了网络的性能。
-
-在第\ref{chapter_random}章中，将关注点转移到交换机本身。由于图论难以描述数据中心
-网络中的交换设备，因此放弃基于图的抽象模型，转而基于多维簇划分的思想，提出并设计
-了WarpNet网络模型。
-
-该网络模型突破了基于图描述的局限性，并对网络的带宽等指标进行理论分析并
-给出定量描述。最后对比了理论分析、仿真测试结果，并在实际物理环境中进系
-真实部署，通过6节点的小规模实验以及1000节点虚拟机的大规模实验，表明该模
-型的理论分析、仿真测试与实际实验吻合，并在网络性能、容错能力、伸缩性灵
-活性方面得到了进一步的提升。
-
-在第\ref{chapter_experiments}章中，针对网络模型研究这一类工作的共性，设计构造通
-用验证平台系统。以海量虚拟机和虚拟分布式交换机的形式，实现了基于少量物理节点，对
-大规模节点的模拟。其模拟运行的过程与真实运行在实现层面完全一致，运行的结果与真实
-环境线性相关。除为本文所涉若干网络模型提供验证外，可进一步推广到更为广泛的领域，
-为各种网络模型及路由算法的研究工作，提供分析、指导与验证。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 致谢，应放在《结论》之后
 \begin{acknowledgement}
-  首先感谢我的母亲韦春花对我的支持。其次感谢我的导师陈近南对我的精心指导和热心帮助。接下来，
-  感谢我的师兄茅十八和风际中，他们阅读了我的论文草稿并提出了很有价值的修改建议。
+首先感谢我的父母
 
-  最后，感谢我亲爱的老婆们：双儿、苏荃、阿珂、沐剑屏、曾柔、建宁公主、方怡，感谢
-  你们在生活上对我无微不至的关怀和照顾。我爱你们！
+
 \end{acknowledgement}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 附录
-\appendix
 
-\chapter{博士(硕士)学位论文编写格式规定(试行)}
-
-\section{适用范围}
-
-本规定适用于博士学位论文编写，硕士学位论文编写应参照执行。
-
-\section{引用标准}
-
-GB7713科学技术报告、学位论文和学术论文的编写格式。
-
-GB7714文后参考文献著录规则。
-
-\section{印制要求}
-
-论文必须用白色纸印刷，并用A4(210mm×297mm)标准大小的白纸。纸的四周应留足空白
-边缘，上方和左侧应空边25mm以上，下方和右侧应空边20mm以上。除前置部分外，其它
-部分双面印刷。
-
-论文装订不要用铁钉，以便长期存档和收藏。
-
-论文封面与封底之间的中缝（书脊）必须有论文题目、作者和学校名。
-
-\section{编写格式}
-
-论文由前置部分、主体部分、附录部分(必要时)、结尾部分(必要时)组成。
-
-前置部分包括封面，题名页，声明及说明，前言，摘要(中、英文)，关键词，目次页，
-插图和附表清单(必要时)，符号、标志、缩略词、首字母缩写、单位、术语、名词解释
-表(必要时)。
-
-主体部分包括绪论(作为正文第一章)、正文、结论、致谢、参考文献表。
-
-附录部分包括必要的各种附录。
-
-结尾部分包括索引和封底。
-
-\section{前置部分}
-
-\subsection{封面（博士论文国图版用）}
-
-封面是论文的外表面，提供应有的信息，并起保护作用。
-
-封面上应包括下列内容：
-\begin{enumerate}
-\item 分类号  在左上角注明分类号，便于信息交换和处理。一般应注明《中国图书资
-  料分类法》的类号，同时应注明《国际十进分类法UDC》的类号；
-\item 密级  在右上角注明密级；
-\item “博士学位论文”用大号字标明；
-\item 题名和副题名   用大号字标明；
-\item 作者姓名；
-\item 学科专业名称；
-\item 研究方向；
-\item 导师姓名，职称；
-\item 日期包括论文提交日期和答辩日期；
-\item 学位授予单位。
-\end{enumerate}
-
-\subsection{题名}
-
-题名是以最恰当、最简明的词语反映论文中最重要的特定内容的逻辑组合。
-
-题名所用每一词语必须考虑到有助于选定关键词和编写题录、索引等二次文献可以提供
-检索的特定实用信息。
-
-题名应避免使用不常见的缩略词、首字母缩写字、字符、代号和公式等。
-
-题名一般不宜超过20字。
-
-论文应有外文题名，外文题名一般不宜超过10个实词。
-
-可以有副题名。
-
-题名在整本论文中不同地方出现时，应完全相同。
-
-\subsection{前言}
-
-前言是作者对本论文基本特征的简介，如论文背景、主旨、目的、意义等并简述本论文
-的创新性成果。
-
-\subsection{摘要}
-
-摘要是论文内容不加注释和评论的简单陈述。
-
-论文应有中、英文摘要，中、英文摘要内容应相同。
-
-摘要应具有独立性和自含性，即不阅读论文的全文，便能获得必要的信息，摘要
-中有数据、有结论，是一篇完整的短文，可以独立使用，可以引用，可以用于推广。摘
-要的内容应包括与论文同等量的主要信息，供读者确定有无必要阅读全文，也供文摘等
-二次文献引用。摘要的重点是成果和结论。
-
-中文摘要一般在1500字，英文摘要不宜超过1500实词。
-
-摘要中不用图、表、化学结构式、非公知公用的符号和术语。
-
-\subsection{关键词}
-
-关键词是为了文献标引工作从论文中选取出来用于表示全文主题内容信息款目的单词或
-术语。
-
-每篇论文选取3－8个词作为关键词，以显著的字符另起一行，排在摘要的左下方。在英
-文摘要的左下方应标注与中文对应的英文关键词。
-
-\subsection{目次页}
-
-目次页由论文的章、节、附录等的序号、名称和页码组成，另页排在摘要的后面。
-
-\subsection{插图和附表清单}
-
-论文中如图表较多，可以分别列出清单并置于目次页之后。
-
-图的清单应有序号、图题和页码。表的清单应有序号、表题和页码。
-
-符号、标志、缩略词、首字母缩写、计量单位、名词、术语等的注释表符号、标志、缩略词、
-首字母缩写、计量单位、名词、术语等的注释说明汇集表，应置于图表清单之后。
-
-\section{主体部分}
-
-\subsection{格式}
-
-主体部分由绪论开始，以结论结束。主体部分必须由另页右页开始。每一章必须另页开
-始。全部论文章、节、目的格式和版面安排要划一，层次清楚。
-
-\subsection{序号}
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width= 0.5\textwidth]{njuname.eps}\\
-  \caption{测试附录中的插图}\label{fig:appendix1}
-\end{figure}
-
-论文的章可以写成：第一章。节及节以下均用阿拉伯数字编排序号，如
-1.1，1.1.1等。
-
-论文中的图、表、附注、参考文献、公式、算式等一律用阿拉伯数字分别分章依序连续编排
-序号。其标注形式应便于互相区别，一般用下例：图1.2；表2.3；附注1）；文献[4]；式
-  (6.3)等。
-
-论文一律用阿拉伯数字连续编页码。页码由首页开始，作为第1页，并为右页另页。封页、
-封二、封三和封底不编入页码，应为题名页、前言、目次页等前置部分单独编排页码。页码
-必须标注在每页的相同位置，便于识别。
-
-\begin{equation}
-    C_i = \frac{2E_i}{k_i(k_i-1)}
-\end{equation}
-
-附录依序用大写正体A、B、C、$\cdots$编序号，如：附录A。附录中的图、表、式、参考文
-献等另行编序号，与正文分开，也一律用阿拉伯数字编码，但在数码前题以附条序码，如图
-A.1；表B.2；式(B.3)；文献[A.5]等。
-
-\subsection{绪论}
-
-绪论（综述）：简要说明研究工作的目的、范围、相关领域的前人工作和知识空白、理
-论基础和分析，研究设想、研究方法和实验设计、预期结果和意义等。一般在教科书中
-有的知识，在绪论中不必赘述。
-
-绪论的内容应包括论文研究方向相关领域的最新进展、对有关进展和问题的评价、本论
-文研究的命题和技术路线等；绪论应表明博士生对研究方向相关的学科领域有系统深入
-的了解，论文具有先进性和前沿性；
-
-\begin{problem}
-测试定理环境。测试定理环境。测试定理环境。测试定理环境。测试定理环境。测试定理环境。
-测试定理环境。测试定理环境。测试定理环境。
-\end{problem}
-
-为了反映出作者确已掌握了坚实的基础理论和系统的专门知识，具有开阔的科学视野，对研
-究方案作了充分论证，绪论应单独成章，列为第一章，绪论的篇幅应达$1\sim 2$万字，不
-得少于$1$万字；绪论引用的文献应在$100$篇以上，其中外文文献不少于$60\%$；引用文献
-应按正文中引用的先后排列。
-
-\subsection{正文}
-
-论文的正文是核心部分，占主要篇幅。正文必须实事求是，客观真切，准确完备，合乎
-逻辑，层次分明，简便可读。
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width= 0.5\textwidth]{njuname.eps}\\
-  \caption{测试附录中的插图}\label{fig:appendix2}
-\end{figure}
-
-正文的每一章(除绪论外)应有小结，在小结中应明确阐明作者在本章中所做的工作，特
-别是创新性成果。凡本论文要用的基础性内容或他人的成果不应单独成章，也不应作过
-多的阐述，一般只引结论、使用条件等，不作推导。
-
-\subsubsection{图}
-
-图包括曲线图、构造图、示意图、图解、框图、流程图、记录图、布置图、地图、照片
-、图版等。
-
-图应具有“自明性”，即只看图、图题和图例，不阅读正文，就可以理解图意。
-
-图应编排序号。每一图应有简短确切的图题，连同图号置于图下。必要时，应将图上的
-符号、标记、代码，以及实验条件等，用最简练的文字，横排于图题下方，作为图例说
-明。
-
-\begin{example}
-测试定理环境。测试定理环境。测试定理环境。测试定理环境。测试定理环境。测试定理环境。
-测试定理环境。测试定理环境。测试定理环境。
-\end{example}
-
-曲线图的纵、横坐标必须标注“量、标准规定符号、单位”。此三者只有在不必要标明
-(如无量纲等)的情况下方可省略。坐标上标注的量的符号和缩略词必须与正文一致。
-
-照片图要求主题和主要显示部分的轮廓鲜明，便于制版。如用放大缩小的复制品，必须
-清晰，反差适中。照片上应该有表示目的物尺寸的标度。
-
-\subsubsection{表}
-
-表的编排，一般是内容和测试项目由左至右横读，数据依序竖排。表应有自明性。
-
-表应编排序号。
-
-每一表应有简短确切的表题，连同标号置于表上。必要时，应将表中的符号、标记、代
-码，以及需要说明事项，以最简练的文字，横排于表题下，作为表注，也可以附注于表
-下。表内附注的序号宜用小号阿拉伯数字并加圆括号置于被标注对象的右上角，如：
-xxx${}^{1)}$；不宜用“*”，以免与数学上共轭和物质转移的符号相混。
-
-表的各栏均应标明“量或测试项目、标准规定符号、单位”。只有在无必要标注的情况下
-方可省略。表中的缩略词和符号，必须与正文中一致。
-
-表内同一栏的数字必须上下对齐。表内不宜用“同上”，“同左”和类似词，一律填入具体数字
-或文字。表内“空白”代表未测或无此项，“－”或“\textellipsis”（因“－”可能与代表阴性
-  反应相混）代表未发现，“0”代表实测结果确为零。
-
-如数据已绘成曲线图，可不再列表。
-
-\subsubsection{数学、物理和化学式}
-
-正文中的公式、算式或方程式等应编排序号，序号标注于该式所在行(当有续行时，应
-标注于最后一行)的最右边。
-
-较长的式，另行居中横排。如式必须转行时，只能在$+$，$-$，$\times$，$\div$，$<$，
-$>$处转行。上下式尽可能在等号“$=$”处对齐。
-
-小数点用“$.$”表示。大于$999$的整数和多于三位数的小数，一律用半个阿拉伯数字符的小
-间隔分开，不用千位撇。对于纯小数应将$0$列于小数点之前。
-
-示例：应该写成$94\ 652.023\ 567$和$0.314\ 325$, 不应写成$94,652.023,567$和
-$.314,325$。
-
-应注意区别各种字符，如：拉丁文、希腊文、俄文、德文花体、草体；罗马数字和阿拉伯数
-字；字符的正斜体、黑白体、大小写、上下脚标（特别是多层次，如“三踏步”）、上下偏差
-等。
-
-\subsubsection{计量单位}
-
-报告、论文必须采用国务院发布的《中华人民共和国法定计量单位》，并遵照《中华人
-民共和国法定计量单位使用方法》执行。使用各种量、单位和符号，必须遵循附录B所
-列国家标准的规定执行。单位名称和符号的书写方式一律采用国际通用符号。
-
-\subsubsection{符号和缩略词}
-
-符号和缩略词应遵照国家标准的有关规定执行。如无标准可循，可采纳本学科或本专业
-的权威性机构或学术团体所公布的规定；也可以采用全国自然科学名词审定委员会编印
-的各学科词汇的用词。如不得不引用某些不是公知公用的、且又不易为同行读者所理解
-的、或系作者自定的符号、记号、缩略词、首字母缩写字等时，均应在第一次出现时一
-一加以说明，给以明确的定义。
-
-\subsection{结论}
-
-报告、论文的结论是最终的、总体的结论，不是正文中各段的小结的简单重复。结论应
-该准确、完整、明确、精炼。在结论中要清楚地阐明论文中有那些自己完成的成果，特
-别是创新性成果；
-
-如果不可能导出应有的结论，也可以没有结论而进行必要的讨论。可以在结论或讨论中
-提出建议、研究设想、仪器设备改进意见、尚待解决的问题等。
-
-\subsection{致谢}
-
-可以在正文后对下列方面致谢：
-
-\begin{itemize}
-\item 国家科学基金、资助研究工作的奖学金基金、合作单位、资助或支持的企业、组织或个
-人；
-\item 协助完成研究工作和提供便利条件的组织或个人；
-\item 在研究工作中提出建议和提供帮助的人；
-\item 给予转载和引用权的资料、图片、文献、研究思想和设想的所有者；
-\item 其他应感谢的组织或个人。
-\end{itemize}
-
-\subsection{参考文献表}
-
-\subsubsection{专著著录格式}
-
-主要责任者，其他责任者，书名，版本，出版地：出版者，出版年
-
-例：1. 刘少奇，论共产党员的修养，修订2版，北京：人民出版社，1962
-
-\subsubsection{连续出版物中析出的文献著录格式}
-
-析出文献责任者，析出文献其他责任者，析出题名，原文献题名，版本：文献中的位置。
-
-例：2. 李四光，地壳构造与地壳运动，中国科学，1973 (4)：400－429
-
-参考文献采用顺序编码制，按论文正文所引用文献出现的先后顺序连续编码。
-
-\section{附录}
-
-附录是作为报告、论文主体的补充项目，并不是必需的。
-
-下列内容可以作为附录编于报告、论文后，也可以另编成册；
-
-\begin{enumerate}
-\item 为了整篇论文材料的完整，但编入正文又有损于编排的条理和逻辑性，这一材料
-包括比正文更为详尽的信息、研究方法和技术更深入的叙述，建议可以阅读的参考文献
-题录，对了解正文内容有用的补充信息等；
-\item 由于篇幅过大或取材于复制品而不便于编入正文的材料；
-\item 不便于编入正文的罕见珍贵资料；
-\item 对一般读者并非必要阅读，但对本专业同行有参考价值的资料；
-\item 某些重要的原始数据、数学推导、计算程序、框图、结构图、注释、统计表、计
-算机打印输出件等。
-\end{enumerate}
-
-附录与正文连续编页码。
-
-每一附录均另页起。
-
-\section{结尾部分 (必要时)}
-
-为了将论文迅速存储入电子计算机，可以提供有关的输入数据。可以编排分类索引、著者索
-引、关键词索引等。
 
 % 参考文献。应放在\backmatter之前。
 % 推荐使用BibTeX，若不使用BibTeX时注释掉下面一句。
@@ -688,7 +879,6 @@ $.314,325$。
 % 附录，必须放在参考文献后，backmatter前
 \appendix
 \chapter{图论基础知识}
-\Blindtext
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 书籍附件
@@ -723,570 +913,6 @@ $.314,325$。
 % 生成《学位论文出版授权书》页面，应放在最后一页
 \makelicense
 
-
-\section{研究目的与意义}
-\subsection{现有解决方法}
-\Blindtext
-\begin{table}
-  \centering
-  \begin{tabular}{cccp{38mm}}
-    \toprule
-    \textbf{文档域类型} & \textbf{Java类型} & \textbf{宽度(字节)} & \textbf{说明} \\
-    \midrule
-    BOOLEAN  & boolean &  1  & \\
-    CHAR     & char    &  2  & UTF-16字符 \\
-    BYTE     & byte    &  1  & 有符号8位整数 \\
-    SHORT    & short   &  2  & 有符号16位整数 \\
-    INT      & int     &  4  & 有符号32位整数 \\
-    LONG     & long    &  8  & 有符号64位整数 \\
-    STRING   & String  &  字符串长度  & 以UTF-8编码存储 \\
-    DATE     & java.util.Date & 8 & 距离GMT时间1970年1月1日0点0分0秒的毫秒数 \\
-    BYTE\_ARRAY & byte$[]$ & 数组长度 & 用于存储二进制值 \\
-    BIG\_INTEGER & java.math.BigInteger & 和具体值有关 & 任意精度的长整数 \\
-    BIG\_DECIMAL & java.math.BigDecimal & 和具体值有关 & 任意精度的十进制实数 \\
-    \bottomrule
-  \end{tabular}
-  \caption{测试表格}\label{table:test1}
-\end{table}
-\Blindtext
-\subsection{现有问题与不足}
-
-测试一下脚注\footnote{测试脚注}，测试一下脚注\footnote{测试脚注}，测试一下脚
-注\footnote{测试脚注}，测试一下脚注\footnote{测试脚注}，测试一下脚注\footnote{测
-  试脚注}，测试一下脚注\footnote{测试脚注}，测试一下脚注\footnote{测试脚注}，测
-试一下脚注\footnote{测试脚注}，测试一下脚注\footnote{测试脚注}，测试一下脚
-注\footnote{测试脚注}。
-
-测试一下引用\cite{newman2006structure}，连续引用
-\cite{newman2001random,aiello2000random,bollobas2001random}，另一个连续引用
-\cite{newman2001random,bollobas2001random,barabasi1999emergence}。测试一下带页码
-的引用\cite[124--128]{erdHos1961strength}。
-
-下面是一个项目列表：
-
-\begin{itemize}
-\item 这是第一项。这是第一项。
-\item 这是第二项。这是第二项。这是第二项。这是第二项。这是第二项。这是第二项。这
-  是第二项。这是第二项。这是第二项。这是第二项。这是第二项。
-\item 这是第三项。这是第三项。这是第三项。
-  \begin{itemize}
-  \item 测试第二层列表。测试第二层列表。
-  \item 测试第二层列表。测试第二层列表。
-  \begin{itemize}
-     \item 测试第三层列表。测试第三层列表。
-     \item 测试第三层列表。测试第三层列表。
-  \end{itemize}
-  \item 测试第二层列表。测试第二层列表。测试第二层列表。测试第二层列表。测试第二
-    层列表。
-  \end{itemize}
-\item 这是第四项。这是第四项。这是第四项。
-  \begin{enumerate}
-  \item 测试第二层列表。测试第二层列表。测试第二层列表。测试第二层列表。测试第二
-    层列表。测试第二层列表。测试第二层列表。测试第二层列表。
-  \item 测试第二层列表。测试第二层列表。
-  \item 测试第二层列表。测试第二层列表。测试第二层列表。测试第二层列表。测试第二
-    层列表。
-  \end{enumerate}
-\end{itemize}
-
-下面是一个编号列表：
-
-\begin{enumerate}
-\item 这是第一项。这是第一项。这是第一项。这是第一项。这是第一项。这是第一项。这
-  是第一项。这是第一项。这是第一项。这是第一项。这是第一项。
-\item 这是第二项。这是第二项。
-\item 这是第三项。这是第三项。这是第三项。
-  \begin{itemize}
-  \item 测试第二层列表。测试第二层列表。
-  \item 测试第二层列表。测试第二层列表。
-  \item 测试第二层列表。测试第二层列表。测试第二层列表。测试第二层列表。测试第二
-    层列表。
-  \end{itemize}
-\item 这是第四项。这是第四项。这是第四项。
-  \begin{enumerate}
-  \item 测试第二层列表。测试第二层列表。
-  \begin{enumerate}
-  \item 测试第三层列表。测试第三层列表。测试第三层列表。测试第三层列表。测试第三
-    层列表。测试第三层列表。
-  \item 测试第三层列表。测试第三层列表。
-  \item 测试第三层列表。测试第三层列表。测试第三层列表。
-  \end{enumerate}
-  \item 测试第二层列表。测试第二层列表。测试第二层列表。
-  \end{enumerate}
-\end{enumerate}
-
-下面是最多三层的阿拉伯数字列表:
-\begin{arabicenum}
-\item 第1项
-\item 第2项
-  \begin{arabicenum}
-  \item 第2.1项
-  \item 第2.2项
-    \begin{arabicenum}
-    \item 第2.2.1项
-    \item 第2.2.2项
-    \item 第2.2.3项
-    \end{arabicenum}
-  \item 第2.3项
-  \end{arabicenum}
-\item 第3项
-\end{arabicenum}
-
-下面是最多两层的罗马数字列表:
-\begin{romanenum}
-\item 第1项
-\item 第2项
-  \begin{romanenum}
-  \item 第2.1项
-  \item 第2.2项
-  \item 第2.3项
-  \end{romanenum}
-\item 第3项
-\end{romanenum}
-
-下面是最多两层的小写字母列表:
-\begin{alphaenum}
-\item 第1项
-\item 第2项
-  \begin{alphaenum}
-  \item 第2.1项
-  \item 第2.2项
-  \item 第2.3项
-  \end{alphaenum}
-\item 第3项
-\end{alphaenum}
-
-下面是最多两层的情况列表:
-\begin{caseenum}
-\item 第1项
-\item 第2项
-  \begin{caseenum}
-  \item 第2.1项
-  \item 第2.2项
-  \item 第2.3项
-  \end{caseenum}
-\item 第3项
-\end{caseenum}
-
-下面是最多两层的步骤列表:
-\begin{stepenum}
-\item 第1项
-\item 第2项
-  \begin{stepenum}
-  \item 第2.1项
-  \item 第2.2项
-  \item 第2.3项
-  \end{stepenum}
-\item 第3项
-\end{stepenum}
-
-下面测试一下引用环境|quote|。下面测试一下引用环境|quote|。下面测试一下引用环境|quote|。
-下面测试一下引用环境|quote|。下面测试一下引用环境|quote|。下面测试一下引用环境|quote|。
-下面测试一下引用环境|quote|。下面测试一下引用环境|quote|。下面测试一下引用环境|quote|。
-
-\begin{quote}
-这是一段引用。这是一段引用。这是一段引用。这是一段引用。这是一段引用。这是一段引用。
-这是一段引用。这是一段引用。这是一段引用。这是一段引用。这是一段引用。这是一段引用。
-这是一段引用。这是一段引用。这是一段引用。这是一段引用。这是一段引用。
-
-这是一段引用。这是一段引用。这是一段引用。这是一段引用。这是一段引用。这是一段引用。
-这是一段引用。这是一段引用。这是一段引用。
-
-这是一段引用。这是一段引用。
-\end{quote}
-
-下面测试一下引用环境|quotation|。下面测试一下引用环境|quotation|。
-下面测试一下引用环境|quotation|。下面测试一下引用环境|quotation|。
-下面测试一下引用环境|quotation|。下面测试一下引用环境|quotation|。
-下面测试一下引用环境|quotation|。下面测试一下引用环境|quotation|。
-下面测试一下引用环境|quotation|。
-
-\begin{quotation}
-这是一段引用。这是一段引用。这是一段引用。这是一段引用。这是一段引用。这是一段引用。
-这是一段引用。这是一段引用。这是一段引用。这是一段引用。这是一段引用。这是一段引用。
-这是一段引用。这是一段引用。这是一段引用。这是一段引用。这是一段引用。
-
-这是一段引用。这是一段引用。这是一段引用。这是一段引用。这是一段引用。这是一段引用。
-这是一段引用。这是一段引用。这是一段引用。
-
-这是一段引用。这是一段引用。
-\end{quotation}
-
-引用结束。引用结束。引用结束。引用结束。引用结束。引用结束。引用结束。引用结束。引用结束。
-引用结束。引用结束。引用结束。
-
-测试一下定理环境。
-
-\begin{theorem}[测试定理]
-测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下
-定理环境。测试一下定理环境。测试一下定理环境。
-\end{theorem}
-\begin{proof}
-\blindtext
-\end{proof}
-
-\blindtext
-
-\begin{theorem}
-测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下
-定理环境。测试一下定理环境。测试一下定理环境。
-\end{theorem}
-\begin{proof}
-\blindtext
-\end{proof}
-
-\blindtext
-
-\begin{lemma}
-测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下
-定理环境。测试一下定理环境。测试一下定理环境。
-\end{lemma}
-\begin{proof}
-\blindtext
-\end{proof}
-
-\blindtext
-
-\begin{definition}
-测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下
-定理环境。测试一下定理环境。测试一下定理环境。
-\end{definition}
-
-\blindtext
-
-\begin{corollary}
-测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下
-定理环境。测试一下定理环境。测试一下定理环境。
-\end{corollary}
-
-\blindtext
-
-\begin{proposition}
-测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下
-定理环境。测试一下定理环境。测试一下定理环境。
-\end{proposition}
-
-\blindtext
-
-\begin{fact}
-测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下
-定理环境。测试一下定理环境。测试一下定理环境。
-\end{fact}
-
-\blindtext
-
-\begin{assumption}
-测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下
-定理环境。测试一下定理环境。测试一下定理环境。
-\end{assumption}
-
-\blindtext
-
-\begin{conjecture}
-测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下
-定理环境。测试一下定理环境。测试一下定理环境。
-\end{conjecture}
-
-\blindtext
-
-\begin{hypothesis}
-测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下
-定理环境。测试一下定理环境。测试一下定理环境。
-\end{hypothesis}
-
-\blindtext
-
-\begin{axiom}
-测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下
-定理环境。测试一下定理环境。测试一下定理环境。
-\end{axiom}
-
-\blindtext
-
-\begin{postulate}
-测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下
-定理环境。测试一下定理环境。测试一下定理环境。
-\end{postulate}
-
-\blindtext
-
-\begin{principle}
-测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下
-定理环境。测试一下定理环境。测试一下定理环境。
-\end{principle}
-
-\blindtext
-
-\begin{problem}
-测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下
-定理环境。测试一下定理环境。测试一下定理环境。
-\end{problem}
-\begin{solution}
-\blindtext
-\end{solution}
-
-\blindtext
-
-\begin{problem}
-测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下
-定理环境。测试一下定理环境。测试一下定理环境。
-\end{problem}
-\begin{solution}
-\blindtext
-\end{solution}
-
-\blindtext
-
-\begin{exercise}
-测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下
-定理环境。测试一下定理环境。测试一下定理环境。
-\end{exercise}
-
-\blindtext
-
-\begin{exercise}
-测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下
-定理环境。测试一下定理环境。测试一下定理环境。
-\end{exercise}
-
-\begin{algorithm}
-测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下定理环境。测试一下
-定理环境。测试一下定理环境。测试一下定理环境。
-\end{algorithm}
-
-\subsection{中心观点与思想}
-
-云计算在概念上通常被分为IaaS、PaaS、SaaS几个层面。但透过分类去理解其本
-质，可认为是上世纪70年代基于大型计算机的中心控制型瘦客户端终端模式，在
-如今技术水平上的一种新的表达，是在技术发展道路中，螺旋上升的结果。
-
-与瘦客户端相比，云计算在设计结构上存在一定的相似性。
-
-\begin{enumerate}
-\item 中心控制的模式：通过中心的大规模硬件提供统一的计算，可大大降低管理成本，提
-  高硬件资源利用率，同时降低客户端的硬件成本需求。例如Nvidia推出Georce GRID平台
-  \cite{NVIDIAGRID}，推出了GaaS\footnote{Gaming as a Service}概念。将
-  GPU放置在云端，使得用户不需要再不断购买升级显卡，并可在更为广泛的终端（包括手机、
-  平板、智能电视）和地点体验最新的游戏。
-\item 数据集中：由于瘦客户端的关系，数据都集中存储在中心，可对数据提供
-  可靠的保护，并且通过按需调用的实现方式，降低对网络带宽的需求。
-\end{enumerate}
-
-在设计思路上，两者都为了降低管理成本和硬件成本、以低能耗、高弹性等需求
-为设计目标。随着技术的进步，云计算在具体实现形态上与传统的大型机也有很
-大的不同：
-
-一方面，云中心不再是传统的一台大型机，而是用大量廉价计算节点的互联来提
-供海量资源。云计算更强调资源规模的无缝、平滑扩展，以及高可靠性，无单点
-故障问题。另一方面，云计算时代的终端，也具备相当计算能力。随着web2.0的
-整合，还有向胖客户端和智能终端发展的趋势。
-
-总而言之，云计算在大框架中是传统的中心控制／终端的模式，但在中心与终端
-两方面，都引入分布式技术加以改良。核心的思路是在低成本的前提下做到高可
-靠性、高灵活性和高伸缩性。因此，云计算并不仅仅以数量换性能的表象，本质
-上为低成本高性能，追求高能效比，并在实现层面讲究可实现性和可操作性。
-\subsection{需要解决的问题与挑战}
-
-测试一下中文字体：
-
-{\songti\zihao{0} 宋体，初号}
-
-{\songti\zihao{-0} 宋体，小初}
-
-{\songti\zihao{1} 宋体，一号}
-
-{\songti\zihao{-1} 宋体，小一}
-
-{\songti\zihao{2} 宋体，二号}
-
-{\songti\zihao{-2} 宋体，小二}
-
-{\songti\zihao{3} 宋体，三号}
-
-{\songti\zihao{-3} 宋体，小三}
-
-{\songti\zihao{4} 宋体，四号}
-
-{\songti\zihao{-4} 宋体，小四}
-
-{\songti\zihao{5} 宋体，五号}
-
-{\songti\zihao{-5} 宋体，小五}
-
-{\songti\zihao{6} 宋体，六号}
-
-{\songti\zihao{-6} 宋体，小六}
-
-{\songti\zihao{7} 宋体，七号}
-
-{\songti\zihao{8} 宋体，八号}
-
-{\heiti\zihao{0} 黑体，初号}
-
-{\heiti\zihao{-0} 黑体，小初}
-
-{\heiti\zihao{1} 黑体，一号}
-
-{\heiti\zihao{-1} 黑体，小一}
-
-{\heiti\zihao{2} 黑体，二号}
-
-{\heiti\zihao{-2} 黑体，小二}
-
-{\heiti\zihao{3} 黑体，三号}
-
-{\heiti\zihao{-3} 黑体，小三}
-
-{\heiti\zihao{4} 黑体，四号}
-
-{\heiti\zihao{-4} 黑体，小四}
-
-{\heiti\zihao{5} 黑体，五号}
-
-{\heiti\zihao{-5} 黑体，小五}
-
-{\heiti\zihao{6} 黑体，六号}
-
-{\heiti\zihao{-6} 黑体，小六}
-
-{\heiti\zihao{7} 黑体，七号}
-
-{\heiti\zihao{8} 黑体，八号}
-
-{\kaishu\zihao{0} 楷书，初号}
-
-{\kaishu\zihao{-0} 楷书，小初}
-
-{\kaishu\zihao{1} 楷书，一号}
-
-{\kaishu\zihao{-1} 楷书，小一}
-
-{\kaishu\zihao{2} 楷书，二号}
-
-{\kaishu\zihao{-2} 楷书，小二}
-
-{\kaishu\zihao{3} 楷书，三号}
-
-{\kaishu\zihao{-3} 楷书，小三}
-
-{\kaishu\zihao{4} 楷书，四号}
-
-{\kaishu\zihao{-4} 楷书，小四}
-
-{\kaishu\zihao{5} 楷书，五号}
-
-{\kaishu\zihao{-5} 楷书，小五}
-
-{\kaishu\zihao{6} 楷书，六号}
-
-{\kaishu\zihao{-6} 楷书，小六}
-
-{\kaishu\zihao{7} 楷书，七号}
-
-{\kaishu\zihao{8} 楷书，八号}
-
-{\fangsong\zihao{0} 仿宋，初号}
-
-{\fangsong\zihao{-0} 仿宋，小初}
-
-{\fangsong\zihao{1} 仿宋，一号}
-
-{\fangsong\zihao{-1} 仿宋，小一}
-
-{\fangsong\zihao{2} 仿宋，二号}
-
-{\fangsong\zihao{-2} 仿宋，小二}
-
-{\fangsong\zihao{3} 仿宋，三号}
-
-{\fangsong\zihao{-3} 仿宋，小三}
-
-{\fangsong\zihao{4} 仿宋，四号}
-
-{\fangsong\zihao{-4} 仿宋，小四}
-
-{\fangsong\zihao{5} 仿宋，五号}
-
-{\fangsong\zihao{-5} 仿宋，小五}
-
-{\fangsong\zihao{6} 仿宋，六号}
-
-{\fangsong\zihao{-6} 仿宋，小六}
-
-{\fangsong\zihao{7} 仿宋，七号}
-
-{\fangsong\zihao{8} 仿宋，八号}
-
-测试一下标准字号：
-
-{\Huge 汉字，Huge}
-
-{\huge 汉字，huge}
-
-{\LARGE 汉字，LARGE}
-
-{\Large 汉字，Large}
-
-{\large 汉字，large}
-
-{\normalsize 汉字，normalsize}
-
-{\small 汉字，small}
-
-{\footnotesize 汉字，footnotesize}
-
-{\scriptsize 汉字，scriptsize}
-
-{\tiny 汉字，tiny}
-
-测试一下标准字体的变形：
-
-{\songti 宋体} {\heiti 黑体} {\kaishu 楷书} {\fangsong 仿宋}
-
-{\textsl{textsl字体}}
-
-{\bfseries bfseries字体}
-
-{\textbf{textbf字体}}
-
-{\textit{textit字体}}
-
-测试一下数学公式中的字体大小。
-
-\newcommand{\set}[1]{\left\{\,#1\,\right\}}
-\newcommand{\card}[1]{\left|\,#1\,\right|}
-
-Fall-Out指标计算公式如下：
-\begin{equation*}
-  \mbox{fallout} = \frac{\card{\set{\text{不相关文档}}\cap\set{\text{获取的文档}}}}{\card{\set{\text{不相关文档}}}}
-\end{equation*}
-
-\section{研究的应用背景}
-云计算作为分布式技术的当前表现形式，通过将众多节点资源整合，以冗余、去
-中心化的分布式模式，实现传统技术中需要大型机才能解决的海量信息问题。一
-言而概之，“人多力量大”。
-
-但随着节点数目的增多，问题的重点将逐步转换为如何对大量节点进行高效互联。图
-\ref{fig:test1}所示为传统IaaS云中心网络结构的一部分。通过BR边界路由器，AR接入路
-由器构建数据中心的主干；核心交换机和接入交换机S，构成二层交换网络层，大量的服务
-器节点通过二层交换机被最终接入整个网络。
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width= 0.5\textwidth]{njuname.eps}\\
-  \caption{测试插图}\label{fig:test1}
-\end{figure}
-在上述传统网络中，当节点总数达到数千乃至万数量级时，上层链路的聚合带宽
-将不断提高，从而对核心交换机、接入路由器、边界路由器的指标提出了极高的
-要求。以至于少数核心网络设备，成为整个网络中的高价格、高性能单点。一方
-面与原本追求低成本、分布化、去中心化的云技术设计理念背道而驰，另一方面
-也降低了网络的健壮性。因而本文所做工作对数据中心的网络基础设施而言，具
-有较大应用价值。
-\subsection{IaaS云中心}
-\Blindtext
-\subsection{PaaS云中心}
-\Blindtext
-\section{论文结构}
-\Blindtext
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
