@@ -54,7 +54,7 @@
 % 设置论文的中文封面
 
 % 论文标题，不可换行
-\title{基于神经网络语言模型的文本向量表示研究}
+\title{基于神经网络的文本向量表示与建模研究}
 % 论文作者姓名
 \author{牛力强}
 % 论文作者联系电话
@@ -88,7 +88,7 @@
 % 设置论文的英文封面
 
 % 论文的英文标题，不可换行
-\englishtitle{A Research on Text Embeddings based on Neural Network Language Models}
+\englishtitle{A Research on Text Vector Representations and Modelling based on Neural Networks}
 % 论文作者姓名的拼音
 \englishauthor{NIU Li-Qiang}
 % 导师姓名职称的英文
@@ -120,10 +120,10 @@
 
 % 设置英文摘要页面的论文标题及副标题的第一行。
 % 此属性可选，其默认值为使用|\englishtitle|命令所设置的论文标题
-\englishabstracttitlea{A Research on Text Embeddings}
+\englishabstracttitlea{A Research on Text Vector Representations and Modelling}
 % 设置英文摘要页面的论文标题及副标题的第二行。
 % 此属性可选，其默认值为空白
-\englishabstracttitleb{based on Neural Network Language Models}
+\englishabstracttitleb{based on Neural Networks}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -524,7 +524,7 @@ Topic2Vec模型旨在学习词向量表示的同时能够学习到主题的向�
   \caption{Topic2Vec结果中每个主题所包含主题和词基于t-SNE的在2维空间的映射}\label{fig:tw_tsne_chap3}
 \end{figure}
 
-图\ref{fig:topic_words_chap3}展示出选定8个典型有意义的主题，LDA和Topic2Vec分别给出了最相关的词和主题，我们通过如下细节的分析来理解它们两者之间的不同。如图\ref{fig:topic_words_chap3}所示，对于Topic\_19，LDA返回的主题词如$''drugs'', ``drugs'', ``cancer''$和$''patients''$，而Topic2Vec返回$''aricept'', ``memantine'', ``enbrel''$和$''gabapentin''$，对于Topic\_27，LDA返回的主题词如$''medical'', ``hospital'', ``care'', ``patients''$和$''doctors''$，而Topic2Vec返回$''neonatal'', ``anesthesiologists'', ``anesthesia''$和$''comatose''$。从LDA的结果来看，我们只知道Topic\_19和Topic\_27共享着相同关于$patients$或者$medical$的主题，但是我们无法更进一步获得这两个主题之间的不同。但是从Topic2Vec结果来看，我们可以轻易地发现Topic\_19关注一个更加具体的关于药品（$''drugs''$）的主题（$''aricept'', ``memantine'', ``enbrel''$和$''gabapentin''$），而Topic\_27则关注另一个更加具体的关于治疗状况（$''treatment''$）的主题（$''neonatal'', ``anesthesiologists'', ``anesthesia''$和$''comatose''$），Topic\_19和Topic\_27本质意义是完全不同的。因此我们得出结论，Topic2Vec在识别两个相似主题时显得更有区别能力。
+图\ref{fig:topic_words_chap3}展示出选定8个典型有意义的主题，LDA和Topic2Vec分别给出了最相关的词和主题，我们通过如下细节的分析来理解它们两者之间的不同。如图\ref{fig:topic_words_chap3}所示，对于Topic\_19，LDA返回的主题词如 ``{\it drug}''，``{\it drugs}''，``{\it cancer}''和 ``{\it patients}''，而Topic2Vec返回 ``{\it aricept}''，``{\it memantine}''，``{\it enbrel}''和``{\it gabapentin}''，对于Topic\_27，LDA返回的主题词如 ``{\it medical}''，``{\it hospital}''，``{\it care}''，``{\it patients}''和``{\it doctors}''，而Topic2Vec返回 ``{\it neonatal}''，``{\it anesthesiologists}''，``{\it anesthesia}''和 ``{\it comatose}''。从LDA的结果来看，我们只知道Topic\_19和Topic\_27共享着相同关于``{\it patients}''或者``{\it medical}''的主题，但是我们无法更进一步获得这两个主题之间的不同。但是从Topic2Vec结果来看，我们可以轻易地发现Topic\_19关注一个更加具体的关于药品（``{\it drugs}''）的主题（``{\it aricept}''，``{\it memantine}''，``{\it enbrel}''和``{\it gabapentin}''），而Topic\_27则关注另一个更加具体的关于治疗状况（``{\it treatment}''）的主题（``{\it neonatal}''，``{\it anesthesiologists}''，``{\it anesthesia}''和 ``{\it comatose}''），Topic\_19和Topic\_27本质意义是完全不同的。因此我们得出结论，Topic2Vec在识别两个相似主题时显得更有区别能力。
 
 利用t-SNE降维方法，图\ref{fig:lda_tsne_chap3}和图\ref{fig:tw_tsne_chap3}分别展示出了LDA和Topic2Vec结果的每一个主题所包含最相关主题词在2维空间的映射。明显可以看出，Topic2Vec的结果相同的主题词产生了更好的聚簇而在不同的主题之间产生更好的分离。相反地，LDA并不能产生一个良好分离的映射，不同主题的主题词相互混合在一起。
 
@@ -545,7 +545,7 @@ Topic2Vec模型旨在学习词向量表示的同时能够学习到主题的向�
 
 而近来，新式的分布式词向量（Dsitributed Word Representations）表示已经在诸多自然语言处理（NLP）任务中取得重大的成功，例如词性标注（POS-Tagging）、命名实体识别（Name Entity Recognition）和语言建模（Language Modeling）等\cite{bengio2003neural,collobert2008unified,turian2010word,huang2015bidirectional}。另外，分布式表示方法已经被扩展到建模超越词级别的概念，例如短语、句子、文档\cite{le2014distributed}，实体与关系\cite{bordes2013translating,socher2013reasoning}、社交和引用网络等\cite{tang2015line}。但是，大多数的模型只利用到局部上下文属性并且单独地学习特定任务相关的表示。因此，这些模型都缺乏可以融合多种属性并利用词及其属性联合学习的能力。
 
-因此在本章，我们提出一个可以同时学习词及其属性的分布式表示的统一框架，其中词的属性可以是词的任意特性。自然地，词属性可以关联到句法关系（词性（POS-Tag）和词元（lemma））、文档结构关系（短语、主题和文档）或者其他信息（例如语言（language）、情感（sentiment）和人名（name of person））。如图\ref{fig:wtld_chap4}中例子所示，词$''scoring''$具有如下属性：$''football''$（主题）、'$''score''$（词元）和''David Villa opened the scoring. Lionel Messi notched a hat trick. There was also an own goal created by pressure from Messi.''（文档）。值得注意的是我们可以扩展我们的模型来学习更多词属性的分布式表示，例如$''David\ Villa\ opened\ the\ scoring''$（句子）、$''positive''$（情感）、$''English''$（语言）、$''NN''$（词性）和$''Lionel\ Messi''$（人名）等。
+因此在本章，我们提出一个可以同时学习词及其属性的分布式表示的统一框架，其中词的属性可以是词的任意特性。自然地，词属性可以关联到句法关系（词性（POS-Tag）和词元（lemma））、文档结构关系（短语、主题和文档）或者其他信息（例如语言（language）、情感（sentiment）和人名（name of person））。如图\ref{fig:wtld_chap4}中例子所示，词 ``{\it scoring}''具有如下属性：``{\it football}''（主题）、``{\it score}''（词元）和``{\it David Villa opened the scoring. Lionel Messi notched a hat trick. There was also an own goal created by pressure from Messi.}''（文档）。值得注意的是我们可以扩展我们的模型来学习更多词属性的分布式表示，例如``{\it David\ Villa\ opened\ the\ scoring}''（句子）、``{\it positive}''（情感）、``{\it English}''（语言）、``{\it NN}''（词性）和``{\it Lionel\ Messi}''（人名）等。
 
 \begin{figure}[t]
   \centering
@@ -645,7 +645,7 @@ TLW             & 词:主题:词元                                 & 提升的�
 \begin{itemize}
 \item \textbf{TW} 如前面在\ref{subsec_tw_chap4}中描述，TW模型可以联合学习词向量表示和分布式主题向量表示。同只利用到局部上下文的Word2Vec模型相比，TW模型同时考虑了词和主题属性。自然地，我们期望运用额外的主题属性可以提升原来的词向量表示。
 
-\item \textbf{LW} 在形态学（Morphology）中，词元（Lemma）\footnote{https://en.wikipedia.org/wiki/Lemma}是一组词的规范化（canonical）形式。在英语中，例如单词$''go'', ``goes'', ``went''$和$''going''$是同一个词素（Lexeme）的不同形式，以单词$''go''$作为词元，如图\ref{fig:lemma_word_chap4}所示。拥有相同词元的不同单词通常包含着相同的基本意义。
+\item \textbf{LW} 在形态学（Morphology）中，词元（Lemma）\footnote{https://en.wikipedia.org/wiki/Lemma}是一组词的规范化（canonical）形式。在英语中，例如单词``{\it go}''，``{\it goes}''，``{\it went}''和``{\it going}''是同一个词素（Lexeme）的不同形式，以单词``{\it go}''作为词元，如图\ref{fig:lemma_word_chap4}所示。拥有相同词元的不同单词通常包含着相同的基本意义。
 
 如表\ref{tab:word_attributes}所示，LW考虑了词所赋予的词元属性旨在提升词的向量表示。例如给定一个词-词元序列$(w_{t-2}:l_{t-2}, w_{t-1}:l_{t-1}, w_t:l_t, w_{t+1}:l_{t+1}, w_{t+2}:l_{t+2})$，其中$w_t$是当前词并伴随着一个由$WordNet\ Lemmatizer$\footnote{http://textanalysisonline.com/nltk-wordnet-lemmatizer}获取的词元属性$l_t$，CBOW模型基于上下文词$(w_{t-2}, w_{t-1}, w_{t+1}, w_{t+2})$来预测当前词$w_t$和词元$l_t$，而Skip-gram模型给定当前词$w_t$和词元$l_t$来预测上下文词$(w_{t-2}, w_{t-1}, w_{t+1}, w_{t+2})$。
 
@@ -719,10 +719,11 @@ TW模型能够在学习词向量表示的同时学习主题的向量表示。因
 \begin{figure}[htbp]
 \centering
 \includegraphics[width= 1.0\textwidth]{figures//tw_tsne_chap4.pdf}\\
-\caption{TW结果中每个主题所包含主题词基于t-SNE的在2维空间的映射}\label{fig:lda_tsne_chap4}
+\caption{TW结果中每个主题所包含主题词基于t-SNE的在2维空间的映射}\label{fig:tw_tsne_chap4}
 \end{figure}
 	
-图\ref{fig:topic_words_chap4}展示出选定4个典型有意义的主题，LDA和TW分别给出了最相关的词和主题，我们通过如下细节的分析来理解它们两者之间的不同。如图\ref{fig:topic_words_chap4}所示，对于Topic\_19，LDA返回的主题词如$''drugs'', ``drugs'', ``cancer''$和$''patients''$，而TW返回$''aricept'', ``memantine'', ``enbrel''$和$''gabapentin''$，对于Topic\_27，LDA返回的主题词如$''medical'', ``hospital'', ``care'', ``patients''$和$''doctors''$，而TW返回$''neonatal'', ``anesthesiologists'', ``anesthesia''$和$''comatose''$。从LDA的结果来看，我们只知道Topic\_19和Topic\_27共享着相同关于$patients$或者$medical$的主题，但是我们无法更进一步获得这两个主题之间的不同。但是从TW结果来看，我们可以轻易地发现Topic\_19关注一个更加具体的关于药品（$''drugs''$）的主题（$''aricept'', ``memantine'', ``enbrel''$和$''gabapentin''$），而Topic\_27则关注另一个更加具体的关于治疗状况（$''treatment''$）的主题（$''neonatal'', ``anesthesiologists'', ``anesthesia''$和$''comatose''$），Topic\_19和Topic\_27本质意义是完全不同的。明显地可以看出TW在识别两个相似主题时显得更有区别能力。
+图\ref{fig:topic_words_chap4}展示出选定4个典型有意义的主题，LDA和TW分别给出了最相关的词和主题，我们通过如下细节的分析来理解它们两者之间的不同。
+如图\ref{fig:topic_words_chap4}所示，对于Topic\_19，LDA返回的主题词如 ``{\it drug}''，``{\it drugs}''，``{\it cancer}''和 ``{\it patients}''，而TW返回 ``{\it aricept}''，``{\it memantine}''，``{\it enbrel}''和``{\it gabapentin}''，对于Topic\_27，LDA返回的主题词如 ``{\it medical}''，``{\it hospital}''，``{\it care}''，``{\it patients}''和``{\it doctors}''，而TW返回 ``{\it neonatal}''，``{\it anesthesiologists}''，``{\it anesthesia}''和 ``{\it comatose}''。从LDA的结果来看，我们只知道Topic\_19和Topic\_27共享着相同关于``{\it patients}''或者``{\it medical}''的主题，但是我们无法更进一步获得这两个主题之间的不同。但是从TW结果来看，我们可以轻易地发现Topic\_19关注一个更加具体的关于药品（``{\it drugs}''）的主题（``{\it aricept}''，``{\it memantine}''，``{\it enbrel}''和``{\it gabapentin}''），而Topic\_27则关注另一个更加具体的关于治疗状况（``{\it treatment}''）的主题（``{\it neonatal}''，``{\it anesthesiologists}''，``{\it anesthesia}''和 ``{\it comatose}''），Topic\_19和Topic\_27本质意义是完全不同的。明显地可以看出TW在识别两个相似主题时显得更有区别能力。
 
 利用t-SNE\cite{van2008visualizing}降维方法，图\ref{fig:lda_tsne_chap4}和图\ref{fig:tw_tsne_chap4}分别展示出了LDA和TW结果的每一个主题所包含最相关主题词在2维空间的映射。明显可以看出，TW的结果相同的主题词产生了更好的聚簇而在不同的主题之间产生更好的分离。相反地，LDA并不能产生一个良好分离的映射，不同主题的主题词相互混合在一起。
 
@@ -831,13 +832,37 @@ Skip-gram             & \begin{tabular}[c]{@{}c@{}}Word2Vec\\ TW\\ LW\\ TLW\end{
 最后我们想强调的是我们所提出的框架具有灵活性和可扩展性，可以整合更多的属性。在未来的工作中，我们可以探索词的其他属性的向量表示学习，例如情感分析（sentiment analysis）中的情感（sentiment）、词性标注（POS-Tagging）中的词性（POS-Tags）和命名实体识别（name entity recognition, NER）中的人名（name of person）。
 
 %%%%%%%%%%%%%%%%%%
-\chapter{融合词向量与主题模型}\label{chapter5_embedding_topic_model}
+\chapter{词向量加强的主题模型}\label{chapter5_embedding_topic_model}
 
-\section{融合词向量主题模型}\label{sec_}
+\section{研究背景}\label{sec_bg_chap5}
 
-\section{实验及分析}\label{sec_}
+由以上章节，我们可以看出词向量（Word Embedding）和潜在狄利克雷分布（LDA）在文本表示与建模过程中有各自的优势。其中基于神经网络语言模型的分布式词向量表示利用词的局部上下文信息将词映射至一个低维（low-dimensional）连续值的 （continuous-valued）向量空间，词向量可以用来描述词与词之间的句法和语义关系以及在各项自然语言处理任务中取得重要的成果\cite{mikolov2013efficient,le2014distributed}。而LDA在图模型中加入隐含节点来表示隐藏变量来模拟一个生成式的过程， 在文本建模、推荐系统等领域取得重要的结果\cite{blei2003latent}。在文本表示与建模方面，词向量表示与LDA模型有着共同点。词向量可以利用大规模未标注的语料来学习词的分布式表示，而LDA可以挖掘未标注语料中文档、主题和词之间的层次关系建模。
 
-\section{本章小结}\label{sec_}
+但是，实际中LDA模型面临着更多的问题与挑战，例如在吉布斯采样（Gibbs sampling）初始化阶段采用了随机初始化、收敛速度慢、主题长尾现象以及主题词偏向于一般性词（高频词）等等。依据词向量的分布假设（相同上下文的词是相似的），我们可以假设词向量相似的词很可能是属于同一个主题的。而从大规模语料中学习词向量表示是简单而且快速的，因此，我们可以直接利用学习好的词向量来改善LDA的运行和结果。具体地从以下两个方面：
+
+\begin{itemize}
+\item \textbf{词向量聚类先验}：依据主题数$K$对词向量进行聚类，每一个类别作为一个主题，同属于一个类别的词的主题初始化为其属于的类别。相比原始吉布斯采样随机初始化，期待利用词聚类先验的LDA可以收敛的更快更好，具体见原理部分\ref{sec_embedding_clustering_chap5}和实验结果\ref{subsec_evaluate_ec_chap5}。
+\item \textbf{词向量加强的潜在狄利克雷分布}：改进原始LDA模型及其生成过程，引入上下文词变量$C$。期待改进的LDA模型可以收敛的更快、更好，具体见原理部分\ref{sec_embedding_enhanced_chap5}和实验结果\ref{subsec_evaluate_ee_chap5}。
+\end{itemize}
+
+
+\section{词向量聚类先验}\label{sec_embedding_clustering_chap5}
+
+word2vec\footnote{https://code.google.com/archive/p/word2vec/}
+
+20Newsgroups\footnote{http://qwone.com/~jason/20Newsgroups/}
+
+\section{词向量加强的潜在狄利克雷分布}\label{sec_embedding_enhanced_chap5}
+
+
+
+\section{实验及分析}\label{sec_experiments_chap5}
+
+\subsection{评估词向量聚类先验}\label{subsec_evaluate_ec_chap5}
+
+\subsection{评估词向量加强的潜在狄利克雷分布}\label{subsec_evaluate_ee_chap5}
+
+\section{本章小结}\label{sec_conclusions_chap5}
 
 %%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
