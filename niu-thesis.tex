@@ -54,7 +54,7 @@
 % 设置论文的中文封面
 
 % 论文标题，不可换行
-\title{基于神经网络的文本向量表示与建模研究}
+\title{基于神经网络的文本向量表示和建模研究 }
 % 论文作者姓名
 \author{牛力强}
 % 论文作者联系电话
@@ -68,7 +68,7 @@
 % 导师姓名职称
 \supervisor{戴新宇~~副教授}
 % 导师的联系电话
-\supervisortelphone{}
+\supervisortelphone{+86 18913825156}
 % 论文作者的学科与专业方向
 \major{计算机技术}
 % 论文作者的研究方向
@@ -146,36 +146,40 @@
 % 论文的中文摘要
 \begin{abstract}
 
-文本表示与建模是自然语言处理领域一项基础任务，传统文本表示方法是基于词袋模型，即将所有存在的词组成一个高维的0/1空间，若词出现，则对应维度置为1，否则置为0。词袋模型的好处在于简单高效，容易扩展，但同时也面临众多严重的问题，如维度灾难、数据稀疏表示、缺失语义表达能力等。而近年来随着深度学习技术在语音、图像、生物信息等领域取得重大的成果，研究者们也开始将深度学习技术应用到自然语言处理领域。特别地，自2013年谷歌研究员基于神经网络语言模型来学习分布式词向量表示起，越来越多基于深度学习技术来学习各层次文本语义向量表示的方法出现。
+文本表示与建模是自然语言处理领域中的基础任务。传统的文本表示方法主要是基于词袋模型，将文本映射至一个由所有存在的词项组成的一个高维0/1空间，若出现，则对应维度置为1，否则置为0。词袋模型的好处在于简单高效，容易扩展，但同时也面临众多严重的问题，如维度灾难、数据稀疏表示、缺失语义表达能力等。近年来随着大数据和深度学习技术在语音、图像、生物信息等领域取得重大的成果，研究者们也开始将深度神经网络技术应用到自然语言处理领域。特别地，随着2008年Collobert和Weston将基于深度神经网络的词向量表示应用到各类自然语言处理任务以及2013年谷歌研究员基于神经网络语言模型来学习分布式词向量表示，越来越多基于神经网络模型来学习文本向量表示的方法出现。
 
-本文集中对基于神经网络语言模型的文本表示与建模问题进行了探索。相比传统方法以及前人基于神经网络的文本表示与建模方法，本文对其进行了多方面的扩展：
+本文集中对基于神经网络语言模型的文本向量表示和主题建模问题进行了研究。首先简单介绍了传统N-Gram统计语言模型和基于神经网络的语言模型，并且回顾传统词向量表示方法以基于神经网络语言模型学习分布式词向量表示模型Word2Vec。随后基于这些基础模型与方法，本文对其进行了多方面的扩展：
 
 \begin{enumerate}
-\item 提出主题语义向量学习模型Topic2Vec：借助于潜在狄利克雷分布（Latent Dirichlet Allocation, LDA）挖掘到词的主题信息，将基于神经网络语言模型学习来学习词的语义向量表示模型Word2Vec扩展到主题语义向量表示。相比原始LDA中词以及主题文档等都以维度下标来表示而且词与主题之间的关系采用条件概率来衡量，Topic2Vec将词及其主题映射至统一语义向量空间，词与主题之间关系采用余弦相似度来计算。
-\item 提出一个能够联合学习词及其属性分布式表示的学习框架：将词向量表示学习方法扩展到联合学习词及其属性语义向量表示。相比单一模型的学习能力，联合学习框架使得词与其属性在学习过程中相互促进来得到更好的语义向量表示。
-\item 提出融合词向量与LDA的模型：将词向量表示应用到LDA中来提升词主题发现。
+\item 提出主题语义向量学习模型Topic2Vec：借助于潜在狄利克雷分布（Latent Dirichlet Allocation, LDA）挖掘词的主题信息，扩展Word2Vec模型来学习主题的语义向量表示。相比原始LDA中词、主题和文档均以空间下标（Indices）来表示而且词与主题之间的关系采用条件概率来衡量，Topic2Vec将词及其主题映射至同一个语义向量空间，词与主题之间关系可以直接采用余弦相似度来度量。
+\item 提出能够联合学习词及其属性向量表示的统一学习框架：将词向量表示学习模型Word2Vec扩展到联合学习词及其属性语义向量表示的统一框架。相比单一模型的学习能力，联合学习框架使得词与其属性在学习过程中相互促进可以得到更好的语义向量表示。
+\item 融合词向量与主题模型：结合词向量表示可以表征词的句法和语义信息的特性和LDA主题模型在收敛速度、收敛结果以及主题一致性方面的问题，将词向量表示应用到LDA中来提升原有主题模型的效果。特别地，提出了词向量聚类先验LDA、上下文感知LDA和词向量加强LDA。
 \end{enumerate}
-针对扩展之后的模型方法，本文分别进行了多方面的实验评估，实验结果表明扩展之后的方法均优于原有的模型方法。
+针对扩展之后的模型方法，本文分别给出了原理和实现，并且进行了多方面的实验评估，结果表明扩展之后的模型方法表现更好。
 
 
 % 中文关键词。关键词之间用中文全角分号隔开，末尾无标点符号。
-\keywords{自然语言处理；文本表示；深度学习；神经网络；文本建模}
+\keywords{自然语言处理；文本表示；深度学习；神经网络；文本建模；主题模型；词向量；主题；文档；框架；潜在狄利克雷分布}
 \end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 论文的英文摘要
 \begin{englishabstract}
-Natural language 
 
-Traditional
+Text representations and modelling are basic tasks in Natural Langauge Processing (NLP) area. Traditionally, these methods of text representations are based on Bag-of-Words (BOW) models, which could map arbitrary text into a high-dimensional binary space constructed by existing terms. If one term occurs, then corresponding index will be set to 1, otherwise 0. Even BOW models are simple, efficient, and scalable, they suffer from disadvantages such as the curse of dimensionality, data sparsity, and inability to capture semantic information. Recently, with the significant development of appling big data and deep learning technologies in speech, image, and bioinformatics areas, researcher start taking the usage of deep neural networks (DNN) to NLP area. In particular, Collobert and Westion applied DNN-based word vector representations in all kinds of NLP tasks in 2008, Google researcher learned distributed word vector representations with neural network language models (NNLMs) in 2013, and now there is an increasing number of  text embedding methods based on neural networks.
 
-Based on the 
+This paper focuses on studying NNLM-based text vector representations and topic models. First we briefly introduce traditional N-Gram statistical language models and neural network language models, also review some traditional methods of word representations and NNLM-based Word2Vec model which can learn distributed word representations. Then this paper extends these basic models and methods in the following aspects:
 
-Text representation
+\begin{enumerate}
+\item Proposed topic representation learning model Topic2Vec: with the help of topic information mined by Latent Dirichlet Allocation (LDA), we extend Word2Vec to Topic2Vec for learning distributed topic representations. Compared to LDA, in which words, topics, and documents are represented as indices, and conditional probabilities measure the relationship between words and topics, Topic2Vec embeds words and topics into the same semantic space, meanwhile we can immediately use cosine similarity to measure the words and topics.
+\item A proposed unified framework for jointly learning distributed representations of word and attributes: we extend Word2Vec to a unified framework for jointly learning distributed representations of word and attributes. Compare to capacity of single model, this unified framework has the benefit that word and attributes help each other during the learning process. 
+\item Fusing word embeddings and topic models: by intergrating the characteristic of syntactic and semantic information in word embeddings and the challenges of convergence rate, results and topic coherence in LDA, we apply word embeddings into the LDA for improving topic models. In particular, we propose word embedding cluster prior LDA, context-aware LDA, and word embedding enhanced LDA.
+\end{enumerate}
+To these extended models and methods, this paper provides basic principles and realizations respectively, and also conduct various experiments and evaluation. Finally, experiment results show that our extended models and methods perform better.
 
 
 % 英文关键词。关键词之间用英文半角逗号隔开，末尾无符号。
-\englishkeywords{Natural Language Processing, Text Representation, Deep Learning, Neural Networks, Text Modelling}
+\englishkeywords{Natural Language Processing (NLP), Text Representation, Deep Learning, Neural Networks, Text Modelling, Topic Models, Word Embeddings, Topic, Document, Framework, Latent Dirichlet Allocation (LDA)}
 \end{englishabstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -185,17 +189,16 @@ Text representation
 
 在机器学习系统的设计过程中，数据的表示是一项基础工程，好的数据表示方法能够提升整个系统的性能。传统思路下研究者们重点关注如何设计出更好的模型系统来达到更好的结果，而数据的表示则大多采用人工设计的方法。但是，近年来随着互联网大数据时代的到来以及2006年深度学习技术的兴起，大数据及数据表示方法在机器学习系统中扮演的角色越来越重要。特别地，基于深度学习技术，采用多层神经网络学习数据的层次化表示迅速成为一大研究热点，而且已经取得不俗的成果。
 
-在自然语言处理领域中，文本表示则是一项基础任务，好的文本表示方法将直接有益于后续各项自然语言处理任务。传统的文本表示方法是基于词袋模型，即将所有的词组成高维0/1特征空间，若词出现，则对应维度置为1，否则置为0。词袋模型的好处在于简单高效，但是面临众多严重的问题，如维度灾难、数据稀疏、缺失语义表达能力等。而最新的基于深度学习的文本表示方法通过多层神经网络的学习将文本中的多层结构（词、短语、句子、段落、文档等）映射至一个低维连续的空间，每一种类型的文本都对应一个低维连续值的向量。因此，新的深度学习文本表示方法完美的克服了原来词袋模型的弊端，而且在各类自然语言处理任务中取得了最好的结果。如基于神经网络的机器翻译、基于神经网络的文本分类、情感分析、复述识别等等。
+在自然语言处理领域中，文本表示是一项基础任务，好的文本表示方法将直接有益于后续各项自然语言处理任务。传统的文本表示方法主要是基于词袋模型，即将所有的词项组成高维0/1特征空间，若词项出现，则对应维度置为1，否则置为0。词袋模型的好处在于简单高效，但是面临众多严重的问题，如维度灾难、数据稀疏、缺失语义表达能力等。而最新的基于深度学习的文本表示方法通过多层神经网络的学习将文本中的多层结构（词、短语、句子、段落、文档等）映射至一个低维连续的空间，任意的文本都对应一个低维连续值的向量。因此，新的深度学习文本表示方法完美的克服了原来词袋模型的弊端，而且在各类自然语言处理任务中取得了最好的结果。如基于神经网络的机器翻译、基于神经网络的文本分类、情感分析、复述识别等等\cite{mikolov2013efficient,collobert2008unified,socher2011dynamic}。
 
-基于近年来深度学习用于自然语言处理任务所取得的成果，本文集中对自然语言处理中的文本表示以及建模问题进行了探索。相比原有基于深度学习的文本表示与建模方法，本文对其进行了多方面的扩展：
+本文集中对基于神经网络语言模型的文本向量表示和主题建模问题进行了研究。首先简单介绍了传统N-Gram统计语言模型和基于神经网络的语言模型，并且回顾传统词向量表示方法以基于神经网络语言模型学习分布式词向量表示模型Word2Vec。随后基于这些基础模型与方法，本文对其进行了多方面的扩展：
 
 \begin{enumerate}
-\item 提出主题语义向量学习模型Topic2Vec：借助于潜在狄利克雷分布（Latent Dirichlet Allocation, LDA）挖掘到词的主题信息，将基于神经网络语言模型学习来学习词的语义向量表示模型Word2Vec扩展到主题语义向量表示。相比原始LDA中词以及主题文档等都以维度下标来表示而且词与主题之间的关系采用条件概率来衡量，Topic2Vec将词及其主题映射至统一语义向量空间，词与主题之间关系采用余弦相似度来计算。
-\item 提出一个能够联合学习词及其属性分布式表示的学习框架：将词向量表示学习方法扩展到联合学习词及其属性语义向量表示。相比单一模型的学习能力，联合学习框架使得词与其属性在学习过程中相互促进来得到更好的语义向量表示。
-\item 提出融合词向量与LDA的模型：将词向量表示应用到LDA中来提升词主题发现。
+\item 提出主题语义向量学习模型Topic2Vec：借助于潜在狄利克雷分布（Latent Dirichlet Allocation, LDA）挖掘词的主题信息，扩展Word2Vec模型来学习主题的语义向量表示。相比原始LDA中词、主题和文档均以空间下标（Indices）来表示而且词与主题之间的关系采用条件概率来衡量，Topic2Vec将词及其主题映射至同一个语义向量空间，词与主题之间关系可以直接采用余弦相似度来度量。
+\item 提出能够联合学习词及其属性向量表示的统一学习框架：将词向量表示学习模型Word2Vec扩展到联合学习词及其属性语义向量表示的统一框架。相比单一模型的学习能力，联合学习框架使得词与其属性在学习过程中相互促进可以得到更好的语义向量表示。
+\item 融合词向量与主题模型：结合词向量表示可以表征词的句法和语义信息的特性和LDA主题模型在收敛速度、收敛结果以及主题一致性方面的问题，将词向量表示应用到LDA中来提升原有主题模型的效果。特别地，提出了词向量聚类先验LDA、上下文感知LDA和词向量加强LDA。
 \end{enumerate}
-
-针对扩展之后的模型方法，本文进行了多方面的实验验证评估，实验结果表明扩展之后的方法均优于原有的模型方法。
+针对扩展之后的模型方法，本文分别给出了原理和实现，并且进行了多方面的实验评估，结果表明扩展之后的模型方法均表现更好。
 
 \vspace{1cm}
 \begin{flushright}
@@ -229,39 +232,38 @@ Text representation
 
 自然语言同语音、图像并列为人工智能研究领域的三大重要元素。特别地，自2006年Hinton提出深度学习技术\cite{hinton2006reducing}并且在机器学习以及人工智能领域取得重大突破。其中，语音识别、计算机视觉、图像处理等典型人工智能任务取得了重大进展与广泛应用。但是，不同于语音、图像等原始信号或者信息，自然语言是人类高度抽象之后的产物。因此，深度学习等机器学习技术在面对自然语言处理任务时依旧面临较大的挑战。
 
-传统的自然语言处理任务包括了语言建模、机器翻译、文本分类、情感分析、句法分析、词性标注、命名实体识别、中文分词、复述识别、自动问答等等\cite{collobert2008unified}。传统的自然语言处理方法大多是将有监督机器学习模型方法等根据对应的任务加以修改应用。例如，基于短语的统计机器翻译采用双语平行语料，依据源语言与目标语言词对齐方法来构建翻译模型，之后基于翻译模型来将源语言翻译为目标语言\cite{chiang2005hierarchical}；文本分类、情感分析、复述识别等都是将具体的任务转换为有监督机器学习中二分类或者多分类任务，不同的任务采取不同的特征提取方法，进而构建对应的分类器\cite{collobert2008unified}；句法分析、中文分词等序列标注任务部分采用条件随机场等图模型方法，基于特征模板来提取特征进而构造有监督分类器来进行参数学习\cite{lafferty2001conditional,zhao2006improved}。可以看到传统自然语言处理处理的最大局限在于采用有监督的机器学习方法，而现实中有监督方法所需的标记语料是相对有限且人工成本昂贵。因此，传统有监督机器学习方法在自然语言处理任务中的效果并不理想依旧面临很大的问题与挑战。
+传统的自然语言处理任务包括了语言建模、机器翻译、文本分类、情感分析、句法分析、词性标注、命名实体识别、中文分词、复述识别、自动问答等等\cite{collobert2008unified}。传统的自然语言处理方法大多是将有监督（supervised）机器学习模型方法根据对应的任务加以修改应用。例如，基于短语的统计机器翻译采用双语平行语料，依据源语言与目标语言词对齐方法来构建翻译模型，之后基于翻译模型来将源语言翻译为目标语言\cite{chiang2005hierarchical}；文本分类、情感分析、复述识别等都是将具体的任务转换为有监督机器学习中二分类或者多分类任务，不同的任务采取不同的特征提取方法，进而构建对应的分类器\cite{collobert2008unified}；句法分析、中文分词等序列标注任务部分采用条件随机场等图模型方法，基于特征模板来提取特征进而构造有监督分类器来进行参数学习\cite{lafferty2001conditional,zhao2006improved}。可以看到传统自然语言处理处理的最大局限在于采用有监督的机器学习方法，而现实中有监督方法所需的标记语料是相对有限且人工成本昂贵。因此，传统有监督机器学习方法在自然语言处理任务中的效果并不理想依旧面临很大的问题与挑战。
 
-在此背景下，诸多研究者意识到深度学习的下一个突破口是自然语言处理方向。深度学习在语音以及图像等领域的成果得益于多层神经网络基于大量的未标注语料中的层次表示学习能力。如在图像中，神经网络通过层次化的学习可以学习到像素、边际、部分、图像的表示，之后通过这些不同层级的特征来构造分类器\cite{lee2009convolutional}。可以看到多层神经网络在处理图像时模拟人脑的处理过程，因此深度学习得以取得重大突破，语音识别也类似\cite{lee2009unsupervised}。因此，研究者将自然语言处理的突破寄望于深度学习。近年来，研究者也开始探索文本的层次化表示学习，并希望通过基于深度学习的文本表示方法来提升传统的自然语言处理任务。
+在此背景下，诸多研究者意识到深度学习的下一个突破口是自然语言处理领域。深度学习在语音以及图像等领域的成果得益于多层神经网络基于大量的未标注语料中的层次特征表示学习能力。如在图像中，神经网络通过层次化的学习可以学习到像素（pixel）、边际（edge）、部分（part）、图像（image）的表示，之后通过这些不同层级的特征来构造分类器\cite{lee2009convolutional}。可以看到多层神经网络在处理图像时模拟人脑的处理过程，因此深度学习得以取得重大突破，语音识别也类似\cite{lee2009unsupervised}。因此，研究者将自然语言处理的突破寄望于深度学习。近年来，研究者也开始探索文本的层次化表示学习，并希望通过基于深度学习的文本表示方法来提升传统的自然语言处理任务。特别地，随着2008年Collobert和Weston将基于深度神经网络的词向量表示应用到各类自然语言处理任务\cite{collobert2008unified}以及2013年谷歌研究员基于神经网络语言模型来学习分布式词向量表示\cite{mikolov2013efficient}，越来越多基于神经网络模型来学习文本向量表示的方法出现。
 
 \section{研究目的与意义}\label{sec_chap1_motivations}
 
-对文本诸如词（Word）、主题（Topic）、句子（Sentence）、文档（Document）等进行建模在自然语言处理（Natural Language Processing, NLP）和信息检索（Information Retrieval, IR）领域是一项关键任务，其目的在于找到一类简短扼要的描述来表达文本的语义，使其能够促进大规模系统的高效处理并且有益于常见的任务，例如文本分类、聚类、摘要、相似性或者相关性估计。
+对文本包括词（Word）、主题（Topic）、句子（Sentence）、文档（Document）等进行建模在自然语言处理（Natural Language Processing, NLP）和信息检索（Information Retrieval, IR）领域是一项关键任务，其目的在于找到一类简短扼要的描述来表达文本的语义，使其能够促进大规模系统的高效处理并且有益于常见的任务，例如文本分类、聚类、摘要、相似性或者相关性估计。
 
 在过去的几十年间，各种各样的模型和解决方法被提出来，例如词袋模型（Bag-of-Words, BOW)\cite{zhang2010understanding}、TF-IDF\cite{salton1986introduction}、潜在语义分析（Latent Semantic Analysis, LSA）\cite{landauer1998introduction}、概率潜在语义分析（Probabilistic Latent Semantic Analysis, PLSA）\cite{hofmann1999probabilistic}、潜在狄利克雷分布（Latent Dirichlet Allocation, LDA）\cite{blei2003latent}等。词袋模型的好处在于简单高效，但是面临众多严重的问题，如维度灾难、数据稀疏、缺失语义表达能力等。
 
-近年来，基于深度学习的文本表示方法通过多层神经网络的学习将文本中的多层结构（词、短语、句子、段落、文档等）映射至一个低维连续的空间，每一种类型的文本都对应一个低维连续值的向量，如词向量（Word Embedding）。因此，基于深度学习文本表示方法完美的克服了传统词袋模型的问题，而且在各类自然语言处理任务中取得了最好的结果\cite{collobert2008unified}。如基于Bengio等人在2003年提出的神经网络语言模型\cite{bengio2003neural}，Mikolov等人在2013年提出了Word2Vec模型来学习词向量表示\cite{mikolov2013efficient,mikolov2013distributed,mikolov2013linguistic}；Le和Mikolov在2014年提出学习句子和文档分布式向量表示的方法\cite{le2014distributed}；Stanford大学Socher等人利用递归自编码器和动态Pooling技术来做复述识别取得state-of-the-art的结果\cite{socher2011dynamic}；Tang等人在2014年利用开发了基于深度学习技术的系统用于Twitter情感分类\cite{tang2014coooolll}；还有各类基于递归神经网络和编码-解码器的统计机器翻译模型\cite{bahdanau2014neural,cho2014learning}。
+近年来，基于深度学习的文本表示方法通过多层神经网络的学习将文本中的多层结构（词、短语、句子、段落、文档等）映射至一个低维连续的空间，每一种类型的文本都对应一个低维连续值的向量，如词向量（Word Embedding）。理论上基于神经网络的文本表示方法完美的克服了传统词袋模型的问题，而且在各类自然语言处理任务中取得了最好的结果\cite{collobert2008unified}。如基于Bengio等人在2003年提出的神经网络语言模型\cite{bengio2003neural}，Mikolov等人在2013年提出了Word2Vec模型来学习分布式（distributed）词向量表示\cite{mikolov2013efficient,mikolov2013distributed,mikolov2013linguistic}；Le和Mikolov在2014年提出学习句子和文档分布式向量表示的方法\cite{le2014distributed}；Stanford大学Socher等人利用递归自编码器和动态池化（Pooling）技术来做复述识别取得目前最好的结果\cite{socher2011dynamic}；Tang等人在2014年利用开发了基于深度学习技术的系统用于Twitter情感分类\cite{tang2014coooolll}；还有各类基于递归神经网络和编码-解码器的统计机器翻译模型\cite{bahdanau2014neural,cho2014learning}。
 
-由上可以看出，基于深度学习的文本表示与建模在克服传统方法缺点的同时，在各类自然语言处理任务中均取得较好甚至是最好的结果。但是，深度学习技术在NLP领域的应用远不止于此。因此，基于近年来深度学习用于自然语言处理任务所取得的成果，本文集中在自然语言处理中的文本表示以及建模问题进行了深入的探索。相比原有的深度学习的文本表示与建模方法，本文对其进行了多方面的扩展：
+综上可以看出，基于神经网络的文本表示与建模在克服传统方法缺点的同时，在各类自然语言处理任务中均取得较好甚至是最好的结果。但是，深度学习技术在NLP领域的应用远不止于此。基于近年来深度学习用于自然语言处理任务所取得的成果，本文集中对基于神经网络语言模型的文本向量表示和主题建模问题进行了研究。首先简单介绍了传统N-Gram统计语言模型和基于神经网络的语言模型，并且回顾传统词向量表示方法以基于神经网络语言模型学习分布式词向量表示模型Word2Vec。随后基于这些基础模型与方法，本文对其进行了多方面的扩展：
 
 \begin{enumerate}
-\item 提出主题语义向量学习模型Topic2Vec：借助于潜在狄利克雷分布（Latent Dirichlet Allocation, LDA）挖掘到词的主题信息，将基于神经网络语言模型学习来学习词的语义向量表示模型Word2Vec扩展到主题语义向量表示。相比原始LDA中词以及主题文档等都以维度下标来表示而且词与主题之间的关系采用条件概率来衡量，Topic2Vec将词及其主题映射至统一语义向量空间，词与主题之间关系采用余弦相似度来计算。
-\item 提出一个能够联合学习词及其属性分布式表示的学习框架：将词向量表示学习方法扩展到联合学习词及其属性语义向量表示。相比单一模型的学习能力，联合学习框架使得词与其属性在学习过程中相互促进来得到更好的语义向量表示。
-\item 提出融合词向量与LDA的模型：将词向量表示应用到LDA中来提升词主题发现。
+\item 提出主题语义向量学习模型Topic2Vec：借助于潜在狄利克雷分布（Latent Dirichlet Allocation, LDA）挖掘词的主题信息，扩展Word2Vec模型来学习主题的语义向量表示。相比原始LDA中词、主题和文档均以空间下标（Indices）来表示而且词与主题之间的关系采用条件概率来衡量，Topic2Vec将词及其主题映射至同一个语义向量空间，词与主题之间关系可以直接采用余弦相似度来度量。
+\item 提出能够联合学习词及其属性向量表示的统一学习框架：将词向量表示学习模型Word2Vec扩展到联合学习词及其属性语义向量表示的统一框架。相比单一模型的学习能力，联合学习框架使得词与其属性在学习过程中相互促进可以得到更好的语义向量表示。
+\item 融合词向量与主题模型：结合词向量表示可以表征词的句法和语义信息的特性和LDA主题模型在收敛速度、收敛结果以及主题一致性方面的问题，将词向量表示应用到LDA中来提升原有主题模型的效果。特别地，提出了词向量聚类先验LDA、上下文感知LDA和词向量加强LDA。
 \end{enumerate}
-
-针对扩展之后的模型方法，本文进行了多方面的实验验证评估，实验结果表明扩展之后的方法均优于原有的模型方法。因此，尽管深度学习技术已经在文本表示与建模甚至是整个NLP领域做出不俗的成绩，但当我们面对具体的实际问题时候，仍需思考当前问题的不同之处以及现有方法的不足，对现有模型做出修改或者创新才能做到更好的效果。
+针对扩展之后的模型方法，本文分别给出了原理和实现，并且进行了多方面的实验评估，结果表明扩展之后的模型方法表现更好。因此，尽管深度学习技术已经在文本表示与建模甚至是整个NLP领域做出不俗的成绩，但当我们面对具体的实际问题时候，仍需思考当前问题的不同之处以及现有方法的不足，对现有模型做出修改或者创新才能做到更好的效果。
 
 \section{论文结构}\label{sec_chap1_outline}
 
-本文旨在对深度学习技术在自然语言处理领域中文本表示与建模这一问题的应用做进一步的探索，从（1）学习主题向量表示、（2）联合学习词及其属性分布式表示和（3）融合词向量表示与图模型三个大的方面来进行扩展，分析了现有方法的不足之处，提出了自己的模型方法，并且分别进行了理论分析与实验对比。
+本文旨在对深度学习技术在自然语言处理领域中文本表示与建模这一问题的应用做进一步的探索，从（1）学习主题向量表示、（2）联合学习词及其属性分布式表示和（3）融合词向量表示与主题模型等方面来进行扩展，分析了现有方法的不足之处，提出了自己的模型方法，分别给出了原理和实现并且进行了实验对比。
 
 本文一共分为六章，后续章节安排如下：
 
 \begin{itemize}
-\item 第\ref{chapter2_nnlm_word_representations}章：语言模型与词向量表示。本章简要介绍本文的背景工作，分别介绍自然语言处理中的语言模型、Bengio等人在2003年提出的神经网络语言模型\cite{bengio2003neural}以及Mikolov等人在2013年提出的基于神经网络语言模型学习分布式词向量表示的模型Word2Vec\cite{mikolov2013efficient,mikolov2013distributed,mikolov2013linguistic}。
-\item 第\ref{chapter3_topic_representations}章：学习主题向量表示。本章主要工作是借助于潜在狄利克雷分布（Latent Dirichlet Allocation, LDA）挖掘到词的主题（Topic）信息，将Word2Vec扩展至学习主题Topic的分布式表示，并且提出了模型Topic2Vec。
-\item 第\ref{chapter4_word_attributes}章：联合学习词和属性向量表示。本章主要工作是将Word2Vec扩展到一个能够联合学习词（Word）和属性（Attributes）分布式向量表示的统一框架，其中重点引入了三类词属性：词元（Lemma）、主题（Topic）、文档（Document），基于该框架实现：（1）学习主题Topic的分布式表示、（2）学习文档Document的分布式表示和（3）利用词元Lemma和主题Topic信息来提升词向量表示。该框架不仅可以学习到属性的分布式表示，而且可以利用属性知识来提高原来词向量表示。另外，该框架易于扩展，可以学习更多其他的词属性的分布式表示。
-\item 第\ref{chapter5_embedding_topic_model}章：融合词向量与主题模型。
+\item 第\ref{chapter2_nnlm_word_representations}章：语言模型与词向量表示。本章主要介绍本文的背景工作，包括传统N-Gram统计语言模型、Bengio等人在2003年提出的神经网络语言模型\cite{bengio2003neural}以及Mikolov等人在2013年提出的基于神经网络语言模型学习分布式词向量表示的模型Word2Vec\cite{mikolov2013efficient,mikolov2013distributed,mikolov2013linguistic}。
+\item 第\ref{chapter3_topic_representations}章：学习主题的向量表示。本章主要工作是借助于潜在狄利克雷分布（Latent Dirichlet Allocation, LDA）挖掘到词的主题（Topic）信息，将Word2Vec扩展至学习分布式主题向量表示，并且提出了模型Topic2Vec。
+\item 第\ref{chapter4_word_attributes}章：联合学习词和属性的向量表示。本章主要工作是将Word2Vec扩展到一个能够联合学习词（Word）和属性（Attributes）分布式向量表示的统一框架，其中重点引入了三类词属性：词元（Lemma）、主题（Topic）、文档（Document），基于该框架实现：（1）学习主题Topic的分布式表示、（2）学习文档Document的分布式表示和（3）利用词元Lemma和主题Topic信息来提升词向量表示。该框架不仅可以学习到属性的分布式表示，而且可以利用属性知识来提高原来词向量表示。另外，该框架易于扩展，可以学习更多其他的词属性的分布式表示。
+\item 第\ref{chapter5_embedding_topic_model}章：词向量加强的主题模型。本章主要工作是基于词向量表示可以表示词的句法和语义信息以及主题模型存在的问题，将词向量表示应用到主题模型中来提升主题模型。首先采用词向量聚类结果作为LDA主题-词的先验分布，提出了词向量聚类先验潜在狄利克雷分布。之后修改LDA的图模型结构，提出了对应的上下文感知潜在狄利克雷分布以及词向量加强的潜在狄利克雷分布。
 \item 第\ref{chapter6_concludes}章：总结与展望。本章对前面的工作进行总结，并提出了进一步研究的展望。
 
 \end{itemize}
@@ -369,15 +371,13 @@ Text representation
 
 综上可以看到神经网络语言模型不仅可以学习到词序列即句子的概率值，而且还可以学习到每一个词所对应的特征向量。在文本表示特别是词的表示方法中我们重点关注词特征向量的计算，即矩阵$C$。
 
-\section{传统词向量表示}
-
-
+%\section{传统词向量表示}
 
 \section{分布式词向量表示}\label{sec_chap2_word2vec}
 
 当前众多的自然语言处理（NLP）系统中，词被视作为原子单元，但是词与词之间的相似度却没有度量，是因为词被表示为词汇表中的下标索引（indices）。通常采用比较流行的N-gram模型用于统计语言模型，如今可以在所有有效数据中来训练N-grams（万亿的词数级别\cite{brants2007large}）。但是这类简单方法依赖于大量训练数据，缺失泛化能力。因此在很多任务中都存在缺陷，例如自动语音识别中的领域内数据是有限的；同样地，在机器翻译系统中，大多数语言所有的语料数据也仅仅包含十亿级别的词数或者更少。
 
-随着近年来机器学习技术的进步，依赖大数据来训练更加复杂的模型已经成为可能并且通常效果优于简单模型。特别地，最成功的概念是利用词的分布式表示（distributed representations）\cite{hinton1986learning}。例如，基于语言模型的神经网络模型相比N-gram模型表现更好\cite{bengio2003neural,schwenk2007continuous}。
+随着近年来机器学习技术的进步，依赖大数据来训练更加复杂的模型已经成为可能并且通常效果优于简单模型。特别地，最成功的概念是利用词的分布式表示（distributed representations）\cite{hinton1986learning}。例如，基于语言模型的神经网络模型相比N-gram模型表现更好\cite{bengio2003neural,schwenk2007continuous}。这里强调下分布表示（distributional representations）和分布式表示（distributed representations）的区别。其中分布表示基于共现矩阵，如LSA\cite{landauer1998introduction}，PLSA\cite{hofmann1999probabilistic}，LDA\cite{blei2003latent}和HAL\cite{lund1996producing}等。而分布式表示则是一个低维、密集、连续值的向量，也称词嵌入式表示（word embeddings）。
 
 因此，Mikolov等人在2013年基于神经网络语言模型提出Word2Vec模型来在大数据集上训练词的分布式向量表示\cite{mikolov2013efficient,mikolov2013distributed,mikolov2013linguistic}，包括Continuous Bag-of-Words(CBOW)和Skip-gram两种结构。下面分别简要介绍CBOW和Skip-gram模型：
 
@@ -438,7 +438,7 @@ Text representation
 
 本章着重介绍本文的背景工作，包括：（1）统计语言模型：简要介绍语言模型的原理与对于自然语言处理任务的意义，并列举了常用的N-gram模型以及其他语言模型；（2）神经网络语言模型：简要介绍神经网络语言模型的由来，重点说明神经网络语言模型的原理；（3）Word2Vec词向量表示：简要介绍了Google基于神经网络语言模型提出Word2Vec模型来学习词的分布式表示，重点介绍Word2Vec的结构包括CBOW和Skip-gram以及训练过程。
 
-本章内容是本文所有工作的基础，基于分布式假设（Distributed Hypotheses）和神经网络语言模型（Neural Network Language Models）来学习文本的分布式表示或向量表示（Distributed Representations or Embedding）的思想贯穿全文，并且训练过程也采用Word2Vec中的随机梯度下降（Stochastic Gradient Descent）以及负采样（Negative Sampling）技术。
+本章内容是本文所有工作的基础，基于分布的假设（Distributional Hypotheses）和神经网络语言模型（Neural Network Language Models）来学习文本的分布式表示或向量表示（Distributed Representations or Embedding）的思想贯穿全文，并且训练过程也采用Word2Vec中的随机梯度下降（Stochastic Gradient Descent）以及负采样（Negative Sampling）技术。
 
 %%%%%%%%%%%%%%%%%%
 \chapter{学习主题的向量表示}\label{chapter3_topic_representations}
@@ -463,9 +463,9 @@ distribution）对于每个词进行一定轮数主题采样或至收敛，可�
 \subsection{研究背景}
 依据前面的介绍，我们知道LDA可以挖掘文档中的主题结构信息，而且已经在自然语言处理（NLP）和机器学习（ML）等领域做出巨大的贡献\cite{blei2003latent}。但是，LDA中概率分布仅仅是语料中出现关系的统计结果，并且在实际中，概率分布表示（distrbutional representations）并不是特征表示最好的选择。近来，通过概念以及表示的学习，基于嵌入向量来表示词和文档的方法相继被提出，例如Word2Vec\cite{mikolov2013efficient}和Doc2Vec\cite{le2014distributed}等，而且嵌入向量表示在许多任务中的结果比LDA的概率分布表示更好。
 
-同时，由于词汇表通常在$10^5-10^6$之间，因此LDA还面临严重的长尾现象（long-tail）：LDA会赋予语料中的高频词以高概率而低概率的词则很难被选作为主题词。但是在实际中，低概率词有时候可以更好的表征主题。例如，LDA会赋予词$food$高概率并且选为主题词而不是$cheeseburger$，选用高概率词$drug$而不是$aricept$，选用高概率词$technology$而不是$smartphone$。从这些例子可以看出，LDA基于语料的统计结果，会明显偏向于高频词（如$food, drugs, technology$ etc.），而这些高频词词义通常比较泛，不够具体，不能够非常清晰具体地表征一个主题。相反，部分低频低概率词（如$cheeseburger, aricept, smartphone$ etc.）词义更加具体，可以更好表征某一个主题。
+同时，由于词汇表通常在$10^5-10^6$之间，因此LDA还面临严重的长尾现象（long-tail）：LDA会赋予语料中的高频词以高概率而低概率的词则很难被选作为主题词。但是在实际中，低概率词有时候可以更好的表征主题。例如，LDA会赋予词$food$高概率并且选为主题词而不是``cheeseburger''，选用高概率词``drug''而不是``aricept''，选用高概率词``technology''而不是``smartphone''。从这些例子可以看出，LDA基于语料的统计结果，会明显偏向于高频词（如``food''，``drugs''，``technology''等），而这些高频词词义通常比较泛，不够具体，不能够非常清晰具体地表征一个主题。相反，部分低频低概率词（如``cheeseburger''，``aricept''，``smartphone''等）词义更加具体，可以更好表征某一个主题。
 
-最近，基于神经网络语言模型（NNLMs）学习的分布式表示将词和文档映射至一个低维的语义向量空间，并且在许多NLP和ML任务中实现了重要的结果\cite{mikolov2013efficient,le2014distributed}。特别地，Word2Vec可以自动学习到词的概念以及词与词之间的语义和句法简单线性关系，例如词向量语义关系：$vec(``Berlin'') - vec(``Germany'') = vec(``Paris'') - vec(``France'')$和词向量句法关系：$vec(``Write'') - vec(``Writing'') = vec(``Read'') - vec(``Reading'')$\cite{mikolov2013linguistic}。Doc2Vec在情感分析（Sentiment Analysis）任务中取得了最好的结果\cite{le2014distributed}。自然地，我们会想这个问题：如果将这些主题映射至语义空间将会发生什么？
+最近，基于神经网络语言模型（NNLMs）学习的分布式表示将词和文档映射至一个低维的语义向量空间，并且在许多NLP和ML任务中实现了重要的结果\cite{mikolov2013efficient,le2014distributed}。特别地，Word2Vec可以自动学习到词的概念以及词与词之间的语义和句法简单线性关系，例如词向量语义关系：vec(``Berlin'') - vec(``Germany'') = vec(``Paris'') - vec(``France'')和词向量句法关系：vec(``Write'') - vec(``Writing'') = vec(``Read'') - vec(``Reading'')\cite{mikolov2013linguistic}。Doc2Vec在情感分析（Sentiment Analysis）任务中取得了最好的结果\cite{le2014distributed}。自然地，我们会想这个问题：如果将这些主题映射至语义空间将会发生什么？
 
 \subsection{Topic2Vec模型}
 
@@ -550,7 +550,7 @@ Topic2Vec模型旨在学习词向量表示的同时能够学习到主题的向�
 \begin{figure}[t]
   \centering
   \includegraphics[width= 1.0\textwidth]{figures//word_topic_lemma_document_chap4.pdf}\\
-  \caption{词$''scoring''$及其节点属性图例}\label{fig:wtld_chap4}
+  \caption{词``{\it scoring}''及其节点属性图例}\label{fig:wtld_chap4}
 \end{figure}
 
 \begin{table}[t]
@@ -751,7 +751,7 @@ TW模型能够在学习词向量表示的同时学习主题的向量表示。因
 \label{tab:tc_chap4}
 \end{table}
 
-对于每一个文档，DW返回一个对应的向量作为这个文档的表示。紧接着我们利用采用了“一对剩余所有”（''one vs rest''）模式的LIBLINEAR\footnote{http://www.csie.ntu.edu.tw/~cjlin/liblinear/} 来做多类别的文本分类。为了评价我们模型的有效性，我们将DW模型与其他学习文档表示的模型进行了实验对比，包括LDA以及最近提出的段落向量表示模型（Paragraph Vector Model）\cite{le2014distributed}。其中，LDA将每个文档表示为隐藏主题上的概率分布，而段落向量表示模型则将每个文档表示为一个低维的连续向量，包括分布式记忆模型（distributed memory model, PV-DM）和分布式词袋模型（distributed bag-of-words model, PV-DBOW）。如表\ref{tab:tc_chap4}所示，DW模型相比已有模型实现了具有竞争力的结果。值得注意的是，所有这些学习文档的低维连续值向量表示的方法的性能都不如传统的词袋模型（BOW）和TWE-1模型\cite{liu2015topical}，其中后两者方法均利用了语料数据的TF-IDF特征来帮助文本分类。
+对于每一个文档，DW返回一个对应的向量作为这个文档的表示。紧接着我们利用采用了``一对剩余所有''（``one vs rest''）模式的LIBLINEAR\footnote{http://www.csie.ntu.edu.tw/~cjlin/liblinear/} 来做多类别的文本分类。为了评价我们模型的有效性，我们将DW模型与其他学习文档表示的模型进行了实验对比，包括LDA以及最近提出的段落向量表示模型（Paragraph Vector Model）\cite{le2014distributed}。其中，LDA将每个文档表示为隐藏主题上的概率分布，而段落向量表示模型则将每个文档表示为一个低维的连续向量，包括分布式记忆模型（distributed memory model, PV-DM）和分布式词袋模型（distributed bag-of-words model, PV-DBOW）。如表\ref{tab:tc_chap4}所示，DW模型相比已有模型实现了具有竞争力的结果。值得注意的是，所有这些学习文档的低维连续值向量表示的方法的性能都不如传统的词袋模型（BOW）和TWE-1模型\cite{liu2015topical}，其中后两者方法均利用了语料数据的TF-IDF特征来帮助文本分类。
 
 
 \subsection{评估提升的词向量表示}\label{subsec_evaluate_improved_word_chap4}
@@ -831,6 +831,8 @@ Skip-gram             & \begin{tabular}[c]{@{}c@{}}Word2Vec\\ TW\\ LW\\ TLW\end{
 
 最后我们想强调的是我们所提出的框架具有灵活性和可扩展性，可以整合更多的属性。在未来的工作中，我们可以探索词的其他属性的向量表示学习，例如情感分析（sentiment analysis）中的情感（sentiment）、词性标注（POS-Tagging）中的词性（POS-Tags）和命名实体识别（name entity recognition, NER）中的人名（name of person）。
 
+
+%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%
 \chapter{词向量加强的主题模型}\label{chapter5_embedding_topic_model}
 
@@ -838,44 +840,280 @@ Skip-gram             & \begin{tabular}[c]{@{}c@{}}Word2Vec\\ TW\\ LW\\ TLW\end{
 
 由以上章节，我们可以看出词向量（Word Embedding）和潜在狄利克雷分布（LDA）在文本表示与建模过程中有各自的优势。其中基于神经网络语言模型的分布式词向量表示利用词的局部上下文信息将词映射至一个低维（low-dimensional）连续值的 （continuous-valued）向量空间，词向量可以用来描述词与词之间的句法和语义关系以及在各项自然语言处理任务中取得重要的成果\cite{mikolov2013efficient,le2014distributed}。而LDA在图模型中加入隐含节点来表示隐藏变量来模拟一个生成式的过程， 在文本建模、推荐系统等领域取得重要的结果\cite{blei2003latent}。在文本表示与建模方面，词向量表示与LDA模型有着共同点。词向量可以利用大规模未标注的语料来学习词的分布式表示，而LDA可以挖掘未标注语料中文档、主题和词之间的层次关系建模。
 
-但是，实际中LDA模型面临着更多的问题与挑战，例如在吉布斯采样（Gibbs sampling）初始化阶段采用了随机初始化、收敛速度慢、主题长尾现象以及主题词偏向于一般性词（高频词）等等。依据词向量的分布假设（相同上下文的词是相似的），我们可以假设词向量相似的词很可能是属于同一个主题的。而从大规模语料中学习词向量表示是简单而且快速的，因此，我们可以直接利用学习好的词向量来改善LDA的运行和结果。具体地从以下两个方面：
+但是在实际中LDA模型通常面临着更多的问题与挑战，例如在吉布斯采样（Gibbs sampling）初始化阶段采用了随机初始化、收敛速度慢、主题长尾现象以及主题词偏向于一般性词（高频词）等等。依据词向量的分布假设（相同上下文的词是相似的），我们可以假设词向量相似的词很可能是属于同一个主题的，而从大规模语料中学习词向量表示是简单而且快速的。因此，我们可以直接利用先前学习好的词向量来改善LDA模型。具体地从简单到复杂有以下两个方面：
 
 \begin{itemize}
-\item \textbf{词向量聚类先验}：依据主题数$K$对词向量进行聚类，每一个类别作为一个主题，同属于一个类别的词的主题初始化为其属于的类别。相比原始吉布斯采样随机初始化，期待利用词聚类先验的LDA可以收敛的更快更好，具体见原理部分\ref{sec_embedding_clustering_chap5}和实验结果\ref{subsec_evaluate_ec_chap5}。
-\item \textbf{词向量加强的潜在狄利克雷分布}：改进原始LDA模型及其生成过程，引入上下文词变量$C$。期待改进的LDA模型可以收敛的更快、更好，具体见原理部分\ref{sec_embedding_enhanced_chap5}和实验结果\ref{subsec_evaluate_ee_chap5}。
+\item \textbf{词向量聚类先验潜在狄利克雷分布}：依据先前在大规模语料中学习到的词向量表示，设置主题数$K$对词向量进行K-Means聚类，聚类结果中每一个类别作为一个主题，同属于一个类别的词的主题初始化为其属于的类别。相比原始吉布斯采样中对词的主题依据一个均匀的狄利克雷分布来随机初始化，我们现在利用词聚类结果来作为主题-词的先验分布，期望以词向量聚类结果先验的LDA可以收敛的更快更好，具体见原理部分\ref{sec_prior_lda_chap5}和实验结果分析\ref{sec_exp_priorLDA_chap5}。
+\item \textbf{词向量加强的潜在狄利克雷分布}：改进原始LDA模型及其生成过程，引入上下文词变量$c$，提出上下文感知的潜在狄利克雷分布（Context-aware LDA, caLDA）。之后将先前在大规模语料中学习到的词向量表示引入到caLDA中提出词向量加强的潜在狄利克雷分布（word embedding enhanced LDA, weeLDA），具体见原理部分\ref{sec_enhanced_lda_chap5}。
 \end{itemize}
 
 
-\section{词向量聚类先验}\label{sec_embedding_clustering_chap5}
+\section{词向量聚类先验潜在狄利克雷分布}\label{sec_prior_lda_chap5}
 
-word2vec\footnote{https://code.google.com/archive/p/word2vec/}
+\subsection{狄利克雷先验分布}\label{subsec_dirichlet_chap5}
 
-20Newsgroups\footnote{http://qwone.com/~jason/20Newsgroups/}
+\begin{itemize}
+\item \textbf{二项分布（Binomial distribution）}：描述在一组相互独立且结果为“是”或“否”的实验中出现“是”的次数的概率分布（伯努利试验）。
+	\begin{equation}
+	P(X=x | n, p)=\binom{n}{x}p^{x}(1-p)^{n-x}
+	\end{equation}
+\item \textbf{多项式分布（Multinomial distribution）}：假设每次试验结果的$k$个可能输出中的一个，对应出现概率为$p_1, ..., p_k$。多项式分布用来描述在$N$次这样的试验中，每一种可能输出出现次数的分布。
+	\begin{equation}
+	P(x_1, ..., x_k | n, p_1, ..., p_k)=\frac{N!}{\prod_{i=1}^{k}x_i!}p_i^{x_i},\sum_{i}x_i=N,x_i\geq 0
+	\end{equation}
+\item \textbf{贝塔分布（Beta distribution）}：考虑$p\in [0,1]$是一个二项分布的参数，则贝塔分布是一个“分布的分布”（二项分布）。
+	\begin{equation}
+	P(p | \alpha, \beta)=\frac{1}{B(\alpha, \beta)}p^{\alpha - 1}(1-p)^{\beta - 1}
+	\end{equation}
+	贝塔函数简单定义为连续变量的二项系数。
+	\begin{equation}
+	B(\alpha, \beta)=\frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)} \simeq \binom{\alpha - 1}{\alpha + \beta - 2}, \Gamma(x+1) =x\Gamma(x)
+	\end{equation}
+	贝塔分布式二项分布的共轭先验分布（即贝塔分布先验联合二项式分布之后依旧是贝塔分布）。
+\item \textbf{狄利克雷分布（Dirichlet distribution）}：是贝塔分布的泛化：贝塔分布是二项分布的分布（在区间$p\in [0,1]$）；狄利克雷分布是多项式分布的分布（在被叫做单形（simplex）的空间里$\sum_{i}p_i=1; p_i\geq 0$）。
+	\begin{equation}
+	p(P={p_i} | \alpha_i)=\frac{\prod_{i}\Gamma(\alpha_i)}{\Gamma(\sum_{i}\alpha_i)}\prod_{i}p_i^{\alpha_i - 1}, \sum_{i}p_i = 1, p_i\geq 0
+	\end{equation}
+	其中包括两个主要参数：规模（或者集中度）$\sigma=\sum_{i}\alpha_i$和基础度量$({\alpha_i}', ..., {\alpha_k}'), {\alpha_i}'=\frac{\alpha_i}{\sigma}$。狄利克雷分布是多项式分布的共轭先验分布（即狄利克雷分布先验联合多项式分布的结果还是狄利克雷分布）。
+	
+	基础度量决定了均值分布，而规模参数反比影响方差。
+	\begin{equation}
+	E(p_i)=\frac{\alpha_i}{\sigma}={\alpha_i}'
+	\end{equation}
+	\begin{equation}
+	Var(p_i)=\frac{\alpha_i(\sigma - \alpha)}{\sigma^2(\sigma + 1)}=\frac{{\alpha_i}'(1-{\alpha_i}')}{(\sigma + 1)}
+	\end{equation}
+	\begin{equation}
+	Cov(p_i, p_j)=\frac{-\alpha_i\alpha_j}{\sigma^2(\sigma + 1)}
+	\end{equation}
+	如下图\ref{fig:dirichlet_chap5}所示是一个三个变量的狄利克雷分布密度图，其中两个水平轴是在2维单形平面中的坐标，而垂直轴则关联到变量分布的密度值。这里左图${a_k}=0.1$，中间图${a_k}=1$，右图${a_k}=10$：
+	\begin{figure}[htbp]
+  	\centering
+  	\includegraphics[width= 1.0\textwidth]{figures//dirichlet_chap5.jpg}\\
+  	\caption{三维空间狄利克雷分布密度图}\label{fig:dirichlet_chap5}
+	\end{figure}
+	
+\end{itemize}
 
-\section{词向量加强的潜在狄利克雷分布}\label{sec_embedding_enhanced_chap5}
+在一般的主题模型如LDA中，初始假设每一个主题是基于所有词的一个均匀狄利克雷分布（参数为$\beta$）。而正如George Box讽刺说道：所有的模型都是错的（``all models are wrong''），特别是对于贝叶斯模型（Bayesian model）\cite{box1976science}。因此，这个先验假设往往与实际情况不符合，因为在实际中一个主题只高概率关系到少数词，而随机初始化也无法保证主题的多样性。尽管主题模型的最终目的是学习到主题和词的后验概率关系，但是先验概率对于整个主题模型的收敛速度以及收敛结果有着非常重要的影响。
+
+\subsection{词向量聚类先验潜在狄利克雷分布}\label{subsec_priorLDA_chap5}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width= 1.0\textwidth]{figures//word_cluster_prior_chap5.pdf}\\
+  \caption{词向量聚类先验潜在狄利克雷分布}\label{fig:wc_prior_chap5}
+\end{figure}
+
+幸运的是在前面章节中，我们可以从大规模的未标注语料中通过非监督方法学习到词的分布式向量表示，而且词的向量表示可以表征词的语义信息。因此，我们可以利用先前学到的词向量表示提供给主题模型作为先验。最简单直接的想法就是如图\ref{fig:wc_prior_chap5}所示：
+
+	\begin{enumerate}
+	\item \textbf{学习词向量表示}：利用词向量表示方法如Word2Vec\footnote{https://code.google.com/archive/p/word2vec/}学习每个词的向量表示。
+	\item \textbf{词向量聚类}：对词向量根据主题模型的主题数进行K-Means聚类。
+	\item \textbf{词向量聚类作为先验}：依据词向量聚类结果，在主题模型如LDA初始化词的主题阶段，将词的主题设置为聚类的类别ID。之后依据原有LDA主题模型过程进行建模。
+	\end{enumerate}
+	
+我们期望通过在LDA训练初始阶段采用词向量聚类的结果来代替原来的随机初始化过程，可以多方面优化LDA的主题建模结果：
+	\begin{enumerate}
+	\item \textbf{收敛速度}：一个好的初始化可以使得模型在参数求解过程中收敛速度加快；
+	\item \textbf{收敛效果}：一个好的初始化可以使得模型能够找到更好的解，收敛结果更好；
+	\item \textbf{主题一致性和多样性}：替代原有的狄利克雷先验，采用词向量K-Means聚类的结果作为主题-词的先验可以增加主题的一致性和多样性。
+	\end{enumerate}
+
+\section{词向量聚类先验实验与分析}\label{sec_exp_priorLDA_chap5}
+
+在本部分，借助于$GibbsLDA++$\footnote{http://gibbslda.sourceforge.net/}，我们实现了词向量聚类先验潜在狄利克雷分布（word embedding clustering prior LDA, wecpLDA）\footnote{https://github.com/NIULQfromNJU/nju-niulq-master-thesis/tree/master/code\%20datasets}。
+
+\subsection{数据集与实验设置}\label{subsec_exp_priorLDA_datasets_chap5}
+
+我们选用英语Gigaword\footnote{https://catalog.ldc.upenn.edu/LDC2011T07}作为训练数据来学习词向量表示以及运行主题模型。实际中，我们随机选择部分文档构造了对应的数据集，如下说明：
+
+\begin{itemize}
+\item \textbf{ltw\_100k}：从包含了$411032$文档数的Gigaword子目录ltw\_eng（Los Angeles Times）中选取了$100000$的文档，且每篇文档长度至少包含$1000$个字符。\textbf{ltw\_100k}数据集主要用来学习基本的词向量表示和构造后续数据集来运行主题模型。
+\item \textbf{ltw\_10k}：从上述\textbf{ltw\_100k}数据集中随机抽取$10000$个文档来运行主题模型。
+\item \textbf{ltw\_20k}：从上述\textbf{ltw\_100k}数据集中随机抽取$20000$个文档作为外部数据（external data）来进行主题一致性（Topic Coherence）评估。
+\end{itemize}
+
+\subsection{主题词评估}\label{subsec_exp_priorLDA_twords_chap5}
+
+在任意主题模型对文档建模完成之后，我们会得到每一个主题关于所有词的概率分布$\Phi$。而对于所学习得到的每一个主题的好坏进行评估，最原始的任务是依据给定主题下的条件概率值排序，我们可以得到与每一个主题最相关的top $N$个主题词（Topic Words）。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width= 1.0\textwidth]{figures//twords_iter100_chap5.pdf}\\
+  \caption{迭代次数为100时列举wecpLDA和LDA的主题词}\label{fig:twords_iter100_chap5}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width= 1.0\textwidth]{figures//twords_iter200_chap5.pdf}\\
+  \caption{迭代次数为200时列举wecpLDA和LDA的主题词}\label{fig:twords_iter200_chap5}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width= 1.0\textwidth]{figures//twords_iter100_chap5.pdf}\\
+  \caption{迭代次数为300时列举wecpLDA和LDA的主题词}\label{fig:twords_iter300_chap5}
+\end{figure}
 
 
+\subsection{主题一致性评估}\label{subsec_exp_priorLDA_tcoherence_chap5}
 
-\section{实验及分析}\label{sec_experiments_chap5}
+从一个统计主题模型学到的主题形式上是所有词的一个多项式分布，平常通过打印出主题中最相关的$N$个词。这些top-$N$通常提供了足够的信息来决定主旨领域和主题的解释，并且可以区别不同的主题。然而，从稀疏（sparse）或者带噪音（noise）的数据学习到的主题通常一致性较差，较难解释，并且通常是无用的。因此在本节，我们通过分布式词向量的聚类结果来作为主题模型中主题-词的先验分布，期望改善之后主题模型的结果中对于同一个主题的top-$N$个主题词是一致的。
 
-\subsection{评估词向量聚类先验}\label{subsec_evaluate_ec_chap5}
+因此，在实验中我们可以评估主题一致性（Topic Coherence）。主题一致性-意味着语义一致性-是基于词的语义信息人工做出的质量判断，而且不能够通过那些将词作为可调换的符号的基于模型的统计度量。幸运的是，最近的工作显示出利用基于逐点互信息（pointwise mutual information, PMI）得分可以自动评估接近人的准确率的主题一致性\cite{newman2010automatic,newman2010evaluating}。PMI-Score受到度量所有top-$N$主题词词对之间的词关联性激发，PMI-Score按如下方式定义：
+	\begin{equation}
+	PMI-Score(\textbf{w})=\frac{1}{N(N-1)/2}\sum_{i<j}PMI(w_i, w_j),ij\in \{1, ..., N\}
+	\end{equation}
+	其中
+	\begin{equation}
+	PMI(w_i, w_j)=log\frac{P(w_i, w_j)}{P(w_i)P(w_j)}
+	\end{equation}
+这里$N(N-1)/2$是top-$N$个主题词之间不同的词对数量，$P(w_i, w_j)$，$P(w_i)$和$P(w_j)$分别是语料中词$w_i$和$w_j$共同出现在一个上下文窗口（通常窗口大小设置为$k=10$\cite{newman2010automatic}）的概率，词$w_i$出现的概率和词$w_j$出现的概率。一个关键点是这个得分采用外部数据（external data）-这个数据没有在主题建模过程中使用。这个数据可以有多种多样的来源，比如我们随机抽取的不同于主题建模数据集\textbf{ltw\_10k}的数据集\textbf{ltw\_20k}。
 
-\subsection{评估词向量加强的潜在狄利克雷分布}\label{subsec_evaluate_ee_chap5}
+\subsection{实验与分析}\label{subsec_exp_results_chap5}
+
+在实验中，我们首先在数据集\textbf{ltw\_100k}上运行Word2Vec学习词的向量表示。紧接着我们在数据集\textbf{ltw\_10k}上运行LDA，并且设置主题数$K=10$，迭代次数$iter=300$，并且每隔$100$次迭代就保存模型。在wecpLDA运行之前，我们先对之前学习到的词向量进行K-Means聚类，设置类别$K=10$，保持与主题模型主题数一致。之后采用K-Means的聚类结果作为先验来对词的主题进行初始化。随后过程跟LDA相同，均采用吉布斯采样，参数设置也保持一致。
+
+\begin{table}[htbp]
+\centering
+\caption{LDA和wecpLDA主题模型评估结果对比}
+\label{tab:exp_results_chap5}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{主题模型评估} & \textbf{LDA} & \textbf{wecpLDA} \\ \hline
+初始化方法			 & 狄利克雷先验随机初始化	& 词向量K-Means聚类先验初始化	\\ \hline
+收敛速度            & 慢            & 快                \\ \hline
+收敛结果            & 差            & 好                \\ \hline
+主题一致性           & 差            & 好                \\ \hline
+主题多样性           & 差            & 好                \\ \hline
+处理稀疏和噪音数据	& 差	 & 好		  \\ \hline
+\end{tabular}
+\end{table}
+
+关于实验结果，如图\ref{fig:twords_iter100_chap5}，\ref{fig:twords_iter200_chap5}和\ref{fig:twords_iter300_chap5}所示，分别是LDA和wecpLDA迭代次数为$100$，$200$和$300$时依据条件概率值列举$K=10$个主题所包含的top-$N=30$主题词（其中红色高亮突出具有实际意义的词）。由主题词的结果可以看出，LDA在面对这类未去除停用词（stop words）的噪音数据集时，这些停用词通常是作为高频词，而LDA的结果会偏向于这些高频词，因此每个主题所包含的主题词结果较差。而wecpLDA采用了词向量聚类先验初始化的结果明显要好很多，比LDA的主题词结果更有意义。单从这些主题词的结果来看，仅仅改变初始化过程就可以明显改善LDA的运行结果。因此我们通过人工判断对LDA和wecpLDA进行了多方面的评估，结果如表\ref{tab:exp_results_chap5}所示。
+
+\section{词向量加强的潜在狄利克雷分布}\label{sec_enhanced_lda_chap5}
+
+在前面章节中，仅仅利用词向量聚类先验来初始化就使得wecpLDA的收敛速度、收敛结果以及主题的多样性和一致性等大为改善。但是wecpLDA对于词向量的利用仅仅限于主题模型的初始化阶段，后续过程依旧采用原有LDA的吉布斯采样来推断。
+ 
+在本节内容，我们将深入探索如何将词向量表示应用到主题模型中。首先，我们修改原有LDA的图模型结构，引入上下文隐藏变量$c$，提出上下文感知的潜在狄利克雷分布（Context-aware LDA）。之后在上下文感知LDA的基础上引入词向量表示来进一步优化整个主题模型，并提出词向量加强的潜在狄利克雷分布（word embedding enhanced LDA）模型。
+ 
+\subsection{上下文感知的潜在狄利克雷分布}\label{subsec_context_aware_lda_chap5}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width= 1.0\textwidth]{figures//caLDA_chap5.pdf}\\
+\caption{上下文感知LDA的图模型表示}\label{fig:caLDA_chap5}
+\end{figure}
+
+如图\ref{fig:caLDA_chap5}所示，上下文感知潜在狄利克雷分布（Context-aware LDA, caLDA）是一个生成式概率模型。其基本的思想是文档表示为隐藏主题的混合分布$\theta$，每一个主题表示为所有上下文词的概率分布$\phi$，而每一个上下文词同时表示为词汇表中所有词的概率分布$\epsilon$。caLDA的生成过程如下：
+	\begin{enumerate}
+	\item 对每一个文档$For\ d=1, ..., M: \theta_{d}\sim Dir(\alpha)$
+	\item 对每一个主题$For\ k=1, ..., K: \phi_{k}\sim Dir(\beta)$
+	\item 对每一个上下文词$For\ v=1, ..., V: \epsilon_{v}\sim Dir(\gamma)$
+	\item 对文档中出现的每一个词$For\ n=1, ..., N:$
+		\begin{itemize}
+		\item 当前主题$z_{n}\sim Mult(\theta_{d})$
+		\item 当前上下文词$c_{n}\sim Mult(\phi_{z_{n}})$
+		\item 当前词$w_{n}\sim Mult(\epsilon_{c_{n}})$
+		\end{itemize}
+	\end{enumerate}
+这里$\alpha$，$\beta$和$\gamma$是超参，分别对应概率分布$\theta$，$\phi$和$\epsilon$的狄利克雷先验，$Dir()$表示狄利克雷分布，$Mult()$为多项式分布。
+
+我们都知道在LDA中，直接对整个模型进行准确推断（exact inference）是棘手的\cite{blei2003latent}。因此通常的处理办法是借助于近似推断技术，包括变分推断（variational inference）和马尔可夫链蒙特卡洛（Markov chain Monte Carlo, MCMC）方法等。其中变分推断引入变分空间将整个问题转化为一个优化问题，而MCMC则通过采样等随机游走方法来寻求收敛的最优解。MCMC中最简单的方法则是吉布斯采样（Gibbs sampling），因此在这里我们选择吉布斯采样来推断主题模型的参数\cite{griffiths2004finding}。caLDA的吉布斯采样过程如下：
+	\begin{enumerate}
+	\item 	对文档中的每一个观测词$w_i$，采样其上下文词$c_i$：
+			\begin{equation}\label{eq:caLDA_gb_c_chap5}
+			P(c_i=v|c_{-i}, w, z)\propto \frac{n_{-i, v}^{(w_i)}+\gamma}{n_{-i, v}^{(.)}+V\gamma}\cdot \frac{n_{-i, v}^{(z_i)}+\beta}{n_{-i, .}^{(z_i)}+V\beta}
+			\end{equation}
+	\item 	根据前一步采样得到的上下文词$c_i$，采样其主题$z_i$：
+			\begin{equation}\label{eq:caLDA_gb_z_chap5}
+			P(z_i=k|z_{-i}, c)\propto \frac{n_{-i, k}^{(c_i)}+\beta}{n_{-i, k}^{(.)}+V\beta}\cdot \frac{n_{-i, k}^{(d_i)}+\alpha}{n_{-i, .}^{(d_i)}+K\alpha}
+			\end{equation}
+	\end{enumerate}
+
+\subsection{词向量加强的潜在狄利克雷分布}\label{subsec_enhanced_lda_chap5}
+ 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width= 1.0\textwidth]{figures//weeLDA_chap5.pdf}\\
+\caption{词向量加强LDA的图模型表示}\label{fig:weeLDA_chap5}
+\end{figure}
+
+如图\ref{fig:weeLDA_chap5}所示，词向量加强潜在狄利克雷分布（word embedding enhanced LDA, weeLDA）在上下文词$c$生成当前观测词$w$时可以利用学习到的词向量表示来替代原来的狄利克雷先验分布。这里简单假设词向量生成上下文词-词的概率分布为$Dis()$，weeLDA的生成过程如下：
+	\begin{enumerate}
+	\item 对每一个文档$For\ d=1, ..., M: \theta_{d}\sim Dir(\alpha)$
+	\item 对每一个主题$For\ k=1, ..., K: \phi_{k}\sim Dir(\beta)$
+	\item 对每一个上下文词$For\ v=1, ..., V: \epsilon_{v}\sim Dir(\gamma)$
+	\item 对每一个上下文词$For\ v'=1, ..., V: \epsilon_{v'}\sim Dis()$
+	\item 对文档中出现的每一个词$For\ n=1, ..., N:$
+		\begin{itemize}
+		\item 当前主题$z_{n}\sim Mult(\theta_{d})$
+		\item 当前上下文词$c_{n}\sim Mult(\phi_{z_{n}})$
+		\item 当前词$w_{n}\sim Mult(\epsilon_{c_{n}}) \cdot Dis((\epsilon_{c_{n}})$
+		\end{itemize}
+	\end{enumerate}
+	
+类似地，weeLDA的吉布斯采样过程如下：
+	\begin{enumerate}
+	\item 	对文档中的每一个观测词$w_i$，采样其上下文词$c_i$：
+			\begin{equation}\label{eq:caLDA_gb_c_chap5}
+			P(c_i=v|c_{-i}, w, z)\propto \frac{n_{-i, v}^{(w_i)}+\gamma}{n_{-i, v}^{(.)}+V\gamma}\cdot \frac{\exp(\mathbf{v} \cdot \mathbf{w_{i}})}{\sum_{c\in C}\exp(\mathbf{c} \cdot \mathbf{w_{i}})} \cdot \frac{n_{-i, v}^{(z_i)}+\beta}{n_{-i, .}^{(z_i)}+V\beta}
+			\end{equation}
+			这里对于分布$Dis()$采用了Softmax函数，$\mathbf{v}$，$\mathbf{c}$和$\mathbf{w_i}$分别表示上下文词$v$，任意上下文词$c$和当前观测词$w_i$的词向量表示。
+	\item 	根据前一步采样得到的上下文词$c_i$，采样其主题$z_i$：
+			\begin{equation}\label{eq:caLDA_gb_z_chap5}
+			P(z_i=k|z_{-i}, c)\propto \frac{n_{-i, k}^{(c_i)}+\beta}{n_{-i, k}^{(.)}+V\beta}\cdot \frac{n_{-i, k}^{(d_i)}+\alpha}{n_{-i, .}^{(d_i)}+K\alpha}
+			\end{equation}
+	\end{enumerate}
+	
+本节重点在于基于利用外部的词向量表示来改善主题模型效果的思想，修改了LDA的图模型表示，并提出了对应的上下文感知的LDA（caLDA）和词向量加强的LDA（weeLDA），并且给出了各自模型的吉布斯采样方法。
+
 
 \section{本章小结}\label{sec_conclusions_chap5}
+
+本章内容的出发点是基于词向量表示和主题模型各自的优势特点，分析主题模型存在的问题，并且希望通过学习到的词向量表示来提升主题模型的效果。特别地，本章的贡献如下：
+
+\begin{itemize}
+\item 分析了LDA中初始化阶段采用狄利克雷先验分布的不足，提出利用词向量K-Means聚类的结果来替代狄利克雷分布的模型。通过实验分析，对词向量聚类先验LDA和原有LDA在收敛速度、收敛效果、主题一致性和多样性等方面作了对比分析。
+\item 深入探索了词向量表示与主题模型的融合应用，通过修改原有LDA的图模型表示，分别提出了上下文感知的潜在狄利克雷分布（caLDA）和词向量加强的潜在狄利克雷分布（weeLDA）。并且借鉴LDA中吉布斯采样推断技术，分别给出各自模型的吉布斯采样方法。
+\end{itemize}
+
+在未来工作中，我们期望分别实现caLDA和weeLDA，并且在收敛效果、主题一致性和多样性等多个方面对其进行定性和定量的分析。
 
 %%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 学位论文的正文应以《结论》作为最后一章
 \chapter{总结与展望}\label{chapter6_concludes}
 
-本文在第\ref{chapter_smallworld}章中，
+基于深度学习技术在人工智能领域取得的重大突破，本文集中对于深度神经网络在自然语言处理领域中文本表示与主题模型等问题进行了研究。具体地，
+\begin{itemize}
+\item 在第\ref{chapter2_nnlm_word_representations}章语言模型与词向量表示中，主要介绍本文的背景工作，包括传统N-Gram统计语言模型、Bengio等人在2003年提出的神经网络语言模型\cite{bengio2003neural}以及Mikolov等人在2013年提出的基于神经网络语言模型学习分布式词向量表示的模型Word2Vec\cite{mikolov2013efficient,mikolov2013distributed,mikolov2013linguistic}。
+\item 在第\ref{chapter3_topic_representations}章学习主题的向量表示中，主要工作是借助于潜在狄利克雷分布（Latent Dirichlet Allocation, LDA）挖掘到词的主题（Topic）信息，将Word2Vec扩展至学习分布式主题向量表示，并且提出了模型Topic2Vec。并且通过主题词实验对比了Topic2Vec和LDA，结果表明Topic2Vec的结果可以更好的表征主题。
+\item 在第\ref{chapter4_word_attributes}章联合学习词和属性的向量表示中，主要工作是将Word2Vec扩展到一个能够联合学习词（Word）和属性（Attributes）分布式向量表示的统一框架，其中重点引入了三类词属性：词元（Lemma）、主题（Topic）、文档（Document），基于该框架实现：（1）学习主题Topic的分布式表示、（2）学习文档Document的分布式表示和（3）利用词元和主题信息来提升词向量表示。针对上述各类向量表示分别进行了实验对比分析，结果表明该框架不仅可以学习到属性的分布式表示，而且可以利用属性知识来提高原来词向量表示。另外，该框架易于扩展，可以学习更多其他的词属性的分布式表示。
+\item 在第\ref{chapter5_embedding_topic_model}章词向量加强的主题模型中，主要工作是基于词向量表示可以表示词的句法和语义信息以及主题模型存在的问题，将词向量表示应用到主题模型中来提升主题模型。首先采用词向量聚类结果作为LDA主题-词的先验分布，提出了词向量聚类先验潜在狄利克雷分布（wecpLDA）。之后修改LDA的图模型结构，提出了对应的上下文感知潜在狄利克雷分布（caLDA）以及词向量加强的潜在狄利克雷分布（weeLDA）。
+\end{itemize}
 
+文本表示和主题建模作为基础任务在自然语言处理中扮演着重要的角色，在未来工作中，我们将继续深入研究深度学习技术即深度神经网络在自然语言处理特别是文本向量表示和主题建模等问题上的应用。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 致谢，应放在《结论》之后
 \begin{acknowledgement}
-首先感谢我的父母
+
+%回想来到自然语言处理研究组之初，自己对于自然语言处理、机器学习、人工智能等概念知之甚少，但是内心却是充满兴趣和期待。而且，对于这些理论模型方面甚至整个人工智能领域的发展的关注度丝毫不减。面对整个人工智能领域广泛的科学知识，三年时间显得很短，自己所学到的知识还远远不够，在以后的工作生活中仍需坚持不断学习的态度，争取有所作为。
+
+岁月如梭，光阴荏苒，不经意间三年的研究生生涯即将结束。在这三年的学习生活中，从基础的自然语言处理任务到广泛的机器学习理论模型、统计方法等，自己都收获颇丰，学到了很多的知识，找到很多自己感兴趣的方向。 对于这三年的研究生生活，自己也感到特别幸运。幸运的是可以安心学习知识，找到自己喜欢的研究方向，完成自己的学业；幸运的是可以跟实验室的老师和同学们愉快的相处；幸运的是可以跟小伙伴们建立更加深厚的友谊。因此，在这里我想对所有帮助支持我的人表示感谢。
+
+首先，我想感谢我的导师戴新宇副教授。感谢戴老师接受我来到自然语言处理研究组学习，并且在之后的三年中，对于我的学习生活、研究工作等多方面给予了极大的指导和帮助。还有，我想感谢南京大学自然语言处理研究组的陈家骏教授、黄书剑老师和尹存燕老师，感谢老师们对于我三年学习生活所给予的指导和鼓励。
+
+其次，我想感谢实验室的师兄邹远航、陈华栋、周浩和师姐潘林林。特别地，感谢邹远航师兄在我来研究组之初对于我的学习内容给予的指导，并且在找实习和工作期间给予的帮助和鼓励。还有，我想特别感谢同届的胡光能、程川、程善伯、黄家君和周逸初，祝福他们以后的学习和工作越来越好。还要感谢下一届可爱的师弟师妹，他们是尚迪、李小婉、郁振庭、汤莲瑞、季红洁、周启元和王韶杰，祝福他们的学习更加进步。
+
+另外，我想感谢学习之余一起玩耍的小伙伴们，他们是缪峥、蒋继东、刘锐奇、刘超、向文君、蒋哲翎、姜成樾、葛奕和丁丽，感谢他们带来的欢乐，祝福他们以后的工作和学习生活更加美好。还有我想感谢腾讯CDG检索策略组的applelin和frankiehu，感谢他们在实习期间给予我的鼓励和帮助。
+
+最后，我想特别感谢我的家人。感谢我的父母在我二十多年的学习历程中给予的关怀和无私的爱。感谢我的弟弟，感谢他的懂事和一直以来对我的鼓励和支持。
+
+只言片语道不尽我的感激之情，谨以此文献给所有支持我的关心、支持、帮助过我的人。
 
 
 \end{acknowledgement}
@@ -902,8 +1140,8 @@ word2vec\footnote{https://code.google.com/archive/p/word2vec/}
 %\end{thebibliography}
 
 % 附录，必须放在参考文献后，backmatter前
-\appendix
-\chapter{图论基础知识}
+%\appendix
+%\chapter{图论基础知识}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 书籍附件
