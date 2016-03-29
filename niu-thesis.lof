@@ -1,0 +1,33 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 神经网络语言模型结构图\relax }}{7}{figure.caption.5}
+\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{2}}{\ignorespaces Word2Vec结构图\relax }}{10}{figure.caption.6}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces Topic2Vec结构图\relax }}{17}{figure.caption.7}
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{2}}{\ignorespaces 对比LDA和Topic2Vec模型列举出给定主题所包含的主题词\relax }}{18}{figure.caption.8}
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{3}}{\ignorespaces LDA结果中每个主题所包含主题词基于t-SNE的在2维空间的映射\relax }}{19}{figure.caption.9}
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{4}}{\ignorespaces Topic2Vec结果中每个主题所包含主题和词基于t-SNE的在2维空间的映射\relax }}{20}{figure.caption.10}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 词``{\it scoring}''及其节点属性图例\relax }}{24}{figure.caption.11}
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{2}}{\ignorespaces Word2Vec和统一学习框架中的CBOW和Skip-gram模型结构对比图\relax }}{25}{figure.caption.12}
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{3}}{\ignorespaces 形态学中一个词元及其变种词的例子\relax }}{28}{figure.caption.13}
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{4}}{\ignorespaces 对比LDA和TW模型列举出给定主题所包含的主题词\relax }}{30}{figure.caption.14}
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{5}}{\ignorespaces LDA结果中每个主题所包含主题词基于t-SNE的在2维空间的映射\relax }}{31}{figure.caption.15}
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{6}}{\ignorespaces TW结果中每个主题所包含主题词基于t-SNE的在2维空间的映射\relax }}{32}{figure.caption.16}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 三维空间狄利克雷分布密度图\relax }}{41}{figure.caption.17}
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{2}}{\ignorespaces 词向量聚类先验潜在狄利克雷分布\relax }}{42}{figure.caption.18}
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{3}}{\ignorespaces 迭代次数为100时列举wecpLDA和LDA的主题词\relax }}{45}{figure.caption.19}
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{4}}{\ignorespaces 迭代次数为200时列举wecpLDA和LDA的主题词\relax }}{46}{figure.caption.20}
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{5}}{\ignorespaces 迭代次数为300时列举wecpLDA和LDA的主题词\relax }}{47}{figure.caption.21}
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{6}}{\ignorespaces 上下文感知LDA的图模型表示\relax }}{49}{figure.caption.22}
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{7}}{\ignorespaces 词向量加强LDA的图模型表示\relax }}{51}{figure.caption.23}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

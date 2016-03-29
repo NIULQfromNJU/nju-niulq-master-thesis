@@ -1,0 +1,449 @@
+\begin{thebibliography}{10}
+\providecommand{\bibauthor}[1]{#1}
+\providecommand{\bibeditor}[1]{#1}
+\providecommand{\bibtranslator}[1]{#1}
+\providecommand{\bibtitle}[1]{#1}
+\providecommand{\bibbooktitle}[1]{#1}
+\providecommand{\bibjournal}[1]{#1}
+\providecommand{\bibmark}[1]{#1}
+\providecommand{\bibcountry}[1]{#1}
+\providecommand{\bibpatentid}[1]{#1}
+\providecommand{\bibedition}[1]{#1}
+\providecommand{\biborganization}[1]{#1}
+\providecommand{\bibaddress}[1]{#1}
+\providecommand{\bibpublisher}[1]{#1}
+\providecommand{\bibinstitution}[1]{#1}
+\providecommand{\bibschool}[1]{#1}
+\providecommand{\bibvolume}[1]{#1}
+\providecommand{\bibnumber}[1]{#1}
+\providecommand{\bibversion}[1]{#1}
+\providecommand{\bibpages}[1]{#1}
+\providecommand{\bibmodifydate}[1]{#1}
+\providecommand{\bibcitedate}[1]{#1}
+\providecommand{\bibyear}[1]{#1}
+\providecommand{\bibdate}[1]{#1}
+\providecommand{\biburl}[1]{\newline\url{#1}}
+
+\bibitem{mikolov2013efficient}
+\bibauthor{MIKOLOV T\@, CHEN K\@, CORRADO G, et~al}\@. \bibtitle{Efficient
+  estimation of word representations in vector space}\bibmark{[J]}\@.
+  \bibjournal{arXiv preprint arXiv:1301.3781}\@, \bibyear{2013}\@.
+
+\bibitem{collobert2008unified}
+\bibauthor{COLLOBERT R\@, WESTON J}\@. \bibtitle{A unified architecture for
+  natural language processing: Deep neural networks with multitask
+  learning}\bibmark{[C]} //\thinspace{}\bibbooktitle{Proceedings of the 25th
+  international conference on Machine learning}\@.
+  \bibyear{2008}\thinspace{}\textnormal{:
+  }\bibpages{160\thinspace{}\textnormal{--}\thinspace{}167}\@.
+
+\bibitem{socher2011dynamic}
+\bibauthor{SOCHER R\@, HUANG E~H\@, PENNIN J, et~al}\@. \bibtitle{Dynamic
+  pooling and unfolding recursive autoencoders for paraphrase
+  detection}\bibmark{[C]} //\thinspace{}\bibbooktitle{Advances in Neural
+  Information Processing Systems}\@. \bibyear{2011}\thinspace{}\textnormal{:
+  }\bibpages{801\thinspace{}\textnormal{--}\thinspace{}809}\@.
+
+\bibitem{liu2015topical}
+\bibauthor{LIU Y\@, LIU Z\@, CHUA T-S, et~al}\@. \bibtitle{Topical Word
+  Embeddings.}\bibmark{[C]} //\thinspace{}\bibbooktitle{AAAI}\@.
+  \bibyear{2015}\thinspace{}\textnormal{:
+  }\bibpages{2418\thinspace{}\textnormal{--}\thinspace{}2424}\@.
+
+\bibitem{hinton2006reducing}
+\bibauthor{HINTON G~E\@, SALAKHUTDINOV R~R}\@. \bibtitle{Reducing the
+  dimensionality of data with neural networks}\bibmark{[J]}\@.
+  \bibjournal{Science}\@, \bibyear{2006}\@,
+  \bibvolume{313}\bibnumber{(5786)}\thinspace{}\textnormal{:
+  }\bibpages{504\thinspace{}\textnormal{--}\thinspace{}507}\@.
+
+\bibitem{chiang2005hierarchical}
+\bibauthor{CHIANG D}\@. \bibtitle{A hierarchical phrase-based model for
+  statistical machine translation}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Proceedings of the 43rd Annual Meeting on
+  Association for Computational Linguistics}\@.
+  \bibyear{2005}\thinspace{}\textnormal{:
+  }\bibpages{263\thinspace{}\textnormal{--}\thinspace{}270}\@.
+
+\bibitem{lafferty2001conditional}
+\bibauthor{LAFFERTY J\@, MCCALLUM A\@, PEREIRA F~C}\@. \bibtitle{Conditional
+  random fields: Probabilistic models for segmenting and labeling sequence
+  data}\bibmark{[J]}\@, \bibyear{2001}\@.
+
+\bibitem{zhao2006improved}
+\bibauthor{ZHAO H\@, HUANG C-N\@, LI M}\@. \bibtitle{An improved Chinese word
+  segmentation system with conditional random field}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Proceedings of the Fifth SIGHAN Workshop on
+  Chinese Language Processing\thinspace{}\textnormal{: }Vol~1082117}\@.
+  \bibyear{2006}\@.
+
+\bibitem{lee2009convolutional}
+\bibauthor{LEE H\@, GROSSE R\@, RANGANATH R, et~al}\@. \bibtitle{Convolutional
+  deep belief networks for scalable unsupervised learning of hierarchical
+  representations}\bibmark{[C]} //\thinspace{}\bibbooktitle{Proceedings of the
+  26th Annual International Conference on Machine Learning}\@.
+  \bibyear{2009}\thinspace{}\textnormal{:
+  }\bibpages{609\thinspace{}\textnormal{--}\thinspace{}616}\@.
+
+\bibitem{lee2009unsupervised}
+\bibauthor{LEE H\@, PHAM P\@, LARGMAN Y, et~al}\@. \bibtitle{Unsupervised
+  feature learning for audio classification using convolutional deep belief
+  networks}\bibmark{[C]} //\thinspace{}\bibbooktitle{Advances in neural
+  information processing systems}\@. \bibyear{2009}\thinspace{}\textnormal{:
+  }\bibpages{1096\thinspace{}\textnormal{--}\thinspace{}1104}\@.
+
+\bibitem{zhang2010understanding}
+\bibauthor{ZHANG Y\@, JIN R\@, ZHOU Z-H}\@. \bibtitle{Understanding
+  bag-of-words model: a statistical framework}\bibmark{[J]}\@.
+  \bibjournal{International Journal of Machine Learning and Cybernetics}\@,
+  \bibyear{2010}\@, \bibvolume{1}\bibnumber{(1-4)}\thinspace{}\textnormal{:
+  }\bibpages{43\thinspace{}\textnormal{--}\thinspace{}52}\@.
+
+\bibitem{salton1986introduction}
+\bibauthor{SALTON G\@, MCGILL M~J}\@. \bibtitle{Introduction to modern
+  information retrieval}\bibmark{[J]}\@, \bibyear{1986}\@.
+
+\bibitem{landauer1998introduction}
+\bibauthor{LANDAUER T~K\@, FOLTZ P~W\@, LAHAM D}\@. \bibtitle{An introduction
+  to latent semantic analysis}\bibmark{[J]}\@. \bibjournal{Discourse
+  processes}\@, \bibyear{1998}\@,
+  \bibvolume{25}\bibnumber{(2-3)}\thinspace{}\textnormal{:
+  }\bibpages{259\thinspace{}\textnormal{--}\thinspace{}284}\@.
+
+\bibitem{hofmann1999probabilistic}
+\bibauthor{HOFMANN T}\@. \bibtitle{Probabilistic latent semantic
+  indexing}\bibmark{[C]} //\thinspace{}\bibbooktitle{Proceedings of the 22nd
+  annual international ACM SIGIR conference on Research and development in
+  information retrieval}\@. \bibyear{1999}\thinspace{}\textnormal{:
+  }\bibpages{50\thinspace{}\textnormal{--}\thinspace{}57}\@.
+
+\bibitem{blei2003latent}
+\bibauthor{BLEI D~M\@, NG A~Y\@, JORDAN M~I}\@. \bibtitle{Latent dirichlet
+  allocation}\bibmark{[J]}\@. \bibjournal{the Journal of machine Learning
+  research}\@, \bibyear{2003}\@, \bibvolume{3}\thinspace{}\textnormal{:
+  }\bibpages{993\thinspace{}\textnormal{--}\thinspace{}1022}\@.
+
+\bibitem{bengio2003neural}
+\bibauthor{BENGIO Y\@, DUCHARME R\@, VINCENT P, et~al}\@. \bibtitle{A Neural
+  Probabilistic Language Model}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{JOURNAL OF MACHINE LEARNING RESEARCH}\@.
+  \bibyear{2003}\@.
+
+\bibitem{mikolov2013distributed}
+\bibauthor{MIKOLOV T\@, SUTSKEVER I\@, CHEN K, et~al}\@. \bibtitle{Distributed
+  representations of words and phrases and their compositionality}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Advances in neural information processing
+  systems}\@. \bibyear{2013}\thinspace{}\textnormal{:
+  }\bibpages{3111\thinspace{}\textnormal{--}\thinspace{}3119}\@.
+
+\bibitem{mikolov2013linguistic}
+\bibauthor{MIKOLOV T\@, YIH W-T\@, ZWEIG G}\@. \bibtitle{Linguistic
+  Regularities in Continuous Space Word Representations.}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{HLT-NAACL}\@.
+  \bibyear{2013}\thinspace{}\textnormal{:
+  }\bibpages{746\thinspace{}\textnormal{--}\thinspace{}751}\@.
+
+\bibitem{le2014distributed}
+\bibauthor{LE Q~V\@, MIKOLOV T}\@. \bibtitle{Distributed representations of
+  sentences and documents}\bibmark{[J]}\@. \bibjournal{arXiv preprint
+  arXiv:1405.4053}\@, \bibyear{2014}\@.
+
+\bibitem{tang2014coooolll}
+\bibauthor{TANG D\@, WEI F\@, QIN B, et~al}\@. \bibtitle{Coooolll: A deep
+  learning system for Twitter sentiment classification}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Proceedings of the 8th International Workshop on
+  Semantic Evaluation (SemEval 2014)}\@.
+  \bibyear{2014}\thinspace{}\textnormal{:
+  }\bibpages{208\thinspace{}\textnormal{--}\thinspace{}212}\@.
+
+\bibitem{bahdanau2014neural}
+\bibauthor{BAHDANAU D\@, CHO K\@, BENGIO Y}\@. \bibtitle{Neural machine
+  translation by jointly learning to align and translate}\bibmark{[J]}\@.
+  \bibjournal{arXiv preprint arXiv:1409.0473}\@, \bibyear{2014}\@.
+
+\bibitem{cho2014learning}
+\bibauthor{CHO K\@, VAN~MERRI{\"E}NBOER B\@, GULCEHRE C, et~al}\@.
+  \bibtitle{Learning phrase representations using RNN encoder-decoder for
+  statistical machine translation}\bibmark{[J]}\@. \bibjournal{arXiv preprint
+  arXiv:1406.1078}\@, \bibyear{2014}\@.
+
+\bibitem{niesler1995variable}
+\bibauthor{NIESLER T\@, WOODLAND P}\@. \bibbooktitle{Variable-length
+  category-based n-grams for language modelling}\bibmark{[M]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{University of
+  Cambridge, Department of Engineering}\@, \bibyear{1995}\@.
+
+\bibitem{niesler1996variable}
+\bibauthor{NIESLER T~R\@, WOODLAND P~C}\@. \bibtitle{A variable-length
+  category-based n-gram language model}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Acoustics, Speech, and Signal Processing, 1996.
+  ICASSP-96. Conference Proceedings., 1996 IEEE International Conference
+  on\thinspace{}\textnormal{: }Vol~1}\@.
+  \bibyear{1996}\thinspace{}\textnormal{:
+  }\bibpages{164\thinspace{}\textnormal{--}\thinspace{}167}\@.
+
+\bibitem{rosenfeld1996maximum}
+\bibauthor{ROSENFELD R}\@. \bibtitle{A maximum entropy approach to adaptive
+  statistical language modeling}\bibmark{[J]}\@, \bibyear{1996}\@.
+
+\bibitem{chelba1997structured}
+\bibauthor{CHELBA C}\@. \bibtitle{A structured language model}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Proceedings of the 35th Annual Meeting of the
+  Association for Computational Linguistics and Eighth Conference of the
+  European Chapter of the Association for Computational Linguistics}\@.
+  \bibyear{1997}\thinspace{}\textnormal{:
+  }\bibpages{498\thinspace{}\textnormal{--}\thinspace{}500}\@.
+
+\bibitem{rosenfeld1997whole}
+\bibauthor{ROSENFELD R}\@. \bibtitle{A whole sentence maximum entropy language
+  model}\bibmark{[C]} //\thinspace{}\bibbooktitle{Automatic Speech Recognition
+  and Understanding, 1997. Proceedings., 1997 IEEE Workshop on}\@.
+  \bibyear{1997}\thinspace{}\textnormal{:
+  }\bibpages{230\thinspace{}\textnormal{--}\thinspace{}237}\@.
+
+\bibitem{brants2007large}
+\bibauthor{BRANTS T\@, POPAT A~C\@, XU P, et~al}\@. \bibtitle{Large language
+  models in machine translation}\bibmark{[C]} //\thinspace{}\bibbooktitle{In
+  Proceedings of the Joint Conference on Empirical Methods in Natural Language
+  Processing and Computational Natural Language Learning}\@. \bibyear{2007}\@.
+
+\bibitem{hinton1986learning}
+\bibauthor{HINTON G~E}\@. \bibtitle{Learning distributed representations of
+  concepts}\bibmark{[C]} //\thinspace{}\bibbooktitle{Proceedings of the eighth
+  annual conference of the cognitive science society\thinspace{}\textnormal{:
+  }Vol~1}\@. \bibyear{1986}\thinspace{}\textnormal{: }\bibpages{12}\@.
+
+\bibitem{schwenk2007continuous}
+\bibauthor{SCHWENK H}\@. \bibtitle{Continuous space language
+  models}\bibmark{[J]}\@. \bibjournal{Computer Speech \& Language}\@,
+  \bibyear{2007}\@, \bibvolume{21}\bibnumber{(3)}\thinspace{}\textnormal{:
+  }\bibpages{492\thinspace{}\textnormal{--}\thinspace{}518}\@.
+
+\bibitem{lund1996producing}
+\bibauthor{LUND K\@, BURGESS C}\@. \bibtitle{Producing high-dimensional
+  semantic spaces from lexical co-occurrence}\bibmark{[J]}\@.
+  \bibjournal{Behavior Research Methods, Instruments, \& Computers}\@,
+  \bibyear{1996}\@, \bibvolume{28}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{203\thinspace{}\textnormal{--}\thinspace{}208}\@.
+
+\bibitem{morin2005hierarchical}
+\bibauthor{MORIN F\@, BENGIO Y}\@. \bibtitle{Hierarchical Probabilistic Neural
+  Network Language Model.}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Aistats\thinspace{}\textnormal{: }Vol~5}\@.
+  \bibyear{2005}\thinspace{}\textnormal{:
+  }\bibpages{246\thinspace{}\textnormal{--}\thinspace{}252}\@.
+
+\bibitem{mnih2009scalable}
+\bibauthor{MNIH A\@, HINTON G~E}\@. \bibtitle{A scalable hierarchical
+  distributed language model}\bibmark{[C]} //\thinspace{}\bibbooktitle{Advances
+  in neural information processing systems}\@.
+  \bibyear{2009}\thinspace{}\textnormal{:
+  }\bibpages{1081\thinspace{}\textnormal{--}\thinspace{}1088}\@.
+
+\bibitem{mikolov2011extensions}
+\bibauthor{MIKOLOV T\@, KOMBRINK S\@, BURGET L, et~al}\@. \bibtitle{Extensions
+  of recurrent neural network language model}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Acoustics, Speech and Signal Processing (ICASSP),
+  2011 IEEE International Conference on}\@.
+  \bibyear{2011}\thinspace{}\textnormal{:
+  }\bibpages{5528\thinspace{}\textnormal{--}\thinspace{}5531}\@.
+
+\bibitem{gutmann2012noise}
+\bibauthor{GUTMANN M~U\@, HYV{\"A}RINEN A}\@. \bibtitle{Noise-contrastive
+  estimation of unnormalized statistical models, with applications to natural
+  image statistics}\bibmark{[J]}\@. \bibjournal{The Journal of Machine Learning
+  Research}\@, \bibyear{2012}\@,
+  \bibvolume{13}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{307\thinspace{}\textnormal{--}\thinspace{}361}\@.
+
+\bibitem{mnih2012fast}
+\bibauthor{MNIH A\@, TEH Y~W}\@. \bibtitle{A fast and simple algorithm for
+  training neural probabilistic language models}\bibmark{[J]}\@.
+  \bibjournal{arXiv preprint arXiv:1206.6426}\@, \bibyear{2012}\@.
+
+\bibitem{dos2014deep}
+\bibauthor{dos SANTOS C~N\@, GATTI M}\@. \bibtitle{Deep Convolutional Neural
+  Networks for Sentiment Analysis of Short Texts.}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{COLING}\@.
+  \bibyear{2014}\thinspace{}\textnormal{:
+  }\bibpages{69\thinspace{}\textnormal{--}\thinspace{}78}\@.
+
+\bibitem{tang2014learning}
+\bibauthor{TANG D\@, WEI F\@, YANG N, et~al}\@. \bibtitle{Learning
+  Sentiment-Specific Word Embedding for Twitter Sentiment
+  Classification.}\bibmark{[C]} //\thinspace{}\bibbooktitle{ACL (1)}\@.
+  \bibyear{2014}\thinspace{}\textnormal{:
+  }\bibpages{1555\thinspace{}\textnormal{--}\thinspace{}1565}\@.
+
+\bibitem{pennington2014glove}
+\bibauthor{PENNINGTON J\@, SOCHER R\@, MANNING C~D}\@. \bibtitle{Glove: Global
+  Vectors for Word Representation.}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{EMNLP\thinspace{}\textnormal{: }Vol~14}\@.
+  \bibyear{2014}\thinspace{}\textnormal{:
+  }\bibpages{1532\thinspace{}\textnormal{--}\thinspace{}1543}\@.
+
+\bibitem{qiu2014co}
+\bibauthor{QIU S\@, CUI Q\@, BIAN J, et~al}\@. \bibtitle{Co-learning of Word
+  Representations and Morpheme Representations.}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{COLING}\@.
+  \bibyear{2014}\thinspace{}\textnormal{:
+  }\bibpages{141\thinspace{}\textnormal{--}\thinspace{}150}\@.
+
+\bibitem{reisinger2010multi}
+\bibauthor{REISINGER J\@, MOONEY R~J}\@. \bibtitle{Multi-prototype vector-space
+  models of word meaning}\bibmark{[C]} //\thinspace{}\bibbooktitle{Human
+  Language Technologies: The 2010 Annual Conference of the North American
+  Chapter of the Association for Computational Linguistics}\@.
+  \bibyear{2010}\thinspace{}\textnormal{:
+  }\bibpages{109\thinspace{}\textnormal{--}\thinspace{}117}\@.
+
+\bibitem{yogatama2014learning}
+\bibauthor{YOGATAMA D\@, FARUQUI M\@, DYER C, et~al}\@. \bibtitle{Learning word
+  representations with hierarchical sparse coding}\bibmark{[J]}\@.
+  \bibjournal{arXiv preprint arXiv:1406.2035}\@, \bibyear{2014}\@.
+
+\bibitem{mnih2013learning}
+\bibauthor{MNIH A\@, KAVUKCUOGLU K}\@. \bibtitle{Learning word embeddings
+  efficiently with noise-contrastive estimation}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Advances in Neural Information Processing
+  Systems}\@. \bibyear{2013}\thinspace{}\textnormal{:
+  }\bibpages{2265\thinspace{}\textnormal{--}\thinspace{}2273}\@.
+
+\bibitem{kalchbrenner2014convolutional}
+\bibauthor{KALCHBRENNER N\@, GREFENSTETTE E\@, BLUNSOM P}\@. \bibtitle{A
+  convolutional neural network for modelling sentences}\bibmark{[J]}\@.
+  \bibjournal{arXiv preprint arXiv:1404.2188}\@, \bibyear{2014}\@.
+
+\bibitem{tang2015line}
+\bibauthor{TANG J\@, QU M\@, WANG M, et~al}\@. \bibtitle{Line: Large-scale
+  information network embedding}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Proceedings of the 24th International Conference
+  on World Wide Web}\@. \bibyear{2015}\thinspace{}\textnormal{:
+  }\bibpages{1067\thinspace{}\textnormal{--}\thinspace{}1077}\@.
+
+\bibitem{kiros2014multiplicative}
+\bibauthor{KIROS R\@, ZEMEL R\@, SALAKHUTDINOV R~R}\@. \bibtitle{A
+  multiplicative model for learning distributed text-based attribute
+  representations}\bibmark{[C]} //\thinspace{}\bibbooktitle{Advances in Neural
+  Information Processing Systems}\@. \bibyear{2014}\thinspace{}\textnormal{:
+  }\bibpages{2348\thinspace{}\textnormal{--}\thinspace{}2356}\@.
+
+\bibitem{wolfinger1993laplace}
+\bibauthor{WOLFINGER R}\@. \bibtitle{Laplace's approximation for nonlinear
+  mixed models}\bibmark{[J]}\@. \bibjournal{Biometrika}\@, \bibyear{1993}\@,
+  \bibvolume{80}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{791\thinspace{}\textnormal{--}\thinspace{}795}\@.
+
+\bibitem{jordan1999introduction}
+\bibauthor{JORDAN M~I\@, GHAHRAMANI Z\@, JAAKKOLA T~S, et~al}\@. \bibtitle{An
+  introduction to variational methods for graphical models}\bibmark{[J]}\@.
+  \bibjournal{Machine learning}\@, \bibyear{1999}\@,
+  \bibvolume{37}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{183\thinspace{}\textnormal{--}\thinspace{}233}\@.
+
+\bibitem{wainwright2008graphical}
+\bibauthor{WAINWRIGHT M~J\@, JORDAN M~I}\@. \bibtitle{Graphical models,
+  exponential families, and variational inference}\bibmark{[J]}\@.
+  \bibjournal{Foundations and Trends{\textregistered} in Machine Learning}\@,
+  \bibyear{2008}\@, \bibvolume{1}\bibnumber{(1-2)}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}305}\@.
+
+\bibitem{andrieu2003introduction}
+\bibauthor{ANDRIEU C\@, DE~FREITAS N\@, DOUCET A, et~al}\@. \bibtitle{An
+  introduction to MCMC for machine learning}\bibmark{[J]}\@.
+  \bibjournal{Machine learning}\@, \bibyear{2003}\@,
+  \bibvolume{50}\bibnumber{(1-2)}\thinspace{}\textnormal{:
+  }\bibpages{5\thinspace{}\textnormal{--}\thinspace{}43}\@.
+
+\bibitem{griffiths2004finding}
+\bibauthor{GRIFFITHS T~L\@, STEYVERS M}\@. \bibtitle{Finding scientific
+  topics}\bibmark{[J]}\@. \bibjournal{Proceedings of the National Academy of
+  Sciences}\@, \bibyear{2004}\@, \bibvolume{101}\bibnumber{(suppl
+  1)}\thinspace{}\textnormal{:
+  }\bibpages{5228\thinspace{}\textnormal{--}\thinspace{}5235}\@.
+
+\bibitem{van2008visualizing}
+\bibauthor{Van~der MAATEN L\@, HINTON G}\@. \bibtitle{Visualizing data using
+  t-SNE}\bibmark{[J]}\@. \bibjournal{Journal of Machine Learning Research}\@,
+  \bibyear{2008}\@,
+  \bibvolume{9}\bibnumber{(2579-2605)}\thinspace{}\textnormal{:
+  }\bibpages{85}\@.
+
+\bibitem{turian2010word}
+\bibauthor{TURIAN J\@, RATINOV L\@, BENGIO Y}\@. \bibtitle{Word
+  representations: a simple and general method for semi-supervised
+  learning}\bibmark{[C]} //\thinspace{}\bibbooktitle{Proceedings of the 48th
+  annual meeting of the association for computational linguistics}\@.
+  \bibyear{2010}\thinspace{}\textnormal{:
+  }\bibpages{384\thinspace{}\textnormal{--}\thinspace{}394}\@.
+
+\bibitem{huang2015bidirectional}
+\bibauthor{HUANG Z\@, XU W\@, YU K}\@. \bibtitle{Bidirectional LSTM-CRF models
+  for sequence tagging}\bibmark{[J]}\@. \bibjournal{arXiv preprint
+  arXiv:1508.01991}\@, \bibyear{2015}\@.
+
+\bibitem{bordes2013translating}
+\bibauthor{BORDES A\@, USUNIER N\@, GARCIA-DURAN A, et~al}\@.
+  \bibtitle{Translating embeddings for modeling multi-relational
+  data}\bibmark{[C]} //\thinspace{}\bibbooktitle{Advances in Neural Information
+  Processing Systems}\@. \bibyear{2013}\thinspace{}\textnormal{:
+  }\bibpages{2787\thinspace{}\textnormal{--}\thinspace{}2795}\@.
+
+\bibitem{socher2013reasoning}
+\bibauthor{SOCHER R\@, CHEN D\@, MANNING C~D, et~al}\@. \bibtitle{Reasoning
+  with neural tensor networks for knowledge base completion}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Advances in Neural Information Processing
+  Systems}\@. \bibyear{2013}\thinspace{}\textnormal{:
+  }\bibpages{926\thinspace{}\textnormal{--}\thinspace{}934}\@.
+
+\bibitem{harris1954distributional}
+\bibauthor{HARRIS Z~S}\@. \bibtitle{Distributional structure}\bibmark{[J]}\@.
+  \bibjournal{Word}\@, \bibyear{1954}\@,
+  \bibvolume{10}\bibnumber{(2-3)}\thinspace{}\textnormal{:
+  }\bibpages{146\thinspace{}\textnormal{--}\thinspace{}162}\@.
+
+\bibitem{pantel2005inducing}
+\bibauthor{PANTEL P}\@. \bibtitle{Inducing ontological co-occurrence
+  vectors}\bibmark{[C]} //\thinspace{}\bibbooktitle{Proceedings of the 43rd
+  Annual Meeting on Association for Computational Linguistics}\@.
+  \bibyear{2005}\thinspace{}\textnormal{:
+  }\bibpages{125\thinspace{}\textnormal{--}\thinspace{}132}\@.
+
+\bibitem{rajaraman2008more}
+\bibauthor{RAJARAMAN A}\@. \bibtitle{More data usually beats better
+  algorithms}\bibmark{[J]}\@. \bibjournal{Datawocky Blog}\@, \bibyear{2008}\@.
+
+\bibitem{box1976science}
+\bibauthor{BOX G~E}\@. \bibtitle{Science and statistics}\bibmark{[J]}\@.
+  \bibjournal{Journal of the American Statistical Association}\@,
+  \bibyear{1976}\@, \bibvolume{71}\bibnumber{(356)}\thinspace{}\textnormal{:
+  }\bibpages{791\thinspace{}\textnormal{--}\thinspace{}799}\@.
+
+\bibitem{newman2010automatic}
+\bibauthor{NEWMAN D\@, LAU J~H\@, GRIESER K, et~al}\@. \bibtitle{Automatic
+  evaluation of topic coherence}\bibmark{[C]} //\thinspace{}\bibbooktitle{Human
+  Language Technologies: The 2010 Annual Conference of the North American
+  Chapter of the Association for Computational Linguistics}\@.
+  \bibyear{2010}\thinspace{}\textnormal{:
+  }\bibpages{100\thinspace{}\textnormal{--}\thinspace{}108}\@.
+
+\bibitem{newman2010evaluating}
+\bibauthor{NEWMAN D\@, NOH Y\@, TALLEY E, et~al}\@. \bibtitle{Evaluating topic
+  models for digital libraries}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Proceedings of the 10th annual joint conference
+  on Digital libraries}\@. \bibyear{2010}\thinspace{}\textnormal{:
+  }\bibpages{215\thinspace{}\textnormal{--}\thinspace{}224}\@.
+
+\bibitem{Goodfellow-et-al-2016-Book}
+\bibauthor{GOODFELLOW I\@, BENGIO Y\@, COURVILLE A}\@. \bibtitle{Deep
+  Learning}\bibmark{[H/OL]}\@. \bibyear{2016}\@.
+  \newline\url{http://goodfeli.github.io/dlbook/}\@.
+
+\bibitem{deng2014deep}
+\bibauthor{DENG L\@, YU D}\@. \bibtitle{Deep learning: Methods and
+  applications}\bibmark{[J]}\@. \bibjournal{Foundations and Trends in Signal
+  Processing}\@, \bibyear{2014}\@,
+  \bibvolume{7}\bibnumber{(3--4)}\thinspace{}\textnormal{:
+  }\bibpages{197\thinspace{}\textnormal{--}\thinspace{}387}\@.
+
+\end{thebibliography}

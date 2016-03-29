@@ -1025,13 +1025,32 @@ Skip-gram             & \begin{tabular}[c]{@{}c@{}}Word2Vec\\ TW\\ LW\\ TLW\end{
 	\begin{enumerate}
 	\item 	对文档中的每一个观测词$w_i$，采样其上下文词$c_i$：
 			\begin{equation}\label{eq:caLDA_gb_c_chap5}
-			P(c_i=v|c_{-i}, w, z)\propto \frac{n_{-i, v}^{(w_i)}+\gamma}{n_{-i, v}^{(.)}+V\gamma}\cdot \frac{n_{-i, v}^{(z_i)}+\beta}{n_{-i, .}^{(z_i)}+V\beta}
+			P(c_i=v|\mathbf{c_{-i}, w, z})\propto \frac{n_{-i, v}^{(w_i)}+\gamma}{n_{-i, v}^{(.)}+V\gamma}\cdot \frac{n_{-i, v}^{(z_i)}+\beta}{n_{-i, .}^{(z_i)}+V\beta}
 			\end{equation}
+	这里$n_{-i}^{(.)}$是一个不包括当前$c_i$赋值的计数。上述结果也是十分的直观，第一个比例表示当前词$w_i$在预测上下文词$v$下的概率值，第二个比例表示预测上下文词$v$在当前主题$z_i$下的概率值。
 	\item 	根据前一步采样得到的上下文词$c_i$，采样其主题$z_i$：
 			\begin{equation}\label{eq:caLDA_gb_z_chap5}
-			P(z_i=k|z_{-i}, c)\propto \frac{n_{-i, k}^{(c_i)}+\beta}{n_{-i, k}^{(.)}+V\beta}\cdot \frac{n_{-i, k}^{(d_i)}+\alpha}{n_{-i, .}^{(d_i)}+K\alpha}
+			P(z_i=k|\mathbf{z_{-i}, w, c})\propto \frac{n_{-i, k}^{(c_i)}+\beta}{n_{-i, k}^{(.)}+V\beta}\cdot \frac{n_{-i, k}^{(d_i)}+\alpha}{n_{-i, .}^{(d_i)}+K\alpha}
 			\end{equation}
+	这里$n_{-i}^{(.)}$是一个不包括当前$z_i$赋值的计数。上述结果也是十分的直观，第一个比例表示当前上下文词$c_i$在预测主题$k$下的概率值，第二个比例表示预测主题$k$在当前文档$d_i$下的概率值。
 	\end{enumerate}
+
+有了从后验分布$P(\textbf{c}|\textbf{w, z})$和$P(\textbf{z}|\textbf{w, c})$吉布斯采样得到的样本集，每一个单独的上下文词和主题中相互独立的统计量可以通过整合所有样本集来计算。对于任意一个样本，我们可以估计从$\textbf{c}$和$\textbf{z}$的值来统计$\theta$，$\phi$和$\epsilon$：
+	\begin{enumerate}
+	\item 词$w$在上下文词$c$下的概率值为：
+		\begin{equation}
+		\hat{\epsilon}_{c}^{(w)}=\frac{n_c^{(w)}+\gamma}{n_c^{(.)}+V\gamma}
+		\end{equation}
+	\item 上下文词$c$在主题$j$下的概率值为：
+		\begin{equation}
+		\hat{\phi}_{j}^{(c)}=\frac{n_j^{(c)}+\beta}{n_j^{(.)}+V\beta}
+		\end{equation}
+	\item 主题$j$在文档$d$中的概率值为：
+		\begin{equation}
+		\hat{\theta}_{j}^{(d)}=\frac{n_{j}^{(d)}+\alpha}{n_{.}^{(d)}+K\alpha}
+		\end{equation}	
+	\end{enumerate}
+	这些值基于$\textbf{w}$，$\textbf{c}$和$\textbf{z}$可以用来估计新出现的$w$，$c$和$z$。
 
 \subsection{词向量加强的潜在狄利克雷分布}\label{subsec_enhanced_lda_chap5}
  
@@ -1046,12 +1065,12 @@ Skip-gram             & \begin{tabular}[c]{@{}c@{}}Word2Vec\\ TW\\ LW\\ TLW\end{
 	\item 对每一个文档$For\ d=1, ..., M: \theta_{d}\sim Dir(\alpha)$
 	\item 对每一个主题$For\ k=1, ..., K: \phi_{k}\sim Dir(\beta)$
 	\item 对每一个上下文词$For\ v=1, ..., V: \epsilon_{v}\sim Dir(\gamma)$
-	\item 对每一个上下文词$For\ v'=1, ..., V: \epsilon_{v'}\sim Dis()$
+	\item 对每一个上下文词$For\ v=1, ..., V: \epsilon'_{v}\sim Dis()$
 	\item 对文档中出现的每一个词$For\ n=1, ..., N:$
 		\begin{itemize}
 		\item 当前主题$z_{n}\sim Mult(\theta_{d})$
 		\item 当前上下文词$c_{n}\sim Mult(\phi_{z_{n}})$
-		\item 当前词$w_{n}\sim Mult(\epsilon_{c_{n}}) \cdot Dis((\epsilon_{c_{n}})$
+		\item 当前词$w_{n}\sim Mult(\epsilon_{c_{n}}) \cdot Dis((\epsilon'_{c_{n}})$
 		\end{itemize}
 	\end{enumerate}
 	
@@ -1059,14 +1078,32 @@ Skip-gram             & \begin{tabular}[c]{@{}c@{}}Word2Vec\\ TW\\ LW\\ TLW\end{
 	\begin{enumerate}
 	\item 	对文档中的每一个观测词$w_i$，采样其上下文词$c_i$：
 			\begin{equation}\label{eq:caLDA_gb_c_chap5}
-			P(c_i=v|c_{-i}, w, z)\propto \frac{n_{-i, v}^{(w_i)}+\gamma}{n_{-i, v}^{(.)}+V\gamma}\cdot \frac{\exp(\mathbf{v} \cdot \mathbf{w_{i}})}{\sum_{c\in C}\exp(\mathbf{c} \cdot \mathbf{w_{i}})} \cdot \frac{n_{-i, v}^{(z_i)}+\beta}{n_{-i, .}^{(z_i)}+V\beta}
+			P(c_i=v|\mathbf{c_{-i}, w, z})\propto \frac{n_{-i, v}^{(w_i)}+\gamma}{n_{-i, v}^{(.)}+V\gamma}\cdot \frac{\exp(\mathbf{v} \cdot \mathbf{w_{i}})}{\sum_{c\in C}\exp(\mathbf{c} \cdot \mathbf{w_{i}})} \cdot \frac{n_{-i, v}^{(z_i)}+\beta}{n_{-i, .}^{(z_i)}+V\beta}
 			\end{equation}
-			这里对于分布$Dis()$采用了Softmax函数，$\mathbf{v}$，$\mathbf{c}$和$\mathbf{w_i}$分别表示上下文词$v$，任意上下文词$c$和当前观测词$w_i$的词向量表示。
+			这里对于分布$Dis()$采用了Softmax函数，$\mathbf{v}$，$\mathbf{c}$和$\mathbf{w_i}$分别表示上下文词$v$，任意上下文词$c$和当前观测词$w_i$的词向量表示。这里$n_{-i}^{(.)}$是一个不包括当前$c_i$赋值的计数。上述结果也是十分的直观，第一个和第二个比例表示当前词$w_i$在预测上下文词$v$下的概率值，第三个比例表示预测上下文词$v$在当前主题$z_i$下的概率值。
 	\item 	根据前一步采样得到的上下文词$c_i$，采样其主题$z_i$：
 			\begin{equation}\label{eq:caLDA_gb_z_chap5}
-			P(z_i=k|z_{-i}, c)\propto \frac{n_{-i, k}^{(c_i)}+\beta}{n_{-i, k}^{(.)}+V\beta}\cdot \frac{n_{-i, k}^{(d_i)}+\alpha}{n_{-i, .}^{(d_i)}+K\alpha}
+			P(z_i=k|\mathbf{z_{-i}, w, c})\propto \frac{n_{-i, k}^{(c_i)}+\beta}{n_{-i, k}^{(.)}+V\beta}\cdot \frac{n_{-i, k}^{(d_i)}+\alpha}{n_{-i, .}^{(d_i)}+K\alpha}
 			\end{equation}
+			这里$n_{-i}^{(.)}$是一个不包括当前$z_i$赋值的计数。上述结果也是十分的直观，第一个比例表示当前上下文词$c_i$在预测主题$k$下的概率值，第二个比例表示预测主题$k$在当前文档$d_i$下的概率值。
 	\end{enumerate}
+	
+有了从后验分布$P(\textbf{c}|\textbf{w, z})$和$P(\textbf{z}|\textbf{w, c})$吉布斯采样得到的样本集，类似地，我们可以估计从$\textbf{c}$和$\textbf{z}$的值来统计$\theta$，$\phi$和$\epsilon$：
+	\begin{enumerate}
+	\item 词$w$在上下文词$c$下的概率值为：
+		\begin{equation}
+		\hat{\epsilon}_{c}^{(w)}=\frac{n_c^{(w)}+\gamma}{n_c^{(.)}+V\gamma}
+		\end{equation}
+	\item 上下文词$c$在主题$j$下的概率值为：
+		\begin{equation}
+		\hat{\phi}_{j}^{(c)}=\frac{n_j^{(c)}+\beta}{n_j^{(.)}+V\beta}
+		\end{equation}
+	\item 主题$j$在文档$d$中的概率值为：
+		\begin{equation}
+		\hat{\theta}_{j}^{(d)}=\frac{n_{j}^{(d)}+\alpha}{n_{.}^{(d)}+K\alpha}
+		\end{equation}	
+	\end{enumerate}
+	同样地，这些值基于$\textbf{w}$，$\textbf{c}$和$\textbf{z}$可以用来估计新出现的$w$，$c$和$z$。
 	
 本节重点在于基于利用外部的词向量表示来改善主题模型效果的思想，修改了LDA的图模型表示，并提出了对应的上下文感知的LDA（caLDA）和词向量加强的LDA（weeLDA），并且给出了各自模型的吉布斯采样方法。
 
