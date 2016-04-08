@@ -446,4 +446,22 @@
   \bibvolume{7}\bibnumber{(3--4)}\thinspace{}\textnormal{:
   }\bibpages{197\thinspace{}\textnormal{--}\thinspace{}387}\@.
 
+\bibitem{wang2016towards}
+\bibauthor{HAO W\@, DIT-YAN Y}\@. \bibtitle{Towards Bayesian Deep Learning: A
+  Survey}\bibmark{[J]}\@. \bibjournal{arXiv preprint arXiv:1604.01662}\@,
+  \bibyear{2016}\@.
+
+\bibitem{niu2015topic2vec}
+\bibauthor{NIU L-Q\@, DAI X-Y}\@. \bibtitle{Topic2Vec: Learning Distributed
+  Representations of Topics}\bibmark{[J]}\@. \bibjournal{arXiv preprint
+  arXiv:1506.08422}\@, \bibyear{2015}\@.
+
+\bibitem{niu2015unified}
+\bibauthor{NIU L\@, DAI X-Y\@, HUANG S, et~al}\@. \bibtitle{A Unified Framework
+  for Jointly Learning Distributed Representations of Word and
+  Attributes}\bibmark{[C]} //\thinspace{}\bibbooktitle{Proceedings of The 7th
+  Asian Conference on Machine Learning}\@.
+  \bibyear{2015}\thinspace{}\textnormal{:
+  }\bibpages{143\thinspace{}\textnormal{--}\thinspace{}156}\@.
+
 \end{thebibliography}

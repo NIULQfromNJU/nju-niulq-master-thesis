@@ -11,45 +11,45 @@ Warning--Require journal: salton1986introduction
 Warning--Require address: niesler1995variable
 Warning--Require journal: rosenfeld1996maximum
 Warning--Require citedate: Goodfellow-et-al-2016-Book
-You've used 64 entries,
+You've used 67 entries,
             3107 wiz_defined-function locations,
-            1061 strings with 17457 characters,
-and the built_in function-call counts, 109975 in all, are:
-= -- 12064
-> -- 214
-< -- 492
-+ -- 9465
-- -- 735
-* -- 2912
-:= -- 12124
+            1074 strings with 17940 characters,
+and the built_in function-call counts, 113981 in all, are:
+= -- 12487
+> -- 224
+< -- 515
++ -- 9790
+- -- 766
+* -- 3036
+:= -- 12573
 add.period$ -- 0
-call.type$ -- 64
-change.case$ -- 300
+call.type$ -- 67
+change.case$ -- 314
 chr.to.int$ -- 0
-cite$ -- 69
-duplicate$ -- 15704
-empty$ -- 4423
-format.name$ -- 600
-if$ -- 29464
+cite$ -- 72
+duplicate$ -- 16257
+empty$ -- 4592
+format.name$ -- 628
+if$ -- 30535
 int.to.chr$ -- 0
-int.to.str$ -- 64
+int.to.str$ -- 67
 missing$ -- 0
-newline$ -- 219
-num.names$ -- 64
-pop$ -- 1587
+newline$ -- 228
+num.names$ -- 67
+pop$ -- 1643
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1045
+skip$ -- 1097
 stack$ -- 0
-substring$ -- 13152
-swap$ -- 2877
+substring$ -- 13605
+swap$ -- 2990
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 5
-while$ -- 1461
-width$ -- 66
-write$ -- 804
+while$ -- 1517
+width$ -- 69
+write$ -- 836
 (There were 5 warnings)
