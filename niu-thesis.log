@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/W32TeX) (preloaded format=xelatex 2015.12.28)  7 APR 2016 23:14
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/W32TeX) (preloaded format=xelatex 2015.12.28)  14 APR 2016 14:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2462,7 +2462,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
 (hyperref)                removed on input line 261.
 
-[3] [4]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
+[4]
 {第\CJKnumber {2}章} 2.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -3377,7 +3381,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1226.
 Here is how much of TeX's memory you used:
  35454 strings out of 493668
  653773 string characters out of 6148790
- 734159 words of memory out of 5000000
+ 734169 words of memory out of 5000000
  38236 multiletter control sequences out of 15000+600000
  50269 words of font info for 250 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191

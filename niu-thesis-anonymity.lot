@@ -1,0 +1,19 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces Word2Vec\cite {mikolov2013efficient}和模型(TW, DW, LW and TLW)中所用到词和属性对以及学习目标\relax }}{24}{table.4.1}
+\contentsline {table}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{2}}{\ignorespaces DW模型与其他模型在$20NewsGroup$数据集上的实验对比。其他方法的结果见\cite {liu2015topical}。粗体表示所有结果中最好的结果。\relax }}{33}{table.4.2}
+\contentsline {table}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{3}}{\ignorespaces 词类比任务上的准确率（\%），值越高越好。我们将我们的模型（TW, LW和TLW）和基础模型W2V（Word2Vec）以及目前最好的模型Glove进行对比。粗体数据表示每个数据集上的最好结果。时间是在一个8GB内存的单机上估计得来。\relax }}{35}{table.4.3}
+\contentsline {table}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{4}}{\ignorespaces WordSim-353数据集上我们的模型（TW, LW和TLW）和Word2Vec以及Glove的进行斯皮尔曼等级相关系数（Spearman rank correlation coefficient）对比。粗体表示每个数据集上的最好结果。\relax }}{36}{table.4.4}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces LDA和wecpLDA主题模型评估结果对比\relax }}{48}{table.5.1}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

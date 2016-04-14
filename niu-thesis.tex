@@ -235,11 +235,11 @@ This paper focuses on studying NNLM-based text vector representations and topic 
 \chapter{绪论}\label{chapter1_introduction}
 \section{研究背景}\label{sec_chap1_background}
 
-自然语言同语音、图像并列为人工智能研究领域的三大重要元素。特别地，自2006年Hinton提出深度学习技术\cite{hinton2006reducing}并且在机器学习以及人工智能领域取得重大突破。其中，语音识别、计算机视觉、图像处理等典型人工智能任务取得了重大进展与广泛应用。但是，不同于语音、图像等原始信号或者信息，自然语言是人类高度抽象之后的产物。因此，深度学习等机器学习技术在面对自然语言处理任务时依旧面临较大的挑战。
+自然语言同语音、图像并列为人工智能研究领域的三大重要元素。传统的自然语言处理任务包括了语言建模、机器翻译、文本分类、情感分析、句法分析、词性标注、命名实体识别、中文分词、复述识别、自动问答等等\cite{collobert2008unified}。传统的自然语言处理方法大多是将有监督（supervised）机器学习模型方法根据对应的任务加以修改应用。例如，基于短语的统计机器翻译采用双语平行语料，依据源语言与目标语言词对齐方法来构建翻译模型，之后基于翻译模型来将源语言翻译为目标语言\cite{chiang2005hierarchical}；文本分类、情感分析、复述识别等都是将具体的任务转换为有监督机器学习中二分类或者多分类任务，不同的任务采取不同的特征提取方法，进而构建对应的分类器\cite{collobert2008unified}；句法分析、中文分词等序列标注任务部分采用条件随机场等图模型方法，基于特征模板来提取特征进而构造有监督分类器来进行参数学习\cite{lafferty2001conditional,zhao2006improved}。可以看到传统自然语言处理处理的最大局限在于采用有监督的机器学习方法，而现实中有监督方法所需的标记语料是相对有限且人工成本昂贵。因此，传统有监督机器学习方法在自然语言处理任务中的效果并不理想依旧面临很大的问题与挑战。
 
-传统的自然语言处理任务包括了语言建模、机器翻译、文本分类、情感分析、句法分析、词性标注、命名实体识别、中文分词、复述识别、自动问答等等\cite{collobert2008unified}。传统的自然语言处理方法大多是将有监督（supervised）机器学习模型方法根据对应的任务加以修改应用。例如，基于短语的统计机器翻译采用双语平行语料，依据源语言与目标语言词对齐方法来构建翻译模型，之后基于翻译模型来将源语言翻译为目标语言\cite{chiang2005hierarchical}；文本分类、情感分析、复述识别等都是将具体的任务转换为有监督机器学习中二分类或者多分类任务，不同的任务采取不同的特征提取方法，进而构建对应的分类器\cite{collobert2008unified}；句法分析、中文分词等序列标注任务部分采用条件随机场等图模型方法，基于特征模板来提取特征进而构造有监督分类器来进行参数学习\cite{lafferty2001conditional,zhao2006improved}。可以看到传统自然语言处理处理的最大局限在于采用有监督的机器学习方法，而现实中有监督方法所需的标记语料是相对有限且人工成本昂贵。因此，传统有监督机器学习方法在自然语言处理任务中的效果并不理想依旧面临很大的问题与挑战。
+自2006年Hinton提出深度学习技术\cite{hinton2006reducing}并且在机器学习以及人工智能领域取得重大突破。其中，语音识别、计算机视觉、图像处理等典型人工智能任务取得了重大进展与广泛应用。深度学习在语音以及图像等领域的成果得益于多层神经网络基于大量的未标注语料中的层次特征表示学习能力。如在图像中，神经网络通过层次化的学习可以学习到像素（pixel）、边际（edge）、部分（part）、图像（image）的表示，之后通过这些不同层级的特征来构造分类器\cite{lee2009convolutional}。可以看到多层神经网络在处理图像时模拟人脑的处理过程，因此深度学习得以取得重大突破，语音识别也类似\cite{lee2009unsupervised}。在此背景下，诸多研究者意识到深度学习的下一个突破口是自然语言处理领域。但是，不同于语音、图像等原始信号或者信息，自然语言是人类高度抽象之后的产物。因此，深度学习等机器学习技术在面对自然语言处理任务时依旧面临较大的挑战。
 
-在此背景下，诸多研究者意识到深度学习的下一个突破口是自然语言处理领域。深度学习在语音以及图像等领域的成果得益于多层神经网络基于大量的未标注语料中的层次特征表示学习能力。如在图像中，神经网络通过层次化的学习可以学习到像素（pixel）、边际（edge）、部分（part）、图像（image）的表示，之后通过这些不同层级的特征来构造分类器\cite{lee2009convolutional}。可以看到多层神经网络在处理图像时模拟人脑的处理过程，因此深度学习得以取得重大突破，语音识别也类似\cite{lee2009unsupervised}。因此，研究者将自然语言处理的突破寄望于深度学习。近年来，研究者也开始探索文本的层次化表示学习，并希望通过基于深度学习的文本表示方法来提升传统的自然语言处理任务。特别地，随着2008年Collobert和Weston将基于深度神经网络的词向量表示应用到各类自然语言处理任务\cite{collobert2008unified}以及2013年谷歌研究员基于神经网络语言模型来学习分布式词向量表示\cite{mikolov2013efficient}，越来越多基于神经网络模型来学习文本向量表示的方法出现。
+因此，研究者将自然语言处理的突破寄望于深度学习。首先，文本的表示与建模是众多自然语言处理任务的基石，近年来研究者也开始探索文本的层次化表示学习，并希望通过基于深度学习的文本表示方法来提升传统的自然语言处理任务。特别地，随着2008年Collobert和Weston将基于深度神经网络的词向量表示应用到各类自然语言处理任务\cite{collobert2008unified}以及2013年谷歌研究员基于神经网络语言模型来学习分布式词向量表示\cite{mikolov2013efficient}，越来越多基于神经网络模型来学习文本向量表示的方法出现。
 
 \section{研究内容}\label{sec_chap1_motivations}
 
@@ -252,9 +252,9 @@ This paper focuses on studying NNLM-based text vector representations and topic 
 综上可以看出，基于神经网络的文本表示与建模在克服传统方法缺点的同时，在各类自然语言处理任务中均取得较好甚至是最好的结果。但是，深度学习技术在NLP领域的应用远不止于此。基于近年来深度学习用于自然语言处理任务所取得的成果，本文集中对基于神经网络语言模型的文本向量表示和主题建模问题进行了研究。首先简单介绍了传统N-Gram统计语言模型和基于神经网络的语言模型，并且回顾传统词向量表示方法以基于神经网络语言模型学习分布式词向量表示模型Word2Vec。随后基于这些基础模型与方法，本文对其进行了多方面的扩展：
 
 \begin{enumerate}
-\item 提出主题语义向量学习模型Topic2Vec：借助于潜在狄利克雷分布（Latent Dirichlet Allocation, LDA）挖掘词的主题信息，扩展Word2Vec模型来学习主题的语义向量表示。相比原始LDA中词、主题和文档均以空间下标（Indices）来表示而且词与主题之间的关系采用条件概率来衡量，Topic2Vec将词及其主题映射至同一个语义向量空间，词与主题之间关系可以直接采用余弦相似度来度量。
-\item 提出能够联合学习词及其属性向量表示的统一学习框架：将词向量表示学习模型Word2Vec扩展到联合学习词及其属性语义向量表示的统一框架。相比单一模型的学习能力，联合学习框架使得词与其属性在学习过程中相互促进可以得到更好的语义向量表示。
-\item 融合词向量与主题模型：结合词向量表示可以表征词的句法和语义信息的特性和LDA主题模型在收敛速度、收敛结果以及主题一致性方面的问题，将词向量表示应用到LDA中来提升原有主题模型的效果。特别地，提出了词向量聚类先验LDA、上下文感知LDA和词向量加强LDA。
+\item 词及其主题向量表示联合学习：借助于潜在狄利克雷分布（Latent Dirichlet Allocation, LDA）挖掘词的主题信息，扩展Word2Vec模型提出主题语义向量学习模型Topic2Vec。相比原始LDA中词、主题和文档均以空间下标（Indices）来表示而且词与主题之间的关系采用条件概率来衡量，Topic2Vec将词及其主题映射至同一个语义向量空间，词与主题之间关系可以直接采用余弦相似度来度量。因此，低维连续空间的向量表示可以更好地表征词和主题的语义信息。
+\item 词及其属性向量表示联合学习：将词向量表示学习模型Word2Vec扩展到联合学习词及其属性语义向量表示的统一框架。相比单一模型的学习能力，联合学习框架使得词与其属性在学习过程中相互促进可以得到更好的语义向量表示。
+\item 融合词向量的增强主题模型：结合词向量表示可以表征词的句法和语义信息的特性和LDA主题模型在收敛速度、收敛结果以及主题一致性方面的问题，将词向量表示应用到LDA中来提升原有主题模型的效果。特别地，提出了词向量聚类先验LDA、上下文感知LDA和词向量加强LDA。
 \end{enumerate}
 针对扩展之后的模型方法，本文分别给出了原理和实现，并且进行了多方面的实验评估，结果表明扩展之后的模型方法表现更好。因此，尽管深度学习技术已经在文本表示与建模甚至是整个NLP领域做出不俗的成绩，但当我们面对具体的实际问题时候，仍需思考当前问题的不同之处以及现有方法的不足，对现有模型做出修改或者创新才能做到更好的效果。
 
@@ -443,7 +443,7 @@ This paper focuses on studying NNLM-based text vector representations and topic 
 
 本章着重介绍本文的背景工作，包括：（1）统计语言模型：简要介绍语言模型的原理与对于自然语言处理任务的意义，并列举了常用的N-gram模型以及其他语言模型；（2）神经网络语言模型：简要介绍神经网络语言模型的由来，重点说明神经网络语言模型的原理；（3）Word2Vec词向量表示：简要介绍了Google基于神经网络语言模型提出Word2Vec模型来学习词的分布式表示，重点介绍Word2Vec的结构包括CBOW和Skip-gram以及训练过程。
 
-本章内容是本文所有工作的基础，基于分布的假设（Distributional Hypotheses）和神经网络语言模型（Neural Network Language Models）来学习文本的分布式表示或向量表示（Distributed Representations or Embedding）的思想贯穿全文，并且训练过程也采用Word2Vec中的随机梯度下降（Stochastic Gradient Descent）以及负采样（Negative Sampling）技术。
+本章内容是本文所有工作的基础，基于分布的假设（Distributional Hypotheses）和神经网络语言模型（Neural Network Language Models）来学习文本的分布式表示或向量表示（Distributed Representations or Embedding）的思想贯穿全文，并且训练过程也采用Word2Vec中的随机梯度下降（Stochastic Gradient Descent）、后向传播（Back-Propagation）以及负采样（Negative Sampling）技术。
 
 %%%%%%%%%%%%%%%%%%
 \chapter{学习主题的向量表示}\label{chapter3_topic_representations}
@@ -462,7 +462,7 @@ This paper focuses on studying NNLM-based text vector representations and topic 
 \end{itemize}
 
 通常在概率图模型中引入潜在隐藏变量，如LDA中引入隐藏主题（Topics），而采样极大似然估计法（Maximum Likelihood Estimate, MLE）和最大后验概率（Maximum a Posteriori, MAP）来直接推断模型参数会遇到无法直接求导或者计算代价太大的问题\cite{blei2003latent}。因此在实际中通常采用近似推断方法，包括拉普拉斯近似（Laplace approximation）\cite{wolfinger1993laplace}、变分近似（Variational Inference, VI）\cite{jordan1999introduction,wainwright2008graphical}和马尔可夫链蒙特卡洛方法（Markov chain Monte Carlo methods, MCMC）\cite{andrieu2003introduction}等。通过MCMC中最简单的吉布斯采样（Gibbs sampling）\footnote{http://gibbslda.sourceforge.net/}，依据当前全条件概率分布（ full conditional
-distribution）对于每个词进行一定轮数主题采样或至收敛，之后利用采样结果可以推断学习到文档-主题概率矩阵$\Theta$和主题-词概率矩阵$\Phi$\cite{griffiths2004finding}。依据已有的参数$\Theta$和$\Phi$，可以对任意新来的句子进行同样的采样过程，收敛之后文档中每一个词都会被赋予一个主题。
+distribution）对于每个词进行一定轮数主题采样或至收敛，之后利用采样结果可以推断学习到文档-主题概率矩阵$\Theta$和主题-词概率矩阵$\Phi$\cite{griffiths2004finding}。依据已有的参数$\Theta$和$\Phi$，可以对任意新来的句子进行同样的采样过程，收敛之后文档中每一个词都会被赋予一个主题标签。
 
 %%%
 \subsection{研究背景}

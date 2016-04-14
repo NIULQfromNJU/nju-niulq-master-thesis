@@ -1,0 +1,42 @@
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/W32TeX) (preloaded format=xelatex 2015.12.28)  12 APR 2016 10:19
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./njuthesis.cls
+(./njuthesis.cls
+LaTeX2e <2015/10/01> patch level 2
+Babel <3.9m> and hyphenation patterns for 79 languages loaded.
+
+LaTeX Warning: You have requested package `',
+               but the package provides `njuthesis.cls'.
+
+Package: njuthesis.cls 2015/7/16 v1.1.18 Document Class for the Degree Papers o
+f Nanjing University
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.29 \newif\ifnjut@
+                   adobefonts\njut@adobefontstrue
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.29 \newif\ifnjut@
+                   adobefonts\njut@adobefontstrue
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ 
+Here is how much of TeX's memory you used:
+ 10 strings out of 493668
+ 217 string characters out of 6148790
+ 53498 words of memory out of 5000000
+ 3491 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 1328 hyphenation exceptions out of 8191
+ 7i,0n,8p,103b,14s stack positions out of 5000i,500n,10000p,200000b,80000s
+No pages of output.
